@@ -1,0 +1,66 @@
+body{
+    background-image: url(images/background.jpg);
+    background-size: 80% 80%;
+    height: 100%;
+    width: 100%;
+}
+
+
+.header{
+    background-color: rgba(229, 244, 252, 0.89);
+    height: 220px;
+   
+    align-items: center;
+}
+.title{
+    font-size: 80pt;
+    font-family:Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+    color: rgb(112, 109, 109);
+
+}
+
+.logo img{
+    height:100%;
+    width: 40%;
+    padding-left: 20px;
+}
+.nav{
+    background-color: white;
+    color: black;
+  
+}
+
+.search{
+    align-items: center;
+    
+}
+.search img{
+    
+    width:5%;
+}
+a{
+    color: grey;
+    font-weight: bolder;
+}
+a:hover{
+    color: black;
+}
+
+.filter{
+   text-align:center ; 
+    font-family:Brush Script MT, Brush Script Std, cursive;  
+    font-size: 25pt;
+    color: rgb(66, 61, 61);
+}
+.filter1{
+    font-family:Brush Script MT, Brush Script Std, cursive;
+    font-size: 20pt;
+    color: rgb(66, 61, 61);
+
+}
+.recipes tr{
+    height: 200px;
+    width: 100%;
+
+}
