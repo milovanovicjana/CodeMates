@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Mixology</title>
+    <link rel="icon" type="image/png" href="images/logo5.png"/>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col-4">
+       
+             </div>
+             <div class="col-4 title">
+               <a href="#go"></a>   Mixology  
+            </div>
+            <div class="col-4 logo">
+               <img src="images/logo5.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="start_unreg.html"> Home page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled " href="#"> Recommended</a>
+                    </li>
+                   
+                    <li class="nav-item disabled">
+                        <a class="nav-link disabled" href="#">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Add new cocktail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">My info</a>
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        
+        <div id="form-register-div">
+            <h4>Personal details</h4>
+            <br>
+            <form class="form-register">
+                <label for="firstname">First name</label>
+                <input type="text" class="form-control" id="firstname" required></input>
+                <label for="lastname">Last name</label>
+                <input type="text" class="form-control" id="lastname" required></input>
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" required></input>
+                <label for="username">User name</label>
+                <input type="text" class="form-control" id="username" required></input>
+                <label for="birthdate">Birth date</label>
+                <input type="date" class="form-control" id="birthdate" required></input>
+
+                <label >Gender</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="option1" checked>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="option2">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+
+                <br><br><br>
+                <h4>Ingredient preferences</h4>
+                <br><br>
+
+                <input type="range" class="custom-range" min="0" max="10" id="vodka">
+                <label for="vodka" class="range-label">Vodka</label>
+                <br>
+                <input type="range" class="custom-range" min="0" max="10" id="gin">
+                <label for="gin" class="range-label">Gin</label>
+                <br>
+                <input type="range" class="custom-range" min="0" max="10" id="tequila">
+                <label for="tequila" class="range-label">Tequila</label>
+                <br>
+                <input type="range" class="custom-range" min="0" max="10" id="whisky">
+                <label for="whisky" class="range-label">Whisky</label>
+                
+                
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" >Register</button>
+            </form>
+        </div>
+
+        
+            
+    </div>
+</body>
+</html>

@@ -97,3 +97,51 @@ a:hover{
     background-color: rgba(229, 244, 252, 0.89);
     border-color: rgba(229, 244, 252, 0.89);
   }
+
+#form-register-div {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+.form-register button{
+    font-weight: bolder;
+    color: rgb(66, 61, 61);
+    background-color: rgba(229, 244, 252, 0.89);
+    border-color: rgba(229, 244, 252, 0.89);
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+
+.form-register input{
+    margin-bottom: 5px;
+}
+
+.custom-range::-moz-range-track {
+    background-color: white;
+  }
+
+  .custom-range::-webkit-slider-runnable-track {
+    background-color: white;
+  }
+
+  .custom-range::-webkit-slider-thumb {
+    background: rgb(83, 79, 79);
+  }
+  
+  .custom-range::-moz-range-thumb {
+    background: rgb(83, 79, 79);
+  }
+  
+  .custom-range::-ms-thumb {
+    background: rgb(83, 79, 79);
+  }
+
+  .custom-range{
+      width: 50%;
+  }
+
+  .range-label{
+    font-weight: bolder;
+    color: rgb(66, 61, 61);
+    padding: 15px;
+  }
