@@ -1,0 +1,154 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mixology(quiz)</title>
+    <link rel="icon" type="image/png" href="images/logo5.png"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style_mili.css">
+
+</head>
+
+<body>
+
+    <!--SABLONSKI DEO-->
+    <div class="container-fluid">
+ 
+        <div class="row header">
+            <div class="col-4">
+             </div>
+             <div class="col-4 title">
+               <a href="#go"></a>   Mixology  
+            </div>
+            <div class="col-4 logo">
+               <img src="images/logo5.png" alt="">
+             <i><font size="5pt" color="grey">Hello Tom!</font> </i>  &nbsp;&nbsp;&nbsp;
+               <button class="btn btn-light btn-lg"><a href="http://www.etf.rs"> Sign out</a></button>
+               
+              
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link enabled" href="#"> Home page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " href="#"> Recommended</a>
+                    </li>
+                   
+                    <li class="nav-item disabled">
+                        <a class="nav-link " href="#">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Add new coctail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">My info</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+
+    <!--KVIZ-->
+    <div class="container">
+        <div class="row center">
+            <div class="col-sm-2"> &nbsp; </div>
+            <form class="col-sm-8">
+                <h1 style="text-align:center">What coctail describes your personality?</h1>
+                <br><br>
+
+                <div class="options" >
+                <h4 style="text-align:center">1. How would you name a perfect night out?</h4>
+                <br>
+                <div style="text-align:center">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="nc" name="inlineRadioOptions1" checked>
+                        <label class="form-check-label" for="nc">Nightclub party</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="enatb" name="inlineRadioOptions1">
+                        <label class="form-check-label" for="enatb">Easy night at the bar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="hoafh" name="inlineRadioOptions1">
+                        <label class="form-check-label" for="hoafh">Hanging out at friend's house</label>
+                    </div>
+                </div>
+                </div>
+
+                <br><br>
+
+                <div class="options" >
+                <h4 style="text-align:center">2. What is your favourite colour?</h4>
+                <br>
+                <div style="text-align:center";>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="red" checked>
+                        <label class="form-check-label" for="red">Red</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="green" name="inlineRadioOptions2">
+                    <label class="form-check-label" for="green" >Green</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="yellow" name="inlineRadioOptions2">
+                        <label class="form-check-label" for="yellow">Yellow</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="orange" name="inlineRadioOptions2">
+                        <label class="form-check-label" for="orange">Orange</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="pink" name="inlineRadioOptions2">
+                        <label class="form-check-label" for="pink" >Pink</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="blue" name="inlineRadioOptions2">
+                        <label class="form-check-label" for="blue">Blue</label>
+                    </div>
+                </div>
+                </div>
+
+                <br>
+                <button class="btn btn-lg btn-primary btn-block btn-light button_confirm" type="button" data-toggle="modal" data-target="#popCoctail">Finish quiz</button>
+                <div class="modal fade" id="popCoctail">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">You are Mohito!</h4>
+                            </div>
+                            <div class="modal-body" style="text-align:center">
+                                <img src="images/mohito.png" alt="" height="500" width="250" >
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger button_close btn-lg btn-primary btn-block btn-light" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="col-sm-2"> &nbsp; </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
