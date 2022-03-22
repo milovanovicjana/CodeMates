@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new cocktail - Mixology</title>
+    <link rel="icon" type="image/png" href="images/logo5.png"/>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col-4">
+       
+             </div>
+             <div class="col-4 title">
+               <a href="#go"></a>   Mixology  
+            </div>
+            <div class="col-4 logo">
+               <img src="images/logo5.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="start_reg.html"> Home page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommended_cocktails.html"> Recommended</a>
+                    </li>
+                   
+                    <li class="nav-item disabled">
+                        <a class="nav-link" href="saved_cocktails.html">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_cocktail.html">Add new cocktail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_info.html">My info</a>
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div id="form-register-div">
+            <h4>Enter details about the cocktail</h4>
+            <br>
+            <form class="form-register">
+                <label>Name</label>
+                <div class="form-group"> 
+                    <input type="text" class="form-control" required> 
+                </div> 
+                <label>Description</label>
+                <div class="form-group"> 
+                    <input type="text" class="form-control" required> 
+                </div> 
+                <label>Image</label>
+                <div class="form-group"> 
+                    <input type="file"> 
+                </div> 
+
+                <br><br>
+                <h4>Ingredients per 250ml</h4>
+                <br><br>
+
+                <input type="number" value="0" id="vodka"  style="width: 75px" >
+                <label for="vodka"  id="ingredient-label" class="range-label" >Vodka</label>
+                <br>
+                <input type="number" value="0" id="tequila"  style="width: 75px">
+                <label for="tequila" id="ingredient-label" class="range-label">Teqila</label>
+                <br>
+                <input type="number" value="0" id="whisky" style="width: 75px">
+                <label for="whisky" id="ingredient-label" class="range-label">Whisky</label>
+                <br>
+                <input type="number" value="0" id="gin" style="width: 75px">
+                <label for="gin"  id="ingredient-label" class="range-label">Gin</label>
+                <br>
+                <input type="number" value="0" id="lemonjuice" style="width: 75px">
+                <label for="lemonjuice"  id="ingredient-label" class="range-label">Lemon juice</label>
+
+                <br><br>
+                <h4>Other ingredients</h4>
+                <br><br>
+
+                <input type="checkbox" id="ice">
+                <label for="ice" class="range-label" >Ice</label>
+                <br>
+                <input type="checkbox" value="0" id="mint">
+                <label for="mint" class="range-label">Mint</label>
+                <br>
+                <input type="checkbox" value="0" id="mint">
+                <label for="mint" class="range-label">Cinnamon</label>
+                <br>
+                
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Add cocktail</button>
+            </form>
+
+            
+        </div>
+
+
+    </div>
+</body>
+</html>

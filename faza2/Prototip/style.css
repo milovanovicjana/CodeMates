@@ -103,6 +103,18 @@ a:hover{
     margin: 0 auto;
   }
 
+.form-register input[type="text"]{
+  width: 60%;
+}
+
+.form-register input[type="email"]{
+  width: 60%;
+}
+
+.form-register input[type="date"]{
+  width: 60%;
+}
+
 .form-register button{
     font-weight: bolder;
     color: rgb(66, 61, 61);
@@ -124,18 +136,6 @@ a:hover{
     background-color: white;
   }
 
-  .custom-range::-webkit-slider-thumb {
-    background: rgb(83, 79, 79);
-  }
-  
-  .custom-range::-moz-range-thumb {
-    background: rgb(83, 79, 79);
-  }
-  
-  .custom-range::-ms-thumb {
-    background: rgb(83, 79, 79);
-  }
-
   .custom-range{
       width: 50%;
   }
@@ -143,5 +143,16 @@ a:hover{
   .range-label{
     font-weight: bolder;
     color: rgb(66, 61, 61);
-    padding: 15px;
+    padding: 10px;
   }
+
+  #ingredient-label {
+    text-align: left;
+    clear: both;
+    margin-left:15px;
+}
+
+.form-register input[type="file"]{
+  font-weight: bolder;
+  color: rgb(66, 61, 61);
+}

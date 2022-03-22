@@ -67,11 +67,17 @@
             <br>
             <form class="form-register">
                 <label for="firstname">First name</label>
+                <div class="form-group"> 
                 <input type="text" class="form-control" id="firstname" required></input>
+                </div>
                 <label for="lastname">Last name</label>
+                <div class="form-group"> 
                 <input type="text" class="form-control" id="lastname" required></input>
+                </div>
                 <label for="email">Email</label>
+                <div class="form-group"> 
                 <input type="email" class="form-control" id="email" required></input>
+                </div>
                 <label for="username">User name</label>
                 <input type="text" class="form-control" id="username" required></input>
                 <label for="birthdate">Birth date</label>
@@ -80,16 +86,16 @@
                 <label >Gender</label>
                 <br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="option1" checked>
-                    <label class="form-check-label" for="male">Male</label>
+                    <input type="radio" name="gender" id="male" checked>
+                    <label  for="male" style="margin-left: 5px;">Male</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2">
-                    <label class="form-check-label" for="female">Female</label>
+                    <input  type="radio" name="gender" id="female" >
+                    <label  for="female" style="margin-left: 5px;">Female</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="option2">
-                    <label class="form-check-label" for="other">Other</label>
+                    <input type="radio" name="gender" id="other">
+                    <label for="other" style="margin-left: 5px;">Other</label>
                 </div>
 
                 <br><br><br>
@@ -110,7 +116,7 @@
                 
                 
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit" >Register</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             </form>
         </div>
 
