@@ -1,4 +1,4 @@
-# **PSI** - timski projekat
+# **PSI** - tim CodeMates
 
 ---
  **Mixology** :cocktail: aplikacija za istrazivanje novih i isprobavanje postojecih koktela
