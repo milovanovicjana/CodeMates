@@ -115,6 +115,10 @@ a:hover{
   width: 60%;
 }
 
+.form-register input[type="password"]{
+  width: 60%;
+}
+
 .form-register button{
     font-weight: bolder;
     color: rgb(66, 61, 61);
