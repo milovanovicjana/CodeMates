@@ -1,3 +1,4 @@
+/*Ana Vukašinović*/
 body{
    /* background-image: url(images/background.jpg);
     background-size: 80% 80%;
@@ -129,4 +130,19 @@ ol{
     color: black;
     font-size: 25px;
     text-align: justify;
+}
+
+#zvezda{
+    color: white;
+    
+    font-size: 40px;
+    font-family:Brush Script MT, Brush Script Std, cursive;
+}
+
+#price{
+    color: black;
+    background-color: aliceblue;
+    font-size: 40px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    padding-left: 10px;
 }
