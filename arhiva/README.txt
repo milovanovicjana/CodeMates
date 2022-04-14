@@ -1,0 +1,1 @@
+U arhivi su sacuvane stare verzije nekih fajlova u kojima je bilo vecih izmena.
