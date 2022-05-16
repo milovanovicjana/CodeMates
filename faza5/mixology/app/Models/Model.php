@@ -124,6 +124,7 @@ class Model
 
     public function updateAvgGradeForCocktail($id, $avg){
         $this->db->table('cocktail')->set('AvgGrade',$avg)->where('IdCocktail',$id)->update();
+    }
 
     public function getRegisterIngredients(){
         return $this->db->table('ingredient')
