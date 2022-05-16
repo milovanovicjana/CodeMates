@@ -1,263 +1,455 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: mixology_database
--- ------------------------------------------------------
--- Server version	8.0.28
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 16, 2022 at 12:29 PM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `mixology_database`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `admin`
 --
 
 DROP TABLE IF EXISTS `admin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `admin` (
-  `IdUser` int NOT NULL,
-  PRIMARY KEY (`IdUser`),
-  CONSTRAINT `FK_user_admin` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `IdUser` int(11) NOT NULL,
+  PRIMARY KEY (`IdUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `admin` (`IdUser`) VALUES
+(1);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `cocktail`
 --
 
 DROP TABLE IF EXISTS `cocktail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cocktail` (
-  `IdCocktail` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cocktail` (
+  `IdCocktail` int(11) NOT NULL AUTO_INCREMENT,
+  `CocktailName` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `AvgGrade` float NOT NULL,
-  `Description` varchar(1000) NOT NULL,
-  `Image` varchar(45) NOT NULL,
+  `Recipes` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `Image` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `Price` float DEFAULT NULL,
-  `Alcoholic` tinyint NOT NULL,
-  `Approved` tinyint NOT NULL,
+  `Alcoholic` tinyint(4) NOT NULL,
+  `Approved` tinyint(4) NOT NULL,
+  `Description` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`IdCocktail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cocktail`
 --
 
-LOCK TABLES `cocktail` WRITE;
-/*!40000 ALTER TABLE `cocktail` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cocktail` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `cocktail` (`IdCocktail`, `CocktailName`, `AvgGrade`, `Recipes`, `Image`, `Price`, `Alcoholic`, `Approved`, `Description`) VALUES
+(1, 'Tequila Sunrise', 4.5, '0', 'Tequila Sunrise_1.jpeg', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.\r\n'),
+(2, 'Hugo', 5, '0', 'Hugo_2.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(3, 'Paloma', 0, '0', 'Paloma_3.png', 7, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(4, 'Limoncello', 3.5, '0', 'Limoncello_4.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(5, 'Wine Cooler', 0, '0', 'Wine Cooler_5.jpg', 10, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(6, 'Mai Tai', 5, '0', 'Mai Tai_6.png', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(7, 'Bahama Mama', 2.5, '0', 'Bahama Mama_7.png', 7, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(8, 'Cuba Libre', 4.4, '0', 'Cuba Libre_8.jpg', 8, 1, 0, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(9, 'Bird of Paradise', 0, '0', 'Bird of Paradise_9.png', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(10, 'Long Island Ice Tea', 0, '0', 'Long Island Ice Tea_10.png', 10, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(11, 'Blue Lagoon', 0, '0', 'Blue Lagoon_11.png', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(12, 'Cosmopolitan', 0, '0', 'Cosmopolitan_12.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(13, 'Pina Colada', 0, '0', 'Pina Colada_13.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(14, 'Manhattan', 0, '0', 'Manhattan_14.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(15, 'Tom Collins', 0, '0', 'Tom Collins_15.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(16, 'Sex On The Beach', 0, '', 'Sex On The Beach_16.png', 12, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(17, 'Virgin Mojito', 0, '0', 'Virgin Mojito_17.png', 9, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(18, 'Mojito', 0, '0', 'Mojito_18.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(19, 'Virgin Pina Colada', 0, '0', 'Virgin Pina Colada_19.jpg', 9, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(20, 'Virgin Cucumber Gimlet Mocktail', 0, '0', 'Virgin Cucumber Gimlet Mocktail_20.jpg', 9, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(21, 'Virgin Margarita', 0, '0', 'Virgin Margarita_21.jpg', 8, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
+(22, 'Amazonia Mocktail', 3.55, '0', 'Amazonia Mocktail_22.jpg', 7, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `contains`
 --
 
 DROP TABLE IF EXISTS `contains`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `contains` (
-  `IdCocktail` int NOT NULL,
-  `IdIngredient` int NOT NULL,
-  `Quantity` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `contains` (
+  `IdCocktail` int(11) NOT NULL,
+  `IdIngredient` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL,
   PRIMARY KEY (`IdCocktail`,`IdIngredient`),
-  KEY `FK_ingredient_contains_idx` (`IdIngredient`),
-  CONSTRAINT `FK_cocktail_contains` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `FK_ingredient_contains` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `FK_ingredient_contains_idx` (`IdIngredient`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `contains`
 --
 
-LOCK TABLES `contains` WRITE;
-/*!40000 ALTER TABLE `contains` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contains` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `contains` (`IdCocktail`, `IdIngredient`, `Quantity`) VALUES
+(1, 7, 0),
+(1, 18, 0),
+(1, 31, 0),
+(1, 33, 0),
+(2, 4, 0),
+(2, 7, 0),
+(2, 29, 0),
+(2, 37, 0),
+(2, 38, 0),
+(2, 41, 0),
+(3, 10, 0),
+(3, 18, 0),
+(3, 39, 0),
+(3, 41, 0),
+(4, 14, 0),
+(4, 17, 0),
+(4, 22, 0),
+(5, 7, 0),
+(5, 10, 0),
+(5, 17, 0),
+(5, 29, 0),
+(5, 31, 0),
+(5, 40, 0),
+(6, 1, 0),
+(6, 2, 0),
+(6, 3, 0),
+(6, 4, 0),
+(6, 5, 0),
+(6, 6, 0),
+(6, 7, 0),
+(6, 41, 0),
+(7, 2, 0),
+(7, 7, 0),
+(7, 8, 0),
+(7, 9, 0),
+(7, 10, 0),
+(7, 11, 0),
+(7, 12, 0),
+(8, 2, 0),
+(8, 7, 0),
+(8, 13, 0),
+(8, 41, 0),
+(9, 2, 0),
+(9, 3, 0),
+(9, 7, 0),
+(9, 11, 0),
+(9, 14, 0),
+(9, 15, 0),
+(9, 16, 0),
+(10, 1, 0),
+(10, 7, 0),
+(10, 10, 0),
+(10, 13, 0),
+(10, 17, 0),
+(10, 18, 0),
+(10, 19, 0),
+(10, 20, 0),
+(10, 21, 0),
+(10, 22, 0),
+(11, 10, 0),
+(11, 12, 0),
+(11, 17, 0),
+(11, 22, 0),
+(11, 23, 0),
+(12, 3, 0),
+(12, 17, 0),
+(12, 22, 0),
+(12, 24, 0),
+(12, 32, 0),
+(13, 2, 0),
+(13, 3, 0),
+(13, 11, 0),
+(13, 16, 0),
+(13, 26, 0),
+(14, 12, 0),
+(14, 22, 0),
+(14, 27, 0),
+(14, 28, 0),
+(15, 10, 0),
+(15, 12, 0),
+(15, 19, 0),
+(15, 21, 0),
+(15, 22, 0),
+(15, 29, 0),
+(16, 7, 0),
+(16, 12, 0),
+(16, 17, 0),
+(16, 30, 0),
+(16, 31, 0),
+(16, 32, 0),
+(16, 33, 0),
+(16, 34, 0),
+(17, 3, 0),
+(17, 4, 0),
+(17, 7, 0),
+(17, 35, 0),
+(18, 1, 0),
+(18, 3, 0),
+(18, 4, 0),
+(18, 7, 0),
+(18, 29, 0),
+(18, 41, 0),
+(19, 11, 0),
+(19, 12, 0),
+(19, 14, 0),
+(19, 16, 0),
+(19, 36, 0),
+(20, 3, 0),
+(20, 14, 0),
+(20, 21, 0),
+(20, 29, 0),
+(20, 42, 0),
+(21, 3, 0),
+(21, 7, 0),
+(21, 10, 0),
+(21, 14, 0),
+(21, 21, 0),
+(21, 31, 0),
+(21, 43, 0),
+(22, 3, 0),
+(22, 4, 0),
+(22, 7, 0),
+(22, 21, 0),
+(22, 45, 0),
+(22, 46, 0);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `grade`
 --
 
 DROP TABLE IF EXISTS `grade`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `grade` (
-  `IdUser` int NOT NULL,
-  `IdCocktail` int NOT NULL,
-  `Grade` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `grade` (
+  `IdUser` int(11) NOT NULL,
+  `IdCocktail` int(11) NOT NULL,
+  `Grade` int(11) NOT NULL,
   PRIMARY KEY (`IdUser`,`IdCocktail`),
-  KEY `FK_cocktail_grade_idx` (`IdCocktail`),
-  CONSTRAINT `FK_cocktail_grade` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `FK_registered_grade` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `FK_cocktail_grade_idx` (`IdCocktail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `grade`
---
-
-LOCK TABLES `grade` WRITE;
-/*!40000 ALTER TABLE `grade` DISABLE KEYS */;
-/*!40000 ALTER TABLE `grade` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `ingredient`
 --
 
 DROP TABLE IF EXISTS `ingredient`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ingredient` (
-  `IdIngredient` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) NOT NULL,
-  `Type` varchar(45) NOT NULL,
-  PRIMARY KEY (`IdIngredient`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE IF NOT EXISTS `ingredient` (
+  `IdIngredient` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `Type` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`IdIngredient`),
+  UNIQUE KEY `Name` (`Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `ingredient`
 --
 
-LOCK TABLES `ingredient` WRITE;
-/*!40000 ALTER TABLE `ingredient` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ingredient` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `ingredient` (`IdIngredient`, `Name`, `Type`) VALUES
+(1, 'White rum', 'ALCOHOL'),
+(2, 'Dark rum', 'ALCOHOL'),
+(3, 'Lime juice', 'JUICE'),
+(4, 'Mint', 'OTHER'),
+(5, 'Orgeat syrup', 'SYRUP'),
+(6, 'Orange liqueur', 'ALCOHOL'),
+(7, 'Ice', 'OTHER'),
+(8, 'Coffee flavored liqueur', 'ALCOHOL'),
+(9, 'Coconut liqueur', 'ALCOHOL'),
+(10, 'Lemon juice', 'JUICE'),
+(11, 'Pineapple juice', 'JUICE'),
+(12, 'Cherry', 'FRUIT'),
+(13, 'Coca cola', 'JUICE'),
+(14, 'Sugar', 'OTHER'),
+(15, 'Aperol', 'ALCOHOL'),
+(16, 'Pineapple', 'FRUIT'),
+(17, 'Vodka', 'ALCOHOL'),
+(18, 'Tequila', 'ALCOHOL'),
+(19, 'Gin', 'ALCOHOL'),
+(20, 'Tripple sec liqueur ', 'ALCOHOL'),
+(21, 'Simple syrup', 'SYRUP'),
+(22, 'Lemon', 'FRUITE'),
+(23, 'Blue curacao', 'ALCOHOL'),
+(24, 'Cointreau', 'ALCOHOL'),
+(25, 'Cranberry', 'FRUIT'),
+(26, 'Coconut cream', 'OTHER'),
+(27, 'Rye Whiskey', 'ALCOHOL'),
+(28, 'Vermouth', 'ALCOHOL'),
+(29, 'Soda', 'JUICE'),
+(30, 'Peach schnapps', 'ALCOHOL'),
+(31, 'Orange juice', 'JUICE'),
+(32, 'Cranberry juice', 'JUICE'),
+(33, 'Grenadine syrup', 'SYRUP'),
+(34, 'Orange', 'FRUIT'),
+(35, 'Honey syrup', 'SYRUP'),
+(36, 'Coconut milk', 'JUICE'),
+(37, 'Prosecco', 'ALCOHOL'),
+(38, 'Elderflower syrup', 'SYRUP'),
+(39, 'Grapefruit juice', 'JUICE'),
+(40, 'White wine ', 'ALCOHOL'),
+(41, 'Lime', 'FRUIT'),
+(42, 'Cucumber', 'OTHER'),
+(43, 'Lemon soda', 'JUICE'),
+(44, 'Apple juice', 'JUICE'),
+(45, 'Grape juice', 'JUICE'),
+(46, 'Apple ', 'FRUIT');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `preferences`
 --
 
 DROP TABLE IF EXISTS `preferences`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `preferences` (
-  `IdUser` int NOT NULL,
-  `IdIngredient` int NOT NULL,
-  `Value` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `preferences` (
+  `IdUser` int(11) NOT NULL,
+  `IdIngredient` int(11) NOT NULL,
+  `Value` int(11) NOT NULL,
   PRIMARY KEY (`IdUser`,`IdIngredient`),
-  KEY `FK_ingredient_preferences_idx` (`IdIngredient`),
-  CONSTRAINT `FK_ingredient_preferences` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `FK_registered_preferences` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `FK_ingredient_preferences_idx` (`IdIngredient`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `preferences`
---
-
-LOCK TABLES `preferences` WRITE;
-/*!40000 ALTER TABLE `preferences` DISABLE KEYS */;
-/*!40000 ALTER TABLE `preferences` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `registered`
 --
 
 DROP TABLE IF EXISTS `registered`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `registered` (
-  `IdUser` int NOT NULL,
-  PRIMARY KEY (`IdUser`),
-  CONSTRAINT `FK_user_registered` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE IF NOT EXISTS `registered` (
+  `IdUser` int(11) NOT NULL,
+  PRIMARY KEY (`IdUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `registered`
 --
 
-LOCK TABLES `registered` WRITE;
-/*!40000 ALTER TABLE `registered` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registered` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `registered` (`IdUser`) VALUES
+(2),
+(3);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `saved`
 --
 
 DROP TABLE IF EXISTS `saved`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `saved` (
-  `IdUser` int NOT NULL,
-  `IdCocktail` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `saved` (
+  `IdUser` int(11) NOT NULL,
+  `IdCocktail` int(11) NOT NULL,
   PRIMARY KEY (`IdUser`,`IdCocktail`),
-  KEY `FK_cocktail_saved_idx` (`IdCocktail`),
-  CONSTRAINT `FK_cocktail_saved` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `FK_registered_saved` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `FK_cocktail_saved_idx` (`IdCocktail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `saved`
 --
 
-LOCK TABLES `saved` WRITE;
-/*!40000 ALTER TABLE `saved` DISABLE KEYS */;
-/*!40000 ALTER TABLE `saved` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `saved` (`IdUser`, `IdCocktail`) VALUES
+(3, 2),
+(2, 7),
+(2, 9),
+(3, 12),
+(3, 16);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `IdUser` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) NOT NULL,
-  `Surname` varchar(45) NOT NULL,
-  `Mail` varchar(45) NOT NULL,
-  `Password` varchar(45) NOT NULL,
-  `Username` varchar(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `IdUser` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `Surname` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `Mail` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `Password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `Username` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `DateOfBirth` date NOT NULL,
-  `Gender` varchar(1) NOT NULL,
+  `Gender` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`IdUser`),
   UNIQUE KEY `Username_UNIQUE` (`Username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `user` (`IdUser`, `Name`, `Surname`, `Mail`, `Password`, `Username`, `DateOfBirth`, `Gender`) VALUES
+(1, 'Mark', 'Smith', 'mark@gmail.com', 'admin123', 'admin', '1999-05-10', 'M'),
+(2, 'Tom', 'Jones', 'tom99@gmail.com', 'tom123', 'tom99', '1999-05-10', 'M'),
+(3, 'Monika', 'Taylor', 'monika@hotmail.com', 'monikaaa123', 'monika123', '2000-05-03', 'F');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `FK_user_admin` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `contains`
+--
+ALTER TABLE `contains`
+  ADD CONSTRAINT `FK_cocktail_contains` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_ingredient_contains` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `grade`
+--
+ALTER TABLE `grade`
+  ADD CONSTRAINT `FK_cocktail_grade` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_registered_grade` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `preferences`
+--
+ALTER TABLE `preferences`
+  ADD CONSTRAINT `FK_ingredient_preferences` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_registered_preferences` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `registered`
+--
+ALTER TABLE `registered`
+  ADD CONSTRAINT `FK_user_registered` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `saved`
+--
+ALTER TABLE `saved`
+  ADD CONSTRAINT `FK_cocktail_saved` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_registered_saved` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON UPDATE CASCADE;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-04-20 18:29:59
