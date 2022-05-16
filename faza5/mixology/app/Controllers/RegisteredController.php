@@ -25,4 +25,51 @@ class RegisteredController extends BaseController
 
     }
 
+
+    public function cocktailDisplayRegistered($id){
+
+        $db= db_connect();
+        $model=new Model($db);
+
+        $cocktail = $model->getCocktailById($id);
+
+        $ingredients = $model->getAllIngredientsForCocktail($id);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+
+    }
+
+    public function gradeCocktail($id){
+        $db= db_connect();
+        $model=new Model($db);
+
+        
+        $user = $this->session->get('user')->IdUser;
+
+        $stars = $this->request->getVar('star');
+        $ocenio = $model->checkGrade($id, $userId);
+        if($ocenio == null){
+            //ubaci
+            $model->insertGrade($id, $userId, $stars);
+        }else{
+            //update
+            $model->updateGrade($id, $userId, $stars);
+        }
+
+        $allGrades = $model->getAllGradesForCocktail($id);
+        $cnt = 0;
+        $sum = 0;
+        foreach($allGrades as $grade){
+            $cnt = $cnt + 1;
+            $sum = $sum + $grade->Grade;
+        }
+
+        $avg = $sum/$cnt;
+        $model->updateAvgGradeForCocktail($id, $avg);
+
+        $ingredients = $model->getAllIngredientsForCocktail($id);
+        $cocktail = $model->getCocktailById($id);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+    }
+
+
 }

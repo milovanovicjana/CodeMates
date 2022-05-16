@@ -65,6 +65,23 @@ class GuestController extends BaseController
     }
 
 
+    public function cocktailDisplayUnregistered($id){
+        
+        $db= db_connect();
+        $model=new Model($db);
+
+        $cocktail = $model->getCocktailById($id);
+       
+
+        $ingredients = $model->getAllIngredientsForCocktail($id);
+        return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+
+    }
+
+    
+
+    
+
     public function register(){
 
         $firstname = $this->request->getVar('firstname');
@@ -161,5 +178,6 @@ class GuestController extends BaseController
         }
 
     }
+
 
 }
