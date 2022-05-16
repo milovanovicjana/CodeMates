@@ -47,4 +47,44 @@ class Model
                   ->where('Approved',1)
                   ->limit(10)->get()->getResult();
     }
+
+    public function getCocktailById($id){
+        return $this->db->table('cocktail')->where('idCocktail',$id)->get()->getRow();
+    }
+
+    public function getAllIngredientsForCocktail($id){
+        return $this->db->table('contains')->where('contains.idCocktail',$id)
+                                           ->join('ingredient','contains.idIngredient=ingredient.idIngredient')
+                                           ->get()
+                                           ->getResult();
+
+    }
+
+    public function checkGrade($cocktailId, $userId){
+        return $this->db->table('grade')->where('IdUser', $userId)->where('IdCocktail',$cocktailId)->get()->getRow();
+    }
+
+    public function insertGrade($cocktailId, $userId, $grade){
+        $this->db->table('grade')->insert([
+            'IdUser' => $userId,
+            'IdCocktail' => $cocktailId,
+            'Grade' => $grade
+        ]);
+    }
+
+    public function updateGrade($cocktailId, $userId, $grade){
+        $this->db->table('grade')->replace([
+            'IdUser' => $userId,
+            'IdCocktail' => $cocktailId,
+            'Grade' => $grade
+        ]);
+    }
+
+    public function getAllGradesForCocktail($cocktailId){
+        return $this->db->table('grade')->where('IdCocktail',$cocktailId)->get()->getResult();
+    }
+
+    public function updateAvgGradeForCocktail($id, $avg){
+        $this->db->table('cocktail')->set('AvgGrade',$avg)->where('IdCocktail',$id)->update();
+    }
 }

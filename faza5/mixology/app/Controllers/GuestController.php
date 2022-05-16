@@ -48,4 +48,22 @@ class GuestController extends BaseController
        
        return $this->show('searchResults',['cocktails'=>$cocktails]);
     }
+
+
+    public function cocktailDisplayUnregistered($id){
+        
+        $db= db_connect();
+        $model=new Model($db);
+
+        $cocktail = $model->getCocktailById($id);
+       
+
+        $ingredients = $model->getAllIngredientsForCocktail($id);
+        return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+
+    }
+
+    
+
+    
 }
