@@ -1,0 +1,162 @@
+body{
+    background-image: url(images/others/background.jpg);
+    background-size: 80% 80%;
+    height: 100%;
+    width: 100%;
+}
+
+
+.header{
+    background-color: rgba(229, 244, 252, 0.89);
+    height: 220px;
+   
+    align-items: center;
+}
+.title{
+    font-size: 80pt;
+    font-family:Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+    color: rgb(112, 109, 109);
+
+}
+
+.logo img{
+    height:100%;
+    width: 40%;
+    padding-left: 20px;
+}
+.nav{
+    background-color: white;
+    color: black;
+  
+}
+
+.search{
+    align-items: center;
+    
+}
+.search img{
+    
+    width:5%;
+}
+a{
+    color: grey;
+    font-weight: bolder;
+}
+a:hover{
+    color: black;
+}
+
+.filter{
+   text-align:center ; 
+    font-family:Brush Script MT, Brush Script Std, cursive;  
+    font-size: 25pt;
+    color: rgb(66, 61, 61);
+}
+.filter1{
+    font-family:Brush Script MT, Brush Script Std, cursive;
+    font-size: 20pt;
+    color: rgb(66, 61, 61);
+
+}
+.recipes tr{
+    height: 200px;
+    width: 100%;
+
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .form-signin button{
+    font-weight: bolder;
+    color: rgb(66, 61, 61);
+    background-color: rgba(229, 244, 252, 0.89);
+    border-color: rgba(229, 244, 252, 0.89);
+  }
+
+#form-register-div {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+.form-register input[type="text"]{
+  width: 60%;
+}
+
+.form-register input[type="email"]{
+  width: 60%;
+}
+
+.form-register input[type="date"]{
+  width: 60%;
+}
+
+.form-register input[type="password"]{
+  width: 60%;
+}
+
+.form-register button{
+    font-weight: bolder;
+    color: rgb(66, 61, 61);
+    background-color: rgba(229, 244, 252, 0.89);
+    border-color: rgba(229, 244, 252, 0.89);
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+
+.form-register input{
+    margin-bottom: 5px;
+}
+
+.custom-range::-moz-range-track {
+    background-color: white;
+  }
+
+  .custom-range::-webkit-slider-runnable-track {
+    background-color: white;
+  }
+
+  .custom-range{
+      width: 50%;
+  }
+
+  .range-label{
+    font-weight: bolder;
+    color: rgb(66, 61, 61);
+    padding: 10px;
+  }
+
+  #ingredient-label {
+    text-align: left;
+    clear: both;
+    margin-left:15px;
+}
+
+.form-register input[type="file"]{
+  font-weight: bolder;
+  color: rgb(66, 61, 61);
+}
