@@ -15,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url('style.css')?>">
+    <script src="<?php echo base_url('skripta2.js')?>"></script>
     
     
  
@@ -26,7 +27,7 @@
         
         <div class="row " style="text-align:center">
             <div class="col-4 search">
-                   <form method="post" action="<?=site_url("GuestController/search")?>">
+              <form method="post" action="<?=site_url("GuestController/search")?>">
                <?php if(isset($message)) echo $message;?>
                 <br>
                <input type="text" name="cocktailName" placeholder="Find your perfect cocktail">
@@ -201,11 +202,11 @@
                     ?>
                           <tr>
                         <td >
-                            <table style="width: 100%; height: 100%;">
+                            <table style="width: 100%; height: 100%; ">
                                 <tr>
                                     <td style="background-color: rgb(216, 221, 221); " ><img src="<?php echo base_url('images/cocktails/'.$cocktail->Image)?>" alt="" style="width:150px; height: 200px;"></td>
                                     <td style="background-color: rgb(216, 221, 221); "><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b><a href="cocktail_unregistered.html"> <?=$cocktail->CocktailName?></a></b></font><br>
-                                        <img src="<?php echo base_url('images/others/starss.png')?>" alt="" style="width:130px; height: 40px;">
+                                    <span class="stars"><?php echo $cocktail->AvgGrade ?></span>
                                       
                                      
                                         <br><i><?=$cocktail->Description?></i> </td>
