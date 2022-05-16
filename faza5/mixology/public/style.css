@@ -132,31 +132,35 @@ a:hover{
     margin-bottom: 5px;
 }
 
-.custom-range::-moz-range-track {
-    background-color: white;
+  
+  .top-star {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
   }
-
-  .custom-range::-webkit-slider-runnable-track {
-    background-color: white;
+  
+  h1 {
+    text-align: center;
   }
-
-  .custom-range{
-      width: 50%;
+  
+  h2 {
+    margin-top: 35px;
   }
-
-  .range-label{
-    font-weight: bolder;
-    color: rgb(66, 61, 61);
-    padding: 10px;
+  
+  h1, h2, h3, p {
+    margin-bottom: 0;
   }
-
-  #ingredient-label {
-    text-align: left;
-    clear: both;
-    margin-left:15px;
-}
-
-.form-register input[type="file"]{
-  font-weight: bolder;
-  color: rgb(66, 61, 61);
-}
+  
+  span.stars, span.stars span {
+    display: block;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+    width: 200px; /* width of a star multiplied by 5 */
+    height: 40px; /* the height of the star */
+    background-size: 40px 40px;
+  }
+  
+  span.stars span {
+    background-position: 0 0;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+  }
