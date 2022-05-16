@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 use App\Models\Model;
+use App\Models\PreferencesModel;
+use App\Models\RegisteredModel;
+use App\Models\UserModel;
+
 class GuestController extends BaseController
 {
     
@@ -10,6 +14,17 @@ class GuestController extends BaseController
         echo view("Views/guestHeader");
         echo view("Views/$path",$data);
         echo view("Views/footer");
+    }
+
+    public function showLogin(){
+        $this->show('login',[]);
+    }
+
+    public function showRegister(){
+        $db= db_connect();
+        $model=new Model($db);
+
+        $this->show('register', ['ingredients'=>$model->getRegisterIngredients()]);
     }
     
     public function index()
@@ -48,4 +63,103 @@ class GuestController extends BaseController
        
        return $this->show('searchResults',['cocktails'=>$cocktails]);
     }
+
+
+    public function register(){
+
+        $firstname = $this->request->getVar('firstname');
+        $lastname = $this->request->getVar('lastname');
+        $email = $this->request->getVar('email');
+        $username = $this->request->getVar('username');
+        $password = $this->request->getVar('password');
+        $passwordrpt = $this->request->getVar('passwordrpt');
+        $birthdate = $this->request->getVar('birthdate');
+        $gender = $this->request->getVar('gender');
+
+
+        $db= db_connect();
+        $model=new Model($db);
+
+        $ingredients = $model->getRegisterIngredients();
+        $tmpuser = $model->getUserByUsername($username);
+
+
+        if($tmpuser!=null){
+            return $this->show('register',['ingredients'=>$model->getRegisterIngredients(), 'message'=>'User name already taken.']);
+        }
+
+        if($password!=$passwordrpt){
+            return $this->show('register',['ingredients'=>$model->getRegisterIngredients(), 'message'=>'Passwords do not match']);
+        }
+
+        $userModel = new UserModel();
+        $newUser = [
+            'Name'=>$firstname,
+            'Surname'=>$lastname,
+            'Mail'=>$email,
+            'Password'=>$password,
+            'Username'=>$username,
+            'DateOfBirth'=>$birthdate,
+            'Gender'=>$gender,
+        ];
+
+        $userModel->insert($newUser);
+        $newUser = $model->getUserByUsername($username);
+        $newUser['UserType'] = 'Registered';
+        $this->session->set("user",$newUser);
+
+        $registeredModel = new RegisteredModel();
+        $newRegistered = [
+            'IdUser'=>$newUser->IdUser
+        ];
+        $registeredModel->insert($newRegistered);
+        
+        $preferencesModel = new PreferencesModel();
+        foreach ($ingredients as $ingredient) {
+
+            $newPreference=[
+                'IdUser'=>$newUser->IdUser,
+                'IdIngredient'=>$ingredient->IdIngredient,
+                'Value'=>$this->request->getVar($ingredient->IdIngredient),
+            ];
+            $preferencesModel->insert($newPreference);
+        }
+
+        return redirect()->to(site_url('UserController'));
+    }
+
+    public function login(){
+
+        $username = $this->request->getVar('username');
+        $password = $this->request->getVar('password');
+
+        $db= db_connect();
+        $model=new Model($db);
+
+        $user = $model->getUserByUsername($username);
+        
+        if($user==null){
+            return $this->show('login',['ingredients'=>$model->getRegisterIngredients(), 'message'=>'User not found.']);
+        }
+
+        if($user->Password != $password){
+            return $this->show('login',['ingredients'=>$model->getRegisterIngredients(), 'message'=>'Incorrect password.']);
+        }
+        
+        $registeredModel = new RegisteredModel();
+        $reguser = $registeredModel->find($user->IdUser);
+        if($reguser==null){
+            $user['UserType']='Admin';
+        }else{
+            $newUser['UserType'] = 'Registered';
+        }
+        $this->session->set('user',$user);
+        if($reguser==null){
+            return redirect()->to(site_url('AdminController'));
+        }else{
+            return redirect()->to(site_url('RegisteredController'));
+        }
+
+    }
+
 }
