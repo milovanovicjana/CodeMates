@@ -25,6 +25,7 @@ class RegisteredController extends BaseController
 
     }
 
+
     public function cocktailDisplayRegistered($id){
 
         $db= db_connect();
@@ -69,5 +70,6 @@ class RegisteredController extends BaseController
         $cocktail = $model->getCocktailById($id);
         return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
     }
+
 
 }
