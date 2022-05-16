@@ -15,7 +15,7 @@ class Model
     
     public function search( $arrayOfFilters,$type,$name){
         
-        if($arrayOfFilters!=[]){
+       if($arrayOfFilters!=[]){
                 $arrayOfFilters= explode(",", $arrayOfFilters);
                 $count= count($arrayOfFilters); //countOfFilters
                 $b=$this->db->table('cocktail')
@@ -32,12 +32,17 @@ class Model
                    ->groupBy('cocktail.IdCocktail');
         }
        
+      $b=$this->db->table('cocktail');
         if($type=="Alcoholic")$b->where ('Alcoholic',1);
         if($type=="Non alcoholic")$b->where ('Alcoholic',0);
-        if($name!="")$b->like('CocktailName',$name);
-
+        if($name!=""){
+            $b->like('CocktailName',$name);
+            
+        }
+  
         $b->where('Approved',1);//only approved cocktails
-   
+    
+
         return $b->get()->getResult();
     }
     
@@ -47,6 +52,39 @@ class Model
                   ->where('Approved',1)
                   ->limit(10)->get()->getResult();
     }
+
+
+    public function getAllUsers(){
+        return $this->db->table('user')->get()->getResult();
+    }
+
+    public function getUnapprovedCocktails(){
+        return $this->db->table('cocktail')->where("Approved",0)->get()->getResult();
+    }
+    
+    public function deleteUsersAccounts($usersCheckBoxs){
+     
+       foreach($usersCheckBoxs as $userCb){
+           $this->db->table('user')->where('IdUser',$userCb)->delete();
+       }
+    }
+
+    public function approveCocktails($cocktailsCheckBoxs,$tip){
+       if($tip=='A'){
+            foreach($cocktailsCheckBoxs as $cocktail){
+                $this->db->table('cocktail')->where('IdCocktail',$cocktail)->update(["Approved"=>1]);
+            }
+       }
+       else{
+            foreach($cocktailsCheckBoxs as $cocktail){
+                $this->db->table('cocktail')->where('IdCocktail',$cocktail)->delete();
+            }
+
+       }
+       
+     }
+
+   
 
     public function getCocktailById($id){
         return $this->db->table('cocktail')->where('idCocktail',$id)->get()->getRow();
@@ -99,4 +137,5 @@ class Model
         ->get()->getRow();
 
     }
+
 }
