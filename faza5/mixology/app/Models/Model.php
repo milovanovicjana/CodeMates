@@ -32,7 +32,6 @@ class Model
                    ->groupBy('cocktail.IdCocktail');
         }
        
-      $b=$this->db->table('cocktail');
         if($type=="Alcoholic")$b->where ('Alcoholic',1);
         if($type=="Non alcoholic")$b->where ('Alcoholic',0);
         if($name!=""){
