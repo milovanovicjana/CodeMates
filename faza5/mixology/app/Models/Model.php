@@ -138,4 +138,32 @@ class Model
 
     }
 
+
+    public function getCntSavings($id){
+        return $this->db->table('saved')->where('IdCocktail',$id)->get()->getResult();
+    }
+
+    public function getSavedCocktails($userId){
+        return $this->db->table('saved')->where('IdUser',$userId)
+                                        ->join('cocktail','saved.IdCocktail=cocktail.IdCocktail')
+                                        ->get()->getResult();
+    }
+
+    public function saveCocktailByUser($id,$userId){
+        $saved = $this->db->table('saved')->where('IdCocktail',$id)->where('IdUser',$userId)->get()->getRow();
+        if($saved == null){
+            $this->db->table('saved')->insert([
+                'IdUser'=>$userId,
+                'IdCocktail'=>$id
+            ]);
+        }
+        
+    }
+
+
+    public function deleteSavedCocktail($id,$userId){
+        $this->db->table('saved')->where('IdCocktail',$id)->where('IdUser',$userId)->delete();
+    }
+
+
 }

@@ -32,9 +32,13 @@ class RegisteredController extends BaseController
         $model=new Model($db);
 
         $cocktail = $model->getCocktailById($id);
+        $savings = $model->getCntSavings($id);
+        $cntSavings=0;
+        foreach($savings as $saving) $cntSavings=$cntSavings+1;
+
 
         $ingredients = $model->getAllIngredientsForCocktail($id);
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
 
     }
 
@@ -43,7 +47,7 @@ class RegisteredController extends BaseController
         $model=new Model($db);
 
         
-        $user = $this->session->get('user')->IdUser;
+        $userId = $this->session->get('user')->IdUser;
 
         $stars = $this->request->getVar('star');
         $ocenio = $model->checkGrade($id, $userId);
@@ -69,6 +73,35 @@ class RegisteredController extends BaseController
         $ingredients = $model->getAllIngredientsForCocktail($id);
         $cocktail = $model->getCocktailById($id);
         return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+    }
+
+    public function displaySavedCocktails(){
+       $db= db_connect();
+       $model=new Model($db);
+       $user = $this->session->get('user');
+       $savedCocktails=$model->getSavedCocktails($user->IdUser);
+       return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
+       
+    }
+
+    public function saveCocktail($id){
+       $db= db_connect();
+       $model=new Model($db);
+       $user = $this->session->get('user');
+       $userId = $user->IdUser;
+       $model->saveCocktailByUser($id,$userId);
+       $savedCocktails=$model->getSavedCocktails($user->IdUser);
+       return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
+    }
+
+    public function unsaveCocktail($id){
+       $db= db_connect();
+       $model=new Model($db);
+       $user = $this->session->get('user');
+       $userId = $user->IdUser;
+       $model->deleteSavedCocktail($id,$userId);
+       $savedCocktails=$model->getSavedCocktails($user->IdUser);
+       return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
     }
 
 
