@@ -122,7 +122,7 @@ class GuestController extends BaseController
 
         $userModel->insert($newUser);
         $newUser = $model->getUserByUsername($username);
-        $newUser['UserType'] = 'Registered';
+        $this->session->set('usertype', 'Registered');
         $this->session->set("user",$newUser);
 
         $registeredModel = new RegisteredModel();
@@ -165,19 +165,18 @@ class GuestController extends BaseController
         
         $registeredModel = new RegisteredModel();
         $reguser = $registeredModel->find($user->IdUser);
-        if($reguser==null){
-            $user['UserType']='Admin';
-        }else{
-            $newUser['UserType'] = 'Registered';
-        }
+
         $this->session->set('user',$user);
         if($reguser==null){
+            $this->session->set('usertype', 'Admin');
             return redirect()->to(site_url('AdminController'));
         }else{
+            $this->session->set('usertype', 'Registered');
             return redirect()->to(site_url('RegisteredController'));
         }
+        
+
 
     }
-
 
 }

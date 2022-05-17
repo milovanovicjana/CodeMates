@@ -138,6 +138,7 @@ class Model
 
     }
 
+
     public function getCntSavings($id){
         return $this->db->table('saved')->where('IdCocktail',$id)->get()->getResult();
     }
@@ -163,5 +164,6 @@ class Model
     public function deleteSavedCocktail($id,$userId){
         $this->db->table('saved')->where('IdCocktail',$id)->where('IdUser',$userId)->delete();
     }
+
 
 }

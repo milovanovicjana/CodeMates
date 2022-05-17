@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2022 at 12:29 PM
+-- Generation Time: May 16, 2022 at 09:27 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -22,7 +22,6 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `mixology_database` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `mixology_database`;
-
 
 -- --------------------------------------------------------
 
@@ -416,41 +415,41 @@ INSERT INTO `user` (`IdUser`, `Name`, `Surname`, `Mail`, `Password`, `Username`,
 -- Constraints for table `admin`
 --
 ALTER TABLE `admin`
-  ADD CONSTRAINT `FK_user_admin` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_user_admin` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `contains`
 --
 ALTER TABLE `contains`
-  ADD CONSTRAINT `FK_cocktail_contains` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_ingredient_contains` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_cocktail_contains` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_ingredient_contains` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `grade`
 --
 ALTER TABLE `grade`
-  ADD CONSTRAINT `FK_cocktail_grade` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_registered_grade` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_cocktail_grade` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_registered_grade` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `preferences`
 --
 ALTER TABLE `preferences`
-  ADD CONSTRAINT `FK_ingredient_preferences` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_registered_preferences` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_ingredient_preferences` FOREIGN KEY (`IdIngredient`) REFERENCES `ingredient` (`IdIngredient`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_registered_preferences` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `registered`
 --
 ALTER TABLE `registered`
-  ADD CONSTRAINT `FK_user_registered` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_user_registered` FOREIGN KEY (`IdUser`) REFERENCES `user` (`IdUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `saved`
 --
 ALTER TABLE `saved`
-  ADD CONSTRAINT `FK_cocktail_saved` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_registered_saved` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_cocktail_saved` FOREIGN KEY (`IdCocktail`) REFERENCES `cocktail` (`IdCocktail`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_registered_saved` FOREIGN KEY (`IdUser`) REFERENCES `registered` (`IdUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
