@@ -18,6 +18,7 @@
 </head>
 <body>
     <div class="container-fluid">
+        <?php $name=$session = \Config\Services::session()->get("user")->Name ?>
       
         <div class="row header">
             <div class="col-4">
@@ -27,7 +28,8 @@
                <a href="#go"></a>   Mixology  
             </div>
             <div class="col-4 logo">
-                <i><font size="5pt" color="grey"><?= "Hello ".$firstname."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
+            <img src="<?php echo base_url('images/others/logo5.png')?>" alt="">
+                <i><font size="5pt" color="grey"><?= "Hello ".$name."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
                <button class="btn btn-light btn-lg"><a href="start_unreg.html"> Sign out</a></button>
                
             </div>
@@ -39,23 +41,23 @@
             <div class="col-12">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#"> Home page</a>
+                        <a class="nav-link" href="<?= site_url("RegisteredController/index")?>"> Home page</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled " href="#"> Recommended</a>
+                        <a class="nav-link" href="#"> Recommended</a>
                     </li>
                    
                     <li class="nav-item ">
-                        <a class="nav-link disabled" href="#">Saved</a>
+                        <a class="nav-link " href="<?= site_url("RegisteredController/displaySavedCocktails")?>">Saved</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Add new cocktail</a>
+                        <a class="nav-link" href="#">Add new cocktail</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Quiz</a>
+                        <a class="nav-link" href="#">Quiz</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">My info</a>
+                        <a class="nav-link" href="#">My info</a>
                     </li>
                   
                 </ul>

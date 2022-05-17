@@ -20,12 +20,12 @@
 <body>
 
     <div class="container-fluid">
-
+    
         
         <div class="row">
             <div class="col-sm-3">
             <div class="stars" style="padding:0">
-                <form method="post" action="<?=site_url("GuestController/gradeCocktail/".$cocktail->IdCocktail)?>">
+                <form method="post" action="<?=site_url("RegisteredController/gradeCocktail/".$cocktail->IdCocktail)?>">
                     <input class="star star-5" id="star-5" type="radio" value="5" name="star"/>
                     <label class="star star-5" for="star-5"></label>
                     <input class="star star-4" id="star-4" type="radio" value="4" name="star"/>
@@ -42,8 +42,8 @@
             </div>
             </div>
             <div class="col-sm-5 ranges" align=left style="padding-left:0"><?=$cocktail->AvgGrade."/5"?>&nbsp;</div>
-            <div class="col-sm-4 heart" align="right">
-                <a href="#"><img src="<?php echo base_url('images/others/light_heart1.png')?>"  height=100px width=100px ></a>
+            <div class="col-sm-4 heart" align="right" >
+                <a href="<?= site_url("RegisteredController/saveCocktail/".$cocktail->IdCocktail)?>"><img src="<?php echo base_url('images/others/light_heart1.png')?>"  height=100px width=100px ></a><font color="black"><?=" ".$cntSavings?>
             </div>
         </div>
 
