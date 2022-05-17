@@ -204,7 +204,13 @@
                             <table style="width: 100%; height: 100%;">
                                 <tr>
                                     <td style="background-color: rgb(216, 221, 221); " ><img src="<?php echo base_url('images/cocktails/'.$cocktail->Image)?>" alt="" style="width:150px; height: 200px;"></td>
-                                    <td style="background-color: rgb(216, 221, 221); "><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b><a href="cocktail_unregistered.html"> <?=$cocktail->CocktailName?></a></b></font><br>
+                                    <td style="background-color: rgb(216, 221, 221); "><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b><a href="<?php $tip=$session = \Config\Services::session()->get("usertype");
+                                      if($tip=="Registered")
+                                        echo site_url("RegisteredController/cocktailDisplayRegistered/".$cocktail->IdCocktail);
+                                       else if($tip==null) echo site_url("GuestController/cocktailDisplayUnregistered/".$cocktail->IdCocktail);
+                                      
+                                      
+                                      ?>"> <?=$cocktail->CocktailName?></a></b></font><br>
                                     <span class="stars"><?php echo $cocktail->AvgGrade ?></span>
                                         <br><i><?=$cocktail->Description?></i> </td>
                                    

@@ -27,7 +27,8 @@
                <a href="#go"></a>   Mixology  
             </div>
             <div class="col-4 logo">
-                <i><font size="5pt" color="grey"><?= "Hello ".$firstname."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
+            <img src="<?php echo base_url('images/others/logo5.png')?>" alt="">
+                <i><font size="5pt" color="grey"><?= "Hello "."jana"."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
                <button class="btn btn-light btn-lg"><a href="start_unreg.html"> Sign out</a></button>
                
             </div>
