@@ -9,7 +9,7 @@ class AdminController extends BaseController
 {
     
     public function show($path,$data) {
-        
+        $data['firstname'] = $this->session->get('user')->Name;
         echo view("Views/adminHeader",$data);
         echo view("Views/$path",$data);
         echo view("Views/footer");
