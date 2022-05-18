@@ -70,9 +70,14 @@ class RegisteredController extends BaseController
         $avg = $sum/$cnt;
         $model->updateAvgGradeForCocktail($id, $avg);
 
+        $savings = $model->getCntSavings($id);
+        $cntSavings=0;
+        foreach($savings as $saving) $cntSavings=$cntSavings+1;
+
         $ingredients = $model->getAllIngredientsForCocktail($id);
         $cocktail = $model->getCocktailById($id);
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+        
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
     }
 
     public function displaySavedCocktails(){
