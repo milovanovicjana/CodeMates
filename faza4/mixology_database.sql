@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `mixology_database`
 --
-
+CREATE DATABASE IF NOT EXISTS `mixology_database` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `mixology_database`;
 -- --------------------------------------------------------
 
 --
