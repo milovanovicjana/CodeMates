@@ -23,7 +23,13 @@
         
         <div class="row " style="text-align:center">
             <div class="col-4 search">
-            <form method="post" action="<?=site_url("GuestController/search")?>">
+            <form method="post" action="<?php
+            $tip=$session = \Config\Services::session()->get("usertype");
+            if($tip=="Registered")
+                    echo site_url("RegisteredController/search");
+                    else if($tip==null) echo site_url("GuestController/search");
+             ?>
+            ">
                 <?php if(isset($message)) echo $message;?>
                 <br>
                <input type="text" name="cocktailName" placeholder="Find your perfect cocktail">
