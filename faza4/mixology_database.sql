@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2022 at 09:27 PM
+-- Generation Time: May 18, 2022 at 09:42 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `mixology_database`
 --
-CREATE DATABASE IF NOT EXISTS `mixology_database` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `mixology_database`;
 
 -- --------------------------------------------------------
 
@@ -67,28 +65,28 @@ CREATE TABLE IF NOT EXISTS `cocktail` (
 --
 
 INSERT INTO `cocktail` (`IdCocktail`, `CocktailName`, `AvgGrade`, `Recipes`, `Image`, `Price`, `Alcoholic`, `Approved`, `Description`) VALUES
-(1, 'Tequila Sunrise', 4.5, '0', 'Tequila Sunrise_1.jpeg', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.\r\n'),
-(2, 'Hugo', 5, '0', 'Hugo_2.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(3, 'Paloma', 0, '0', 'Paloma_3.png', 7, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(4, 'Limoncello', 3.5, '0', 'Limoncello_4.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(5, 'Wine Cooler', 0, '0', 'Wine Cooler_5.jpg', 10, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(6, 'Mai Tai', 5, '0', 'Mai Tai_6.png', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(7, 'Bahama Mama', 2.5, '0', 'Bahama Mama_7.png', 7, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(8, 'Cuba Libre', 4.4, '0', 'Cuba Libre_8.jpg', 8, 1, 0, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(9, 'Bird of Paradise', 0, '0', 'Bird of Paradise_9.png', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(10, 'Long Island Ice Tea', 0, '0', 'Long Island Ice Tea_10.png', 10, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(11, 'Blue Lagoon', 0, '0', 'Blue Lagoon_11.png', 8, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(12, 'Cosmopolitan', 0, '0', 'Cosmopolitan_12.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(13, 'Pina Colada', 0, '0', 'Pina Colada_13.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(14, 'Manhattan', 0, '0', 'Manhattan_14.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(15, 'Tom Collins', 0, '0', 'Tom Collins_15.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(16, 'Sex On The Beach', 0, '', 'Sex On The Beach_16.png', 12, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(17, 'Virgin Mojito', 0, '0', 'Virgin Mojito_17.png', 9, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(18, 'Mojito', 0, '0', 'Mojito_18.png', 9, 1, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(19, 'Virgin Pina Colada', 0, '0', 'Virgin Pina Colada_19.jpg', 9, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(20, 'Virgin Cucumber Gimlet Mocktail', 0, '0', 'Virgin Cucumber Gimlet Mocktail_20.jpg', 9, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(21, 'Virgin Margarita', 0, '0', 'Virgin Margarita_21.jpg', 8, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.'),
-(22, 'Amazonia Mocktail', 3.55, '0', 'Amazonia Mocktail_22.jpg', 7, 0, 1, 'Make an easy vodka martini with our simple recipe for an elegant party tipple. Serve your cool cocktail with an olive or a twist of lemon peel.');
+(1, 'Tequila Sunrise', 4.5, '0', 'Tequila Sunrise_1.jpeg', 8, 1, 1, 'Master the art of a classic tequila sunrise, with grenadine, tequila, orange juice. It\'s the perfect recipe to get your party started.'),
+(2, 'Hugo', 5, '0', 'Hugo_2.png', 9, 1, 0, 'Refreshing, floral and herbal, the hugo cocktail is perfect for warm summer evenings. Make this simple spritz with prosecco.'),
+(3, 'Paloma', 0, '0', 'Paloma_3.png', 7, 1, 0, 'Tequila, grapefruit and lime juice give this cocktail a real kick. Garnish the rim of your glass with salt and a wedge of grapefruit for extra punch'),
+(4, 'Limoncello', 3.5, '0', 'Limoncello_4.png', 9, 1, 0, 'Make up a batch of this boozy lemony drink - it\'s great as a homemade gift or poured over ice cream'),
+(5, 'Wine Cooler', 0, '0', 'Wine Cooler_5.jpg', 10, 1, 1, 'Treat yourself to a wine cooler cocktail, a lighter, sparkling alternative to regular wine'),
+(6, 'Mai Tai', 5, '0', 'Mai Tai_6.png', 8, 1, 1, 'Treat yourself to a mai tai cocktail, with the flavours of rum and orange. This recipe serves one, but it\'s easily multiplied for a party'),
+(7, 'Bahama Mama', 2.5, '0', 'Bahama Mama_7.png', 7, 1, 1, 'Bahama Mama Cocktail is overflowing with tropical flavor that will have you dreaming of sunshine, summertime, and your favorite beach! Made with dark rum, coffee flavored liqueurs and pineapple juice!'),
+(8, 'Cuba Libre', 4.4, '0', 'Cuba Libre_8.jpg', 8, 1, 1, 'A classic Cuban cocktail of rum, cola, lime and ice. Pour into a tall glass for the ultimate refreshing long cocktail'),
+(9, 'Bird of Paradise', 0, '0', 'Bird of Paradise_9.png', 8, 1, 1, 'If you are hosting a tropical party or just looking forward to enjoying cocktails while watching the sunset, this fruity rum cocktail is just what you are looking for!'),
+(10, 'Long Island Ice Tea', 0, '0', 'Long Island Ice Tea_10.png', 10, 1, 1, 'Mix a jug of this classic cocktail for a summer party. It\'s made with equal parts of vodka, gin, tequila, rum and triple sec, plus lime, cola and plenty of ice'),
+(11, 'Blue Lagoon', 0, '0', 'Blue Lagoon_11.png', 8, 1, 1, 'Try our refreshing take on the classic blue lagoon with lemonade and fresh citrus juice. This boozy retro classic cocktail is perfect for parties'),
+(12, 'Cosmopolitan', 0, '0', 'Cosmopolitan_12.png', 9, 1, 1, 'Lipsmackingly sweet and sour, the Cosmopolitan cocktail of vodka, cranberry and citrus is a good-time in a glass. Perfect for a party'),
+(13, 'Pina Colada', 0, '0', 'Pina Colada_13.png', 9, 1, 1, 'A tropical blend of rich coconut cream, dark rum and tangy pineapple – serve with an umbrella for kitsch appeal'),
+(14, 'Manhattan', 0, '0', 'Manhattan_14.png', 9, 1, 1, 'Combine vermouth and whiskey to make the perfect Manhattan cocktail. Add lemon,  and cherry to complete the classic flavour combination'),
+(15, 'Tom Collins', 0, '0', 'Tom Collins_15.png', 9, 1, 1, 'Master the art of the classic Tom Collins cocktail, plus three twists. Gin, lemon, simple syrup and soda water are the ingredients for your cocktail cupboard'),
+(16, 'Sex On The Beach', 0, '', 'Sex On The Beach_16.png', 12, 1, 1, 'Combine vodka with peach schnapps and cranberry juice to make a classic sex on the beach cocktail. Garnish with cocktail cherries and orange slices'),
+(17, 'Virgin Mojito', 0, '0', 'Virgin Mojito_17.png', 9, 0, 1, 'Try a refreshing, non-alcoholic mojito cocktail recipe.  With lime juice, mint and ice , it\'s fabulously refreshing'),
+(18, 'Mojito', 0, '0', 'Mojito_18.png', 9, 1, 1, 'Mix this classic cocktail for a party using fresh mint, white rum, zesty lime and cooling soda water. Play with the quantities to suit your taste.'),
+(19, 'Virgin Pina Colada', 0, '0', 'Virgin Pina Colada_19.jpg', 9, 0, 1, 'For an alcohol-free party option, try our spiced piña colada mocktail (or virgin piña colada), with cherry, pineapple juice and coconut milk'),
+(20, 'Virgin Cucumber Gimlet Mocktail', 0, '0', 'Virgin Cucumber Gimlet Mocktail_20.jpg', 9, 0, 1, 'Make a classic gimlet, combining simple syrup and lime juice, stirred to the perfect dilution with lots of ice. A refreshing cocktail to enjoy with friends'),
+(21, 'Virgin Margarita', 0, '0', 'Virgin Margarita_21.jpg', 8, 0, 1, 'This virgin margarita recipe tastes as good as the real thing! This non-alcoholic mocktail is irresistibly tasty with a secret ingredient.'),
+(22, 'Amazonia Mocktail', 3.55, '0', 'Amazonia Mocktail_22.jpg', 7, 0, 1, 'Fancy bubbles dance in the glass while the flavors of apple, mint and lime brighten each sip!');
 
 -- --------------------------------------------------------
 
