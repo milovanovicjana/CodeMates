@@ -114,4 +114,39 @@ class RegisteredController extends BaseController
         return redirect()->to(site_url('GuestController'));
     }
 
+    public function displayRecommendedCocktails(){
+        $db= db_connect();
+        $model=new Model($db);
+        $user = $this->session->get('user');
+
+        $retval = $model->getRecommended($user->IdUser);
+
+        $cocktails = [];
+
+        foreach ($retval as $ingredient) {
+            
+            if(!array_key_exists($ingredient->IdCocktail, $cocktails)){
+                $cocktails[$ingredient->IdCocktail] = $ingredient;
+                $cocktails[$ingredient->IdCocktail]->sumAlcohol = 0;
+                $cocktails[$ingredient->IdCocktail]->sumGrading = 0;
+            }
+            $cocktails[$ingredient->IdCocktail]->sumAlcohol += $ingredient->Quantity * 10;
+            $cocktails[$ingredient->IdCocktail]->sumGrading += $ingredient->Quantity * $ingredient->Value;
+        }
+
+        foreach ($cocktails as $cocktail) {
+            if($cocktail->sumGrading != 0){
+                $cocktail->match = round(($cocktail->sumGrading / $cocktail->sumAlcohol)*100);
+            }else{
+                $cocktail->match = 0;
+            }
+            
+        }
+
+        usort($cocktails, function($c1, $c2) {return $c2->match - $c1->match;});
+
+        return $this->show('recommended_cocktails',['recommendedCocktails'=>$cocktails]);
+        
+     }
+
 }
