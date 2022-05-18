@@ -24,16 +24,13 @@
     
         <div class="row">
           
-            <div class="col-sm-1">&nbsp;</div>
+            <div class="col-sm-3">&nbsp;</div>
            
           
-            <div class="col-sm-10" style="background-color:white; padding-left: 10px;">
-        
-            <div class="stars">
-                        <span class="star on"></span>
-                        <span class="star half"></span>
-                        <span class="star"></span>
-                    </div>
+            <div class="col-sm-6" style="background-color:white; padding-left: 10px;">
+            <p align="center">  <font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b>Approve or Reject </b></font><br> </p>
+                
+       
             <form method="post" action="<?=site_url("AdminController/approveCocktails")?>">
                 <table class="table table-light"> 
                     <?php foreach($cocktails as $cocktail){  ?>       
@@ -44,7 +41,7 @@
                                 <tr>
                                     <td><input type="checkbox" style=" width: 20px; height: 20px" name="cocktail[]" value="<?=$cocktail->IdCocktail ?>"></td>
                                     <td style="background-color: rgb(216, 221, 221); " ><img src="<?php echo base_url('images/cocktails/'.$cocktail->Image)?>" alt="" style="width:120px; height: 150px;"></td>
-                                    <td style="background-color: rgb(216, 221, 221); "><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b> <?=$cocktail->CocktailName?></b></font><br>
+                                    <td style="background-color: rgb(216, 221, 221); " ><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b> <?=$cocktail->CocktailName?></b></font><br>
                                     <br><i><?=$cocktail->Description?></i> </td>
                                    
                                 </tr>
@@ -55,7 +52,7 @@
                     <?php }?>
                 </table>
             </div>
-            <div class="col-sm-1">&nbsp;</div>
+            <div class="col-sm-3">&nbsp;</div>
         </div>
 
       
