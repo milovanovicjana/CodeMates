@@ -320,7 +320,7 @@ INSERT INTO `ingredient` (`IdIngredient`, `Name`, `Type`) VALUES
 (43, 'Lemon soda', 'JUICE'),
 (44, 'Apple juice', 'JUICE'),
 (45, 'Grape juice', 'JUICE'),
-(46, 'Apple ', 'FRUIT');
+(46, 'Apple ', 'FRUIT'),
 (47, 'Grapefruit soda', 'JUICE');
 
 -- --------------------------------------------------------
