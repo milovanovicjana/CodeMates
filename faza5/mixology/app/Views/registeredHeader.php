@@ -32,7 +32,7 @@
 
                 <i><font size="5pt" color="grey"><?= "Hello ".$name."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
 
-               <button class="btn btn-light btn-lg"><a href="start_unreg.html"> Sign out</a></button>
+               <button class="btn btn-light btn-lg" onclick="window.location='<?php echo site_url("RegisteredController/logout"); ?>'"> Sign out</button>
                
             </div>
    

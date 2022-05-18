@@ -29,7 +29,7 @@
             <div class="col-4 logo">
             <img src="<?php echo base_url('images/others/logo5.png')?>" alt="">
                 <i><font size="5pt" color="grey"><?="Hello ".$firstname."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
-               <button class="btn btn-light btn-lg"><a href="start_unreg.html"> Sign out</a></button>
+               <button class="btn btn-light btn-lg" onclick="window.location='<?php echo site_url("AdminController/logout"); ?>'">Sign out</button>
                
             </div>
    
