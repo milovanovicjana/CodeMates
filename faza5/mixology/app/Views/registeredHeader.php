@@ -46,7 +46,7 @@
                         <a class="nav-link" href="<?= site_url("RegisteredController/index")?>"> Home page</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> Recommended</a>
+                        <a class="nav-link" href="<?= site_url("RegisteredController/displayRecommendedCocktails")?>"> Recommended</a>
                     </li>
                    
                     <li class="nav-item ">
