@@ -167,6 +167,7 @@ class Model
 
     public function getRecommended($userId){
         return $this->db->table('cocktail')
+        ->where('Approved',1)
         ->join('contains','contains.IdCocktail=cocktail.IdCocktail')
         ->join('preferences','contains.IdIngredient=preferences.IdIngredient')
         ->where('IdUser', $userId)
