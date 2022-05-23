@@ -23,12 +23,11 @@
 
         
         <div class="row">
-            <div class="col-sm-6">
-            &nbsp;&nbsp;
-            </div>
-            <div class="col-sm-6 ranges" align=right>
+            
+            <div class="col-sm-5 ranges" align=left style="padding-left:0">&nbsp;
             <?=$cocktail->AvgGrade."/5" ?>
             </div>
+            <div class="col-sm-7">&nbsp;</div>
         </div>
 
         <div class="row">
@@ -66,7 +65,27 @@
                 <div id="price" >Average price : <?=$cocktail->Price?>&euro; </div>
             </div>
             <div class="col-sm-8 center" >
-                <p><?=$cocktail->Recipes?>
+                <div id="naziv_koktela_prikaz" align="center"><font  color="grey"; face="Brush Script MT, Brush Script Std, cursive";><?=$cocktail->CocktailName?></font></div>
+                    <br><br><br><br>
+                <p>
+                    <br>
+                    <?=$cocktail->Recipes?>
+                    <br><br><br>
+                    <?php if($steps != null) {?>
+                    <ol type="1">
+                        <h3>Steps:</h3>
+                        <br>
+                        <?php foreach($steps as $step){?>
+                            <li><?=" ".$step->Step?></li>
+                            <br>
+                        <?php 
+                        }
+                        ?>
+                    </ol>
+                    <br>
+                    <?php }?>
+                </p>
+                
 
                 
                 
@@ -108,7 +127,7 @@
                 </ol>
                         -->  
 
-                </p>
+                
             </div>
         </div>
 

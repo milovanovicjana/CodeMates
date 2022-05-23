@@ -36,9 +36,9 @@ class RegisteredController extends BaseController
         $cntSavings=0;
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
 
-
+        $steps = $model->getSteps($id);
         $ingredients = $model->getAllIngredientsForCocktail($id);
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings,'steps'=>$steps]);
 
     }
 
@@ -50,34 +50,37 @@ class RegisteredController extends BaseController
         $userId = $this->session->get('user')->IdUser;
 
         $stars = $this->request->getVar('star');
-        $ocenio = $model->checkGrade($id, $userId);
-        if($ocenio == null){
-            //ubaci
-            $model->insertGrade($id, $userId, $stars);
-        }else{
-            //update
-            $model->updateGrade($id, $userId, $stars);
+        if($stars){
+            $ocenio = $model->checkGrade($id, $userId);
+            if($ocenio == null){
+                //ubaci
+                $model->insertGrade($id, $userId, $stars);
+            }else{
+                //update
+                $model->updateGrade($id, $userId, $stars);
+            }
+
+            $allGrades = $model->getAllGradesForCocktail($id);
+            $cnt = 0;
+            $sum = 0;
+            foreach($allGrades as $grade){
+                $cnt = $cnt + 1;
+                $sum = $sum + $grade->Grade;
+            }
+
+            $avg = $sum/$cnt;
+            $model->updateAvgGradeForCocktail($id, $avg);
         }
-
-        $allGrades = $model->getAllGradesForCocktail($id);
-        $cnt = 0;
-        $sum = 0;
-        foreach($allGrades as $grade){
-            $cnt = $cnt + 1;
-            $sum = $sum + $grade->Grade;
-        }
-
-        $avg = $sum/$cnt;
-        $model->updateAvgGradeForCocktail($id, $avg);
-
         $savings = $model->getCntSavings($id);
         $cntSavings=0;
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
 
         $ingredients = $model->getAllIngredientsForCocktail($id);
         $cocktail = $model->getCocktailById($id);
+        $steps = $model->getSteps($id);
+        $ingredients = $model->getAllIngredientsForCocktail($id);
         
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings, 'steps'=>$steps]);
     }
 
     public function displaySavedCocktails(){

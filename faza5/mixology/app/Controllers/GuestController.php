@@ -72,9 +72,9 @@ class GuestController extends BaseController
 
         $cocktail = $model->getCocktailById($id);
        
-
+        $steps = $model->getSteps($id);
         $ingredients = $model->getAllIngredientsForCocktail($id);
-        return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+        return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients, 'steps'=>$steps]);
 
     }
 
