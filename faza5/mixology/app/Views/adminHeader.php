@@ -47,7 +47,7 @@
                             Approve cocktails</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="<?= site_url("AdminController/")?>">My info</a>
+                        <a class="nav-link " href="<?= site_url("AdminController/showAdminInfo")?>">My info</a>
                     </li>
                    
                 </ul>

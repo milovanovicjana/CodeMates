@@ -52,6 +52,29 @@ class Model
                   ->limit(10)->get()->getResult();
     }
 
+    public function changeUsername($userId, $username){
+        $this->db->table('user')->where('IdUser',$userId)->set('Username',$username)->update();
+    }
+
+    public function changeName($userId, $firstname){
+        $this->db->table('user')->set('Name',$firstname)->where('IdUser',$userId)->update();
+    }
+
+    public function changeSurname($userId, $lastname){
+        $this->db->table('user')->set('Surname',$lastname)->where('IdUser',$userId)->update();
+    }
+
+    public function changeMail($userId, $email){
+        $this->db->table('user')->set('Mail',$email)->where('IdUser',$userId)->update();
+    }
+
+    public function changeGender($userId, $gender){
+        $this->db->table('user')->set('Gender',$gender)->where('IdUser',$userId)->update();
+    }
+
+    public function changePassword($userId, $password){
+        $this->db->table('user')->set('Password',$password)->where('IdUser',$userId)->update();
+    }
 
     public function getAllUsers(){
         return $this->db->table('user')->get()->getResult();
@@ -178,7 +201,5 @@ class Model
     public function getSteps($id){
         return $this->db->table('steps')->where('IdCocktail',$id)->orderBy('Id','ASC')->get()->getResult();
     }
-
-
 
 }

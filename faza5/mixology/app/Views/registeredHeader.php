@@ -56,10 +56,10 @@
                         <a class="nav-link" href="#">Add new cocktail</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quiz</a>
+                        <a class="nav-link" href="<?= site_url("RegisteredController/showQuiz")?>">Quiz</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My info</a>
+                        <a class="nav-link" href="<?= site_url("RegisteredController/showUserInfo")?>">My info</a>
                     </li>
                   
                 </ul>

@@ -157,6 +157,7 @@ class RegisteredController extends BaseController
         
     }
 
+
     public function search() { //dodat ajax
 
         $db= db_connect();
@@ -180,8 +181,8 @@ class RegisteredController extends BaseController
        else{
            $cocktails=$model->search([],$type,$name);
        }
- 
-       echo "<script type='text/JavaScript'> 
+      
+      echo "<script type='text/JavaScript'> 
        jQuery(document).ready(function(){
          var starWidth = 40;
       
@@ -223,4 +224,111 @@ class RegisteredController extends BaseController
      echo  "</table>";
      }
 
+     public function showInfoChange(){
+        return $this->show('user_info_change',[]);
+     }
+
+     public function showUserInfo(){
+        return $this->show('user_info', []);
+     }
+
+     public function showPassChange(){
+        return $this->show('password_change', []);
+    }
+
+    public function showQuiz(){
+        return $this->show('quiz', []);
+    }
+
+     public function changeInfo(){
+        $firstname = $this->request->getVar('firstname');
+        $lastname = $this->request->getVar('lastname');
+        $email = $this->request->getVar('email');
+        $username = $this->request->getVar('username');
+        $gender = $this->request->getVar('gender');
+        
+        $db= db_connect();
+        $model=new Model($db);
+
+        $user = $this->session->get('user');
+        $userId = $user->IdUser;
+
+        $uUsername = $user->Username;
+        if($uUsername != $username){
+            $tmpuser = $model->getUserByUsername($username);
+            if($tmpuser!=null){
+                return $this->show('user_info_change',['message'=>'Username already taken.']);
+            }else{
+                $model->changeUsername($userId, $username);
+            }
+        }
+
+        $uName = $user->Name;
+        if($uName != $firstname){
+            $model->changeName($userId, $firstname);
+        }
+
+        $uSurname = $user->Surname;
+        if($uSurname != $lastname){
+            $model->changeSurname($userId, $lastname);
+        }
+
+        $uMail = $user->Mail;
+        if($uMail != $email){
+            $model->changeMail($userId, $email);
+        }
+
+        $uGender = $user->Gender;
+        if($uGender != $gender){
+            $model->changeGender($userId, $gender);
+        }
+
+        $userSession = $model->getUserByUsername($username);
+        $this->session->set('user',$userSession);
+        $this->session->set('usertype', 'Registered');
+
+        return redirect()->to(site_url('RegisteredController/showUserInfo'));
+    }
+
+    public function changePass(){
+        $curpass = $this->request->getVar('curpass');
+        $newpass = $this->request->getVar('newpass');
+        $newpassconf = $this->request->getVar('newpassconf');
+
+        $db= db_connect();
+        $model=new Model($db);
+
+        $user = $this->session->get('user');
+        $userId = $user->IdUser;
+
+        $uPass = $user->Password;
+
+        if($curpass != $uPass){
+            return $this->show('password_change_miss', []);
+        }
+        if($newpass != $newpassconf){
+            return $this->show('password_change_miss', []);
+        }
+
+        $model->changePassword($userId, $newpass);
+
+        $userSession = $model->getUserByUsername($user->Username);
+        $this->session->set('user',$userSession);
+        $this->session->set('usertype', 'Registered');
+
+        return redirect()->to(site_url('RegisteredController/showUserInfo'));
+    }
+
+    public function quiz(){
+
+        $question1 = $this->request->getVar('inlineRadioOptions1');
+        $question2 = $this->request->getVar('inlineRadioOptions2');
+        $question3 = $this->request->getVar('inlineRadioOptions3');
+        $question4 = $this->request->getVar('inlineRadioOptions4');
+        $question5 = $this->request->getVar('inlineRadioOptions5');
+
+        $sum = $question1 + $question2 + $question3 + $question4 + $question5;
+
+        echo $sum;
+    }
 }
