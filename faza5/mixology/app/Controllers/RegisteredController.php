@@ -36,48 +36,52 @@ class RegisteredController extends BaseController
         $cntSavings=0;
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
 
-
+        $steps = $model->getSteps($id);
         $ingredients = $model->getAllIngredientsForCocktail($id);
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings,'steps'=>$steps]);
 
     }
 
-    public function gradeCocktail($id){
-        $db= db_connect();
-        $model=new Model($db);
-
+    public function gradeCocktail(){
+        $id=$this->request->getVar('id');
+        $stars = $this->request->getVar('stars');
+ 
+         $db= db_connect();
+         $model=new Model($db);
+ 
+         
+         $userId = $this->session->get('user')->IdUser;
+ 
+       
         
-        $userId = $this->session->get('user')->IdUser;
-
-        $stars = $this->request->getVar('star');
-        $ocenio = $model->checkGrade($id, $userId);
-        if($ocenio == null){
-            //ubaci
-            $model->insertGrade($id, $userId, $stars);
-        }else{
-            //update
-            $model->updateGrade($id, $userId, $stars);
-        }
-
-        $allGrades = $model->getAllGradesForCocktail($id);
-        $cnt = 0;
-        $sum = 0;
-        foreach($allGrades as $grade){
-            $cnt = $cnt + 1;
-            $sum = $sum + $grade->Grade;
-        }
-
-        $avg = $sum/$cnt;
-        $model->updateAvgGradeForCocktail($id, $avg);
-
-        $savings = $model->getCntSavings($id);
-        $cntSavings=0;
-        foreach($savings as $saving) $cntSavings=$cntSavings+1;
-
-        $ingredients = $model->getAllIngredientsForCocktail($id);
-        $cocktail = $model->getCocktailById($id);
-        
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
+         $ocenio = $model->checkGrade($id, $userId);
+         if($ocenio == null){
+             //ubaci
+             $model->insertGrade($id, $userId, $stars);
+         }else{
+             //update
+             $model->updateGrade($id, $userId, $stars);
+         }
+ 
+         $allGrades = $model->getAllGradesForCocktail($id);
+         $cnt = 0;
+         $sum = 0;
+         foreach($allGrades as $grade){
+             $cnt = $cnt + 1;
+             $sum = $sum + $grade->Grade;
+         }
+ 
+         $avg = $sum/$cnt;
+         $model->updateAvgGradeForCocktail($id, $avg);
+ 
+         $savings = $model->getCntSavings($id);
+         $cntSavings=0;
+         foreach($savings as $saving) $cntSavings=$cntSavings+1;
+ 
+         $ingredients = $model->getAllIngredientsForCocktail($id);
+         $cocktail = $model->getCocktailById($id);
+         
+         echo $cocktail->AvgGrade."/5";
     }
 
     public function displaySavedCocktails(){
@@ -89,14 +93,17 @@ class RegisteredController extends BaseController
        
     }
 
-    public function saveCocktail($id){
-       $db= db_connect();
-       $model=new Model($db);
-       $user = $this->session->get('user');
-       $userId = $user->IdUser;
-       $model->saveCocktailByUser($id,$userId);
-       $savedCocktails=$model->getSavedCocktails($user->IdUser);
-       return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
+    public function saveCocktail(){
+        $id=$this->request->getVar('id');
+        $db= db_connect();
+        $model=new Model($db);
+        $user = $this->session->get('user');
+        $userId = $user->IdUser;
+        $model->saveCocktailByUser($id,$userId);
+        $savings = $model->getCntSavings($id);
+        $cntSavings=0;
+        foreach($savings as $saving) $cntSavings=$cntSavings+1;
+        echo $cntSavings;
     }
 
     public function unsaveCocktail($id){
@@ -150,17 +157,20 @@ class RegisteredController extends BaseController
         
     }
 
-    public function search() {
+    public function search() { //dodat ajax
+
         $db= db_connect();
         $model=new Model($db);
         
         $name=$this->request->getVar('cocktailName');
         $type=$this->request->getVar('Type');
         $filters= $this->request->getVar('filter');
-        
+     
         if($name=="" && $type=="" && $filters==[]){
-            $topRatedCocktails=$model->getTopRatedCocktails();
-            return $this->show('search',['message'=>'Please enter a cocktail name or click on the filters to start searching.','topRatedCocktails'=>$topRatedCocktails]);;
+         echo "<p align='center'>  <font size='15pt' ; color='grey'; face='Brush Script MT, Brush Script Std, cursive';><b>";
+         echo "Please enter a cocktail name or click on the filters to start searching.";
+         echo "</b></font><br> </p>";
+            return;
         }
         
        if($filters!=[]) {
@@ -170,13 +180,47 @@ class RegisteredController extends BaseController
        else{
            $cocktails=$model->search([],$type,$name);
        }
-       if($cocktails==null){
-           //Sorry, no results were found for “sdsdsds”. 
-           return $this->show('searchResults',['cocktails'=>$cocktails,'messageResultNotFound'=>'Sorry, no results were found']);
-           
-       }
-        
-        return $this->show('searchResults',['cocktails'=>$cocktails]);
+ 
+       echo "<script type='text/JavaScript'> 
+       jQuery(document).ready(function(){
+         var starWidth = 40;
+      
+          $.fn.stars = function() {
+            return $(this).each(function() {
+              $(this).html($('<span/>').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * starWidth));
+            });
+          }
+          $(document).ready(function() {
+              $('span.stars').stars();
+          });});
+       </script>";
+
+       echo "<table class='table  table-light recipes'>";
+       echo "<p align='center'>  <font size='15pt' ; color='grey'; face='Brush Script MT, Brush Script Std, cursive';><b>";
+       if($cocktails==null)    echo 'Sorry, no results were found';
+       else echo 'Recipe results:';
+       echo "</b></font><br> </p>";
+       foreach($cocktails as $cocktail){   
+                  echo  "<tr>";
+                      echo   "<td >";
+                             echo "<table style='width: 100%; height: 100%;'>";
+                                echo "<tr>";
+                                     echo "<td style='background-color: rgb(216, 221, 221);'><img src='";echo base_url('images/cocktails/'.$cocktail->Image)."'";echo "alt='' style='width:150px; height: 200px;'></td>";
+                                     echo "<td style='background-color: rgb(216, 221, 221); '><font size='15pt' ; color='grey'; face='Brush Script MT, Brush Script Std, cursive'>";
+                                     echo "<b><a href='";
+                                     $tip=$session = \Config\Services::session()->get("usertype");
+                                     if($tip=="Registered")
+                                         echo site_url("RegisteredController/cocktailDisplayRegistered/".$cocktail->IdCocktail);
+                                     else if($tip==null) echo site_url("GuestController/cocktailDisplayUnregistered/".$cocktail->IdCocktail);
+                                     echo "'>";
+                                     echo $cocktail->CocktailName;
+                                     echo "</a></b></font><br>";  echo  "<span class='stars'>";
+                                     echo $cocktail->AvgGrade ;
+                                     echo "</span>"; echo "<br><i>";
+                                     echo $cocktail->Description;
+                                     echo "</i> </td>"; echo    "</table>";   echo    "</td>";   echo    "</tr>";                        
+      }
+     echo  "</table>";
      }
 
 }

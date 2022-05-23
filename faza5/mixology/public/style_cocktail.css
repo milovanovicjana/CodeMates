@@ -114,6 +114,8 @@ td{
     
     margin-left: 10%;
     margin-bottom: 0%;
+    margin-top: 0%;
+    padding-top: 0%;
     background-color: aliceblue;
     width: 70%;
     padding-left: 20px;
@@ -187,6 +189,26 @@ div.stars {
     content: '\f006';
     font-family: FontAwesome;
   }
+
+  #naziv_koktela_prikaz{
+      background-color: aliceblue;
+      font-size: 60pt;
+      margin-left: 10%;
+      margin-bottom: 0%;
+      padding-bottom: 0;
+      width: 70%;
+      padding-left: 20px;
+      padding-right: 20px;
+      /*display: flex;
+      flex-direction: row;*/
+      text-align: center;
+}
+
+  
+
+  
+
+  
 
 
   

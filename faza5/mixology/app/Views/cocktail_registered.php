@@ -13,6 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="<?php echo base_url('skripta2.js')?>"></script>
+
 
     
     <link rel="stylesheet" href="<?php echo base_url('style_cocktail.css')?>">
@@ -23,9 +25,12 @@
     
         
         <div class="row">
-            <div class="col-sm-3">
+        <div class="col-sm-3">
             <div class="stars" style="padding:0">
-                <form method="post" action="<?=site_url("RegisteredController/gradeCocktail/".$cocktail->IdCocktail)?>">
+
+             <!--menjala Jana-->
+         
+               
                     <input class="star star-5" id="star-5" type="radio" value="5" name="star"/>
                     <label class="star star-5" for="star-5"></label>
                     <input class="star star-4" id="star-4" type="radio" value="4" name="star"/>
@@ -36,14 +41,21 @@
                     <label class="star star-2" for="star-2"></label>
                     <input class="star star-1" id="star-1" type="radio"  value="1" name="star"/> 
                     <label class="star star-1" for="star-1"></label>
-                    <button type="submit" class="btn btn-light" value="Grade">Grade</button>
+                    
+                    <button class="btn btn-light" value="Grade" id="grade" >Grade</button>
                    
-                </form> 
+                
             </div>
             </div>
-            <div class="col-sm-5 ranges" align=left style="padding-left:0"><?=$cocktail->AvgGrade."/5"?>&nbsp;</div>
+        
+            <div class="col-sm-5 ranges" align=left style="padding-left:0" id="cocktailGrade"> <?=$cocktail->AvgGrade."/5"?></div>
+       
             <div class="col-sm-4 heart" align="right" >
-                <a href="<?= site_url("RegisteredController/saveCocktail/".$cocktail->IdCocktail)?>"><img src="<?php echo base_url('images/others/light_heart1.png')?>"  height=100px width=100px ></a><font color="black"><?=" ".$cntSavings?>
+               
+               <img src="<?php echo base_url('images/others/light_heart1.png')?>" height=100px width=100px id="save"><font color="black">
+               <span id="cocktailId" style="display:none;"><?= $cocktail->IdCocktail?></span> 
+               <span id="cnt"><?= $cntSavings?></span>
+                 <!--menjala Jana-->
             </div>
         </div>
 
@@ -78,10 +90,27 @@
                 </div>
                 <div id="price" >Average price : <?=$cocktail->Price?>&euro; </div>
             </div>
-            <div class="col-sm-8 center" >
-                <p><?=$cocktail->Recipes?>
-
-                
+            <div class="col-sm-8 center" id="centar">
+                <div id="naziv_koktela_prikaz" align="center"><font  color="grey"; face="Brush Script MT, Brush Script Std, cursive";><?=$cocktail->CocktailName?></font></div>
+                <br><br><br><br>
+                <p>
+                    <br>
+                    <?=$cocktail->Recipes?>
+                    <br><br><br>
+                    <?php if($steps != null) {?>
+                    <ol type="1">
+                        <h3>Steps:</h3>
+	                    <br>
+                        <?php foreach($steps as $step){?>
+                            <li><?=" ".$step->Step?></li>
+                            <br>
+                        <?php 
+                        }
+                        ?>
+                    </ol>
+                    <br>
+                    <?php }?>
+                </p>
                 
                     
                 <!--The Mojito is one of the most popular rum cocktails served today, with a recipe known around the world. The origins of this classic drink can be traced to Cuba and the 16th-century cocktail El Draque. Named for Sir Francis Drake, the English sea captain and explorer who visited Havana in 1586, El Draque was composed of aguardiente (a cane-spirit precursor to rum), lime, mint and sugar. It was supposedly consumed for medicinal purposes, but it’s easy to believe that drinkers enjoyed its flavor and effects.
@@ -121,7 +150,7 @@
                 </ol>
                         -->  
 
-                </p>
+                
             </div>
         </div>
 
