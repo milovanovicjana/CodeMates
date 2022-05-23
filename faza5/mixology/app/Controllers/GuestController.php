@@ -6,6 +6,8 @@ use App\Models\PreferencesModel;
 use App\Models\RegisteredModel;
 use App\Models\UserModel;
 
+
+
 class GuestController extends BaseController
 {
     
@@ -35,17 +37,20 @@ class GuestController extends BaseController
        return $this->show('search',['topRatedCocktails'=>$topRatedCocktails]);
     }
     
-    public function search() {
+    public function search() { //dodat ajax
+
        $db= db_connect();
        $model=new Model($db);
        
        $name=$this->request->getVar('cocktailName');
        $type=$this->request->getVar('Type');
        $filters= $this->request->getVar('filter');
-       
+    
        if($name=="" && $type=="" && $filters==[]){
-           $topRatedCocktails=$model->getTopRatedCocktails();
-           return $this->show('search',['message'=>'Please enter a cocktail name or click on the filters to start searching.','topRatedCocktails'=>$topRatedCocktails]);;
+        echo "<p align='center'>  <font size='15pt' ; color='grey'; face='Brush Script MT, Brush Script Std, cursive';><b>";
+        echo "Please enter a cocktail name or click on the filters to start searching.";
+        echo "</b></font><br> </p>";
+           return;
        }
        
       if($filters!=[]) {
@@ -55,13 +60,48 @@ class GuestController extends BaseController
       else{
           $cocktails=$model->search([],$type,$name);
       }
-      if($cocktails==null){
-          //Sorry, no results were found for “sdsdsds”. 
-          return $this->show('searchResults',['cocktails'=>$cocktails,'messageResultNotFound'=>'Sorry, no results were found']);
-          
-      }
-       
-       return $this->show('searchResults',['cocktails'=>$cocktails]);
+
+      echo "<script type='text/JavaScript'> 
+      jQuery(document).ready(function(){
+        var starWidth = 40;
+     
+         $.fn.stars = function() {
+           return $(this).each(function() {
+             $(this).html($('<span/>').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * starWidth));
+           });
+         }
+         $(document).ready(function() {
+             $('span.stars').stars();
+         });});
+      </script>";
+
+    
+      echo "<table class='table  table-light recipes'>";
+      echo "<p align='center'>  <font size='15pt' ; color='grey'; face='Brush Script MT, Brush Script Std, cursive';><b>";
+      if($cocktails==null)    echo 'Sorry, no results were found';
+      else echo 'Recipe results:';
+      echo "</b></font><br> </p>";
+      foreach($cocktails as $cocktail){   
+                 echo  "<tr>";
+                     echo   "<td >";
+                            echo "<table style='width: 100%; height: 100%;'>";
+                               echo "<tr>";
+                                    echo "<td style='background-color: rgb(216, 221, 221);'><img src='";echo base_url('images/cocktails/'.$cocktail->Image)."'";echo "alt='' style='width:150px; height: 200px;'></td>";
+                                    echo "<td style='background-color: rgb(216, 221, 221); '><font size='15pt' ; color='grey'; face='Brush Script MT, Brush Script Std, cursive'>";
+                                    echo "<b><a href='";
+                                    $tip=$session = \Config\Services::session()->get("usertype");
+                                    if($tip=="Registered")
+                                        echo site_url("RegisteredController/cocktailDisplayRegistered/".$cocktail->IdCocktail);
+                                    else if($tip==null) echo site_url("GuestController/cocktailDisplayUnregistered/".$cocktail->IdCocktail);
+                                    echo "'>";
+                                    echo $cocktail->CocktailName;
+                                    echo "</a></b></font><br>";  echo  "<span class='stars'>";
+                                    echo $cocktail->AvgGrade ;
+                                    echo "</span>"; echo "<br><i>";
+                                    echo $cocktail->Description;
+                                    echo "</i> </td>"; echo    "</table>";   echo    "</td>";   echo    "</tr>";                        
+     }
+    echo  "</table>";
     }
 
 
@@ -76,11 +116,7 @@ class GuestController extends BaseController
         $ingredients = $model->getAllIngredientsForCocktail($id);
         return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients, 'steps'=>$steps]);
 
-    }
-
-    
-
-    
+    } 
 
     public function register(){
 
