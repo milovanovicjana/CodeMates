@@ -15,9 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url('style.css')?>">
-    
-    
- 
+    <script src="<?php echo base_url('skripta2.js')?>"></script>
 
 </head>
 <body>
@@ -26,12 +24,8 @@
         
         <div class="row " style="text-align:center">
             <div class="col-4 search">
-                   <form method="post" action="<?=site_url("GuestController/search")?>">
-               <?php if(isset($message)) echo $message;?>
                 <br>
-               <input type="text" name="cocktailName" placeholder="Find your perfect cocktail">
-              <img src="<?php echo base_url('images/others/search1.png')?>" alt="">
-             
+               <input type="text" name="cocktailName" placeholder="Find your perfect cocktail" id="cName">
             </div>
         </div>
 
@@ -45,28 +39,19 @@
                 <hr>
                 <ul type="square">
                     <li >  <p class="filter1">Type</p>
-                       
-                        
-                            
                                 <table  cellpadding="4" style="background-color:rgba(229, 244, 252, 0.89); width:500px; ">
                                     <tr >
                                         <td>  <input type="radio" name="Type" value="Alcoholic">Alcoholic &nbsp; </td>
                                         <td>  <input type="radio"  name="Type" value="Non alcoholic">Non alcoholic</td>
                                     </tr>
                                 </table>
-                               
-                               
-                            
-                        
                     </li>
                     <hr>
                     <li >
                         <p class="filter1">Alcohols</p>
-                      
-                      
                                 <table  cellpadding="4" style="background-color:rgba(229, 244, 252, 0.89);width:500px;">
                                     <tr >
-                                        <td> <input type="checkbox" name="filter[]" value="Vodka">Vodka </td>
+                                        <td> <input type="checkbox" name="filter" value="Vodka">Vodka </td>
                                         <td> <input type="checkbox" name="filter[]" value="Rye Whiskey">Rye Whiskey</td>
                                         <td> <input type="checkbox" name="filter[]" value="Gin">Gin</td>
                                          <td> <input type="checkbox" name="filter[]" value="Aperol"> Aperol</td>
@@ -94,7 +79,6 @@
                    
                                     </tr>
                                 </table>
-                           
                     </li>
                     <hr>
                     <li >
@@ -115,8 +99,6 @@
                     </li>
                     <hr>
                     <li> <p class="filter1">Juices</p>
-                       
-                        
                                 <table  cellpadding="4" style="background-color:rgba(229, 244, 252, 0.89); width:500px;">
                                     <tr >
                                         <td> <input type="checkbox" name="filter[]" value="Lemon juice">Lemon juice</td>
@@ -175,23 +157,20 @@
                     </li>
                     <hr>
                     <br>
-                 
-                        <p style="text-align: center;"> <button class="btn btn-light" type="submit">SEARCH </button>
-                  
-                   
-     
-                
+                    <span id="userType" style="display:none;">
+                    <?php $tip=$session = \Config\Services::session()->get("usertype");
+                                      if($tip=="Registered") echo "Registered";
+                                       else if($tip==null)  echo "Guest";
+                    ?></span>
+                    <p style="text-align: center;"> <button class="btn btn-light"  id="search">SEARCH </button>
                 </p> 
-
                 </ul>
-               
-               
             </div>
-             </form>
+            
            
             <div class="col-sm-1" >&nbsp;</div>
            
-            <div class="col-sm-6" style="background-color:white; padding-left: 10px;">
+            <div class="col-sm-6" style="background-color:white; padding-left: 10px;" id="results">
                 <p align="center">  <font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b>Top 10 highest rated cocktails</b></font><br> </p>
                 
                 <table class="table  table-light recipes">
@@ -201,13 +180,20 @@
                     ?>
                           <tr>
                         <td >
-                            <table style="width: 100%; height: 100%;">
+                            <table style="width: 100%; height: 100%; ">
                                 <tr>
                                     <td style="background-color: rgb(216, 221, 221); " ><img src="<?php echo base_url('images/cocktails/'.$cocktail->Image)?>" alt="" style="width:150px; height: 200px;"></td>
-                                    <td style="background-color: rgb(216, 221, 221); "><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b><a href="cocktail_unregistered.html"> <?=$cocktail->CocktailName?></a></b></font><br>
-                                        <img src="<?php echo base_url('images/others/starss.png')?>" alt="" style="width:130px; height: 40px;">
+                                    <td style="background-color: rgb(216, 221, 221); "><font size="15pt" ; color="grey"; face="Brush Script MT, Brush Script Std, cursive";><b><a href="
+                                    <?php $tip=$session = \Config\Services::session()->get("usertype");
+                                      if($tip=="Registered")
+                                        echo site_url("RegisteredController/cocktailDisplayRegistered/".$cocktail->IdCocktail);
+                                      else if($tip==null) echo site_url("GuestController/cocktailDisplayUnregistered/".$cocktail->IdCocktail);
                                       
-                                     
+                                      
+                                      ?>
+                                    
+                                    "> <?=$cocktail->CocktailName?></a></b></font><br>
+                                    <span class="stars"><?php echo $cocktail->AvgGrade ?></span>
                                         <br><i><?=$cocktail->Description?></i> </td>
                                    
                                 </tr>

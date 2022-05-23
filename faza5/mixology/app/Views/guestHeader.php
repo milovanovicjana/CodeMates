@@ -27,9 +27,10 @@
                <a href="#go"></a>   Mixology  
             </div>
             <div class="col-4 logo">
+                
                <img src="<?php echo base_url('images/others/logo5.png')?>" alt="">
-               <button class="btn btn-light btn-lg"><a href="login.html">Log in</a> </button>
-               <button class="btn btn-light btn-lg"><a href="register.html"> Sign up</a></button>
+               <button class="btn btn-light btn-lg" onclick="window.location='<?php echo site_url("GuestController/showLogin"); ?>'" >Log in</button>
+               <button class="btn btn-light btn-lg"  onclick="window.location='<?php echo site_url("GuestController/showRegister"); ?>'" ">Sign up</button>
             </div>
    
         </div>
@@ -39,7 +40,7 @@
             <div class="col-12">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#"> Home page</a>
+                        <a class="nav-link" href="<?=site_url("GuestController/index")?>"> Home page</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled " href="#"> Recommended</a>

@@ -57,7 +57,7 @@ class AdminController extends BaseController
         $this->session->destroy();
         return redirect()->to(site_url('GuestController'));
     }
-
+    
     public function showAdminInfoChange(){
         return $this->show('admin_info_change',[]);
      }
