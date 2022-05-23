@@ -36,7 +36,6 @@ class RegisteredController extends BaseController
         $cntSavings=0;
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
 
-
         $steps = $model->getSteps($id);
         $ingredients = $model->getAllIngredientsForCocktail($id);
         return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings,'steps'=>$steps]);
@@ -158,7 +157,9 @@ class RegisteredController extends BaseController
         
     }
 
+
     public function search() { //dodat ajax
+
         $db= db_connect();
         $model=new Model($db);
         
@@ -180,7 +181,8 @@ class RegisteredController extends BaseController
        else{
            $cocktails=$model->search([],$type,$name);
        }
-       echo "<script type='text/JavaScript'> 
+      
+      echo "<script type='text/JavaScript'> 
        jQuery(document).ready(function(){
          var starWidth = 40;
       

@@ -202,6 +202,4 @@ class Model
         return $this->db->table('steps')->where('IdCocktail',$id)->orderBy('Id','ASC')->get()->getResult();
     }
 
-
-
 }
