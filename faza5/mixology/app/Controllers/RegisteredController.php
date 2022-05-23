@@ -36,9 +36,9 @@ class RegisteredController extends BaseController
         $cntSavings=0;
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
 
-
+        $steps = $model->getSteps($id);
         $ingredients = $model->getAllIngredientsForCocktail($id);
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings,'steps'=>$steps]);
 
     }
 
@@ -50,34 +50,37 @@ class RegisteredController extends BaseController
         $userId = $this->session->get('user')->IdUser;
 
         $stars = $this->request->getVar('star');
-        $ocenio = $model->checkGrade($id, $userId);
-        if($ocenio == null){
-            //ubaci
-            $model->insertGrade($id, $userId, $stars);
-        }else{
-            //update
-            $model->updateGrade($id, $userId, $stars);
+        if($stars){
+            $ocenio = $model->checkGrade($id, $userId);
+            if($ocenio == null){
+                //ubaci
+                $model->insertGrade($id, $userId, $stars);
+            }else{
+                //update
+                $model->updateGrade($id, $userId, $stars);
+            }
+
+            $allGrades = $model->getAllGradesForCocktail($id);
+            $cnt = 0;
+            $sum = 0;
+            foreach($allGrades as $grade){
+                $cnt = $cnt + 1;
+                $sum = $sum + $grade->Grade;
+            }
+
+            $avg = $sum/$cnt;
+            $model->updateAvgGradeForCocktail($id, $avg);
         }
-
-        $allGrades = $model->getAllGradesForCocktail($id);
-        $cnt = 0;
-        $sum = 0;
-        foreach($allGrades as $grade){
-            $cnt = $cnt + 1;
-            $sum = $sum + $grade->Grade;
-        }
-
-        $avg = $sum/$cnt;
-        $model->updateAvgGradeForCocktail($id, $avg);
-
         $savings = $model->getCntSavings($id);
         $cntSavings=0;
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
 
         $ingredients = $model->getAllIngredientsForCocktail($id);
         $cocktail = $model->getCocktailById($id);
+        $steps = $model->getSteps($id);
+        $ingredients = $model->getAllIngredientsForCocktail($id);
         
-        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings]);
+        return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings, 'steps'=>$steps]);
     }
 
     public function displaySavedCocktails(){
@@ -109,5 +112,74 @@ class RegisteredController extends BaseController
        return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
     }
 
+    public function logout(){
+        $this->session->destroy();
+        return redirect()->to(site_url('GuestController'));
+    }
+
+
+    public function displayRecommendedCocktails(){
+        $db= db_connect();
+        $model=new Model($db);
+        $user = $this->session->get('user');
+
+        $retval = $model->getRecommended($user->IdUser);
+
+        $cocktails = [];
+
+        foreach ($retval as $ingredient) {
+            
+            if(!array_key_exists($ingredient->IdCocktail, $cocktails)){
+                $cocktails[$ingredient->IdCocktail] = $ingredient;
+                $cocktails[$ingredient->IdCocktail]->sumAlcohol = 0;
+                $cocktails[$ingredient->IdCocktail]->sumGrading = 0;
+            }
+            $cocktails[$ingredient->IdCocktail]->sumAlcohol += $ingredient->Quantity * 10;
+            $cocktails[$ingredient->IdCocktail]->sumGrading += $ingredient->Quantity * $ingredient->Value;
+        }
+
+        foreach ($cocktails as $cocktail) {
+            if($cocktail->sumGrading != 0){
+                $cocktail->match = round(($cocktail->sumGrading / $cocktail->sumAlcohol)*100);
+            }else{
+                $cocktail->match = 0;
+            }
+            
+        }
+
+        usort($cocktails, function($c1, $c2) {return $c2->match - $c1->match;});
+
+        return $this->show('recommended_cocktails',['recommendedCocktails'=>$cocktails]);
+        
+    }
+
+    public function search() {
+        $db= db_connect();
+        $model=new Model($db);
+        
+        $name=$this->request->getVar('cocktailName');
+        $type=$this->request->getVar('Type');
+        $filters= $this->request->getVar('filter');
+        
+        if($name=="" && $type=="" && $filters==[]){
+            $topRatedCocktails=$model->getTopRatedCocktails();
+            return $this->show('search',['message'=>'Please enter a cocktail name or click on the filters to start searching.','topRatedCocktails'=>$topRatedCocktails]);;
+        }
+        
+       if($filters!=[]) {
+           $arrayOfFilters= implode(",", $this->request->getVar('filter'));
+           $cocktails=$model->search($arrayOfFilters,$type,$name);
+       }
+       else{
+           $cocktails=$model->search([],$type,$name);
+       }
+       if($cocktails==null){
+           //Sorry, no results were found for “sdsdsds”. 
+           return $this->show('searchResults',['cocktails'=>$cocktails,'messageResultNotFound'=>'Sorry, no results were found']);
+           
+       }
+        
+        return $this->show('searchResults',['cocktails'=>$cocktails]);
+     }
 
 }

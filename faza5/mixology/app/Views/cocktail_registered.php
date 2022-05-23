@@ -78,10 +78,27 @@
                 </div>
                 <div id="price" >Average price : <?=$cocktail->Price?>&euro; </div>
             </div>
-            <div class="col-sm-8 center" >
-                <p><?=$cocktail->Recipes?>
-
-                
+            <div class="col-sm-8 center" id="centar">
+                <div id="naziv_koktela_prikaz" align="center"><font  color="grey"; face="Brush Script MT, Brush Script Std, cursive";><?=$cocktail->CocktailName?></font></div>
+                <br><br><br><br>
+                <p>
+                    <br>
+                    <?=$cocktail->Recipes?>
+                    <br><br><br>
+                    <?php if($steps != null) {?>
+                    <ol type="1">
+                        <h3>Steps:</h3>
+	                    <br>
+                        <?php foreach($steps as $step){?>
+                            <li><?=" ".$step->Step?></li>
+                            <br>
+                        <?php 
+                        }
+                        ?>
+                    </ol>
+                    <br>
+                    <?php }?>
+                </p>
                 
                     
                 <!--The Mojito is one of the most popular rum cocktails served today, with a recipe known around the world. The origins of this classic drink can be traced to Cuba and the 16th-century cocktail El Draque. Named for Sir Francis Drake, the English sea captain and explorer who visited Havana in 1586, El Draque was composed of aguardiente (a cane-spirit precursor to rum), lime, mint and sugar. It was supposedly consumed for medicinal purposes, but it’s easy to believe that drinkers enjoyed its flavor and effects.
@@ -121,7 +138,7 @@
                 </ol>
                         -->  
 
-                </p>
+                
             </div>
         </div>
 

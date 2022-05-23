@@ -72,9 +72,9 @@ class GuestController extends BaseController
 
         $cocktail = $model->getCocktailById($id);
        
-
+        $steps = $model->getSteps($id);
         $ingredients = $model->getAllIngredientsForCocktail($id);
-        return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients]);
+        return $this->show('cocktail_unregistered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients, 'steps'=>$steps]);
 
     }
 
@@ -100,6 +100,12 @@ class GuestController extends BaseController
         $ingredients = $model->getRegisterIngredients();
         $tmpuser = $model->getUserByUsername($username);
 
+        if($birthdate != null){
+            $latestValid = date("Y-m-d", mktime(0, 0, 0, date("m"),   date("d"),   date("Y")-18));
+            if($birthdate > $latestValid){
+                return $this->show('register',['ingredients'=>$model->getRegisterIngredients(), 'message'=>'You must be 18 or older to register.']);
+            }
+        }
 
         if($tmpuser!=null){
             return $this->show('register',['ingredients'=>$model->getRegisterIngredients(), 'message'=>'User name already taken.']);
@@ -142,7 +148,7 @@ class GuestController extends BaseController
             $preferencesModel->insert($newPreference);
         }
 
-        return redirect()->to(site_url('UserController'));
+        return redirect()->to(site_url('RegisteredController'));
     }
 
     public function login(){

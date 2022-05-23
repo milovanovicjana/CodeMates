@@ -165,5 +165,18 @@ class Model
         $this->db->table('saved')->where('IdCocktail',$id)->where('IdUser',$userId)->delete();
     }
 
+    public function getRecommended($userId){
+        return $this->db->table('cocktail')
+        ->where('Approved',1)
+        ->join('contains','contains.IdCocktail=cocktail.IdCocktail')
+        ->join('preferences','contains.IdIngredient=preferences.IdIngredient')
+        ->where('IdUser', $userId)
+        ->get()->getResult();
+    }
+
+    public function getSteps($id){
+        return $this->db->table('steps')->where('IdCocktail',$id)->orderBy('Id','ASC')->get()->getResult();
+    }
+
 
 }
