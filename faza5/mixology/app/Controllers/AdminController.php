@@ -53,4 +53,9 @@ class AdminController extends BaseController
          return $this->approveCocktailsPage();
       }
 
+      public function logout(){
+        $this->session->destroy();
+        return redirect()->to(site_url('GuestController'));
+    }
+
 }

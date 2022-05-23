@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo base_url('style.css')?>">
 
 </head>
 <body>
@@ -77,18 +77,17 @@
                 <br><br>
 
                 <?php 
-                
                 foreach($ingredients as $ingredient){
-                    ?>
+                ?>
 
-                    <input type="range" class="custom-range" min="0" max="10" id="<?=$ingredient->IdIngredient?>" name="<?=$ingredient->IdIngredient?>">
-                    <label for="<?=$ingredient->IdIngredient?>" class="range-label"><?=$ingredient->Name?></label>
+                    <input type="range" class="custom-range" min="0" max="10" id="<?=$ingredient->IdIngredient?>range" name="<?=$ingredient->IdIngredient?>">
+                    <label for="<?=$ingredient->IdIngredient?>range" class="range-label"><?=$ingredient->Name?></label>
+                    
                     <br>
 
                     
                 <?php    
                 }
-                
                 ?>
                 
                 

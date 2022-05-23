@@ -40,7 +40,7 @@
             <div class="col-12">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#"> Home page</a>
+                        <a class="nav-link" href="<?=site_url("GuestController/index")?>"> Home page</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled " href="#"> Recommended</a>

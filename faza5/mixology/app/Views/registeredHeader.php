@@ -32,7 +32,7 @@
 
                 <i><font size="5pt" color="grey"><?= "Hello ".$name."!"?></font> </i>  &nbsp;&nbsp;&nbsp;
 
-               <button class="btn btn-light btn-lg"><a href="start_unreg.html"> Sign out</a></button>
+               <button class="btn btn-light btn-lg" onclick="window.location='<?php echo site_url("RegisteredController/logout"); ?>'"> Sign out</button>
                
             </div>
    
@@ -46,7 +46,7 @@
                         <a class="nav-link" href="<?= site_url("RegisteredController/index")?>"> Home page</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> Recommended</a>
+                        <a class="nav-link" href="<?= site_url("RegisteredController/displayRecommendedCocktails")?>"> Recommended</a>
                     </li>
                    
                     <li class="nav-item ">
