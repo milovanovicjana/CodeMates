@@ -224,6 +224,10 @@ class RegisteredController extends BaseController
      echo  "</table>";
      }
 
+     public function showAddCocktail1(){
+        return $this->show('add_cocktail1',[]);
+     }
+
      public function showInfoChange(){
         return $this->show('user_info_change',[]);
      }
