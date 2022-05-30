@@ -303,7 +303,7 @@ INSERT INTO `ingredient` (`IdIngredient`, `Name`, `Type`) VALUES
 (19, 'Gin', 'ALCOHOL'),
 (20, 'Tripple sec liqueur ', 'ALCOHOL'),
 (21, 'Simple syrup', 'SYRUP'),
-(22, 'Lemon', 'FRUITE'),
+(22, 'Lemon', 'FRUIT'),
 (23, 'Blue curacao', 'ALCOHOL'),
 (24, 'Cointreau', 'ALCOHOL'),
 (25, 'Cranberry', 'FRUIT'),

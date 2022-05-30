@@ -98,27 +98,6 @@ a:hover{
   border-color: rgba(229, 244, 252, 0.89);
 }
 
-#form-register-div {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-.form-register input[type="text"]{
-  width: 60%;
-}
-
-.form-register input[type="email"]{
-  width: 60%;
-}
-
-.form-register input[type="date"]{
-  width: 60%;
-}
-
-.form-register input[type="password"]{
-  width: 60%;
-}
-
 .form-register button{
     font-weight: bolder;
     color: rgb(66, 61, 61);
@@ -128,29 +107,15 @@ a:hover{
     margin-bottom: 100px;
 }
 
-.form-register input{
-    margin-bottom: 5px;
-}
-
-.custom-range::-moz-range-track {
-  background-color: white;
-}
-
-.custom-range::-webkit-slider-runnable-track {
-  background-color: white;
-}
-
-.custom-range{
-    width: 50%;
+.form-register label{
+  font-weight: bolder;
+  color: rgb(66, 61, 61);
 }
 
 .range-label{
-  font-weight: bolder;
-  color: rgb(66, 61, 61);
-  padding: 10px;
+  margin-top: 5px;
 }
 
-  
 .top-star {
   width: 100px;
   height: 100px;
@@ -181,4 +146,8 @@ span.stars, span.stars span {
 span.stars span {
   background-position: 0 0;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+}
+
+.custom-select{
+  width:20%
 }
