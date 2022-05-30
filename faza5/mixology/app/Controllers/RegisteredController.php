@@ -331,4 +331,24 @@ class RegisteredController extends BaseController
 
         echo $sum;
     }
+
+    public function showaddcocktail2(){
+        $db= db_connect();
+        $model=new Model($db);
+
+        $ingrDB = $model->getAllIngredients();
+        $ingrByType = [];
+
+        foreach ($ingrDB as $ingredient) {
+            if(!array_key_exists($ingredient->Type, $ingrByType)){
+                $ingrByType[$ingredient->Type] = [];
+            }
+            array_push($ingrByType[$ingredient->Type], $ingredient);
+        }
+
+        $this->show("add_cocktail_ingr",['ingrByType'=>$ingrByType]);
+    }
+
+
+
 }

@@ -202,4 +202,8 @@ class Model
         return $this->db->table('steps')->where('IdCocktail',$id)->orderBy('Id','ASC')->get()->getResult();
     }
 
+    public function getAllIngredients(){
+        return $this->db->table('ingredient')->get()->getResult();
+    }
+
 }

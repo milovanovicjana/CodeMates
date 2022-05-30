@@ -8,7 +8,6 @@
     <title>Register - Mixology</title>
     <link rel="icon" type="image/png" href="images/logo5.png"/>
 
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
@@ -18,86 +17,80 @@
 </head>
 <body>
     <div class="container-fluid">
+        <div class = "row" >
+            <div class="col-md-2 col-lg-4"></div>
+            <div class="col-sm-12 col-md-8 col-lg-4">
 
-        <br>
-        <br>
-
-        <div id="form-register-div">
-            <h4>Personal details</h4>
-            <p style="color:red"><?php if(isset($message)) echo $message?></p>
-            <br>
-            <form class="form-register" method="post" action="<?=site_url("GuestController/register")?>">
-                <label for="firstname">First name</label>
-                <div class="form-group"> 
-                <input type="text" class="form-control" id="firstname" name="firstname" required></input>
-                </div>
-                <label for="lastname">Last name</label>
-                <div class="form-group"> 
-                <input type="text" class="form-control" id="lastname" name="lastname" required></input>
-                </div>
-                <label for="email">Email</label>
-                <div class="form-group"> 
-                <input type="email" class="form-control" id="email" name="email" required></input>
-                </div>
-                <label for="username">User name</label>
-                <div class="form-group">
-                <input type="text" class="form-control" id="username" name="username" required></input>
-                </div>
-                <label for="password">Password</label>
-                <div class="form-group">
-                <input type="password" class="form-control" id="password" name="password" required></input>
-                </div>
-                <label for="password">Repeat password</label>
-                <div class="form-group">
-                <input type="password" class="form-control" id="passwordrpt" name="passwordrpt" required></input>
-                </div>
-
-                <label for="birthdate">Birth date</label>
-                <div class="form-group">
-                <input type="date" class="form-control" id="birthdate" name="birthdate" required></input>
-                </div>
-
-                <label >Gender</label>
+                <h4>Personal details</h4>
+                <p style="color:red"><?php if(isset($message)) echo $message?></p>
                 <br>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="gender" id="male" checked>
-                    <label  for="male" style="margin-left: 5px;">Male</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input  type="radio" name="gender" id="female" >
-                    <label  for="female" style="margin-left: 5px;">Female</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input type="radio" name="gender" id="other">
-                    <label for="other" style="margin-left: 5px;">Other</label>
-                </div>
+                <form class="form-register" method="post" action="<?=site_url("GuestController/register")?>">
+                    <label for="firstname">First name</label>
+                    <div class="form-group"> 
+                    <input type="text" class="form-control" id="firstname" name="firstname" required></input>
+                    </div>
+                    <label for="lastname">Last name</label>
+                    <div class="form-group"> 
+                    <input type="text" class="form-control" id="lastname" name="lastname" required></input>
+                    </div>
+                    <label for="email">Email</label>
+                    <div class="form-group"> 
+                    <input type="email" class="form-control" id="email" name="email" required></input>
+                    </div>
+                    <label for="username">User name</label>
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" required></input>
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" required></input>
+                    </div>
+                    <label for="password">Repeat password</label>
+                    <div class="form-group">
+                    <input type="password" class="form-control" id="passwordrpt" name="passwordrpt" required></input>
+                    </div>
 
-                <br><br><br>
-                <h4>Drink preferences</h4>
-                <br><br>
+                    <label for="birthdate">Birth date</label>
+                    <div class="form-group">
+                    <input type="date" class="form-control" id="birthdate" name="birthdate" required></input>
+                    </div>
 
-                <?php 
-                foreach($ingredients as $ingredient){
-                ?>
+                    <label >Gender</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="gender" id="male" value='M' checked>
+                        <label  for="male" style="margin-left: 5px;">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input  type="radio" name="gender" id="female" value='F'>
+                        <label  for="female" style="margin-left: 5px;">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="gender" id="other" value='O'>
+                        <label for="other" style="margin-left: 5px;">Other</label>
+                    </div>
 
-                    <input type="range" class="custom-range" min="0" max="10" id="<?=$ingredient->IdIngredient?>range" name="<?=$ingredient->IdIngredient?>">
-                    <label for="<?=$ingredient->IdIngredient?>range" class="range-label"><?=$ingredient->Name?></label>
-                    
+                    <br><br><br>
+                    <h4>Drink preferences</h4>
                     <br>
 
+                    <?php 
+                    foreach($ingredients as $ingredient){
+                    ?>
+                        <label for="<?=$ingredient->IdIngredient?>range" class="range-label"><?=$ingredient->Name?></label>
+                        <input type="range" class="custom-range" min="0" max="10" id="<?=$ingredient->IdIngredient?>range" name="<?=$ingredient->IdIngredient?>">
+                        
+                        <br>
+                    <?php    
+                    }
+                    ?>
                     
-                <?php    
-                }
-                ?>
-                
-                
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                </form>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-            </form>
+            </div>
+            <div class="col-md-2 col-lg-4"></div>
         </div>
-
-        
-            
     </div>
 </body>
 </html>

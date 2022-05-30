@@ -18,25 +18,21 @@
 </head>
 <body>
     <div class="container-fluid">
-        
+        <div class="row">
+            <div class="col-sm-12 text-center" >
 
-        <br>
-        <br>
-        <br>
 
-        <div class="text-center" >
-            <form class="form-signin" method="post" action="<?=site_url("GuestController/login")?>">
-                <p style="color:red"><?php if(isset($message)) echo $message?></p>
-                <input type="text" id="inputUsername" class="form-control" placeholder="User name" name="username" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-                
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-            </form>
+                <form class="form-signin" method="post" action="<?=site_url("GuestController/login")?>">
+                    <p style="color:red"><?php if(isset($message)) echo $message?></p>
+                    <input type="text" id="inputUsername" class="form-control" placeholder="User name" name="username" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                    
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+                </form>
+
+
+            </div>
         </div>
-        
-
-
-
     </div>
 </body>
 </html>
