@@ -4,6 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Database\ConnectionInterface;
 
+/**
+ * @author  Ana Vukasinovic 0298/2019, Milica Aleksic 0716/2019, Jana Milovanovic 0292/2019, Aleksa Vujnic 0479/2019
+ *
+ * Model - klasa modela za pristup bazi podataka
+ */
+
 class Model
 {
     protected $db;
@@ -12,6 +18,11 @@ class Model
     {
         $this->db = &$db;
     }
+
+    /**Jana Milovanovic 0292/2019 
+     * search - funkcija koja vrsi pretragu koktela tako sto vrsi spajanje tabela ingredient,contains i cocktail 
+     * @return dohvaceni kokteli
+     */
     
     public function search( $arrayOfFilters,$type,$name){
         
@@ -45,6 +56,10 @@ class Model
         return $b->get()->getResult();
     }
     
+    /**Jana Milovanovic 0292/2019 
+     * getTopRatedCocktails - funkcija koja iz baze dohvata sve koktele, zatim ih sortira opadajuce po oceni i vraca 10 najbolje ocenjenih koktela 
+     * @return dohvaceni kokteli
+     */
     public function getTopRatedCocktails() {
           return $this->db->table('cocktail')
                   ->orderBy('AvgGrade',"DESC")
@@ -134,14 +149,26 @@ class Model
         ]);
     }
 
+      /**Jana Milovanovic 0292/2019 
+     * getAllUsers - funkcija koja iz baze dohvata sve korisnike
+     * @return dohvaceni korisnici
+     */
     public function getAllUsers(){
         return $this->db->table('user')->get()->getResult();
     }
 
+    /**Jana Milovanovic 0292/2019 
+     * getUnapprovedCocktails - funkcija koja iz baze dohvata sve neodobrene koktele
+     * @return dohvaceni kokteli
+     */
     public function getUnapprovedCocktails(){
         return $this->db->table('cocktail')->where("Approved",0)->get()->getResult();
     }
     
+    /**Jana Milovanovic 0292/2019 
+     * deleteUsersAccounts - funkcija koja iz baze brise oznacene korisnike
+     * @return void
+     */
     public function deleteUsersAccounts($usersCheckBoxs){
      
        foreach($usersCheckBoxs as $userCb){
@@ -149,6 +176,11 @@ class Model
        }
     }
 
+     /**Jana Milovanovic 0292/2019 
+     * approveCocktails - funkcija koja iz baze brise koktel, ako admin ne zeli da ga odobri ili
+     * update-uje bazu postavljanjem polja approved na 1, ako admin zeli da odobri kokktel
+     * @return void
+     */
     public function approveCocktails($cocktailsCheckBoxs,$tip){
        if($tip=='A'){
             foreach($cocktailsCheckBoxs as $cocktail){
@@ -166,7 +198,8 @@ class Model
 
    
 
-    public function getCocktailById($id){
+    
+     public function getCocktailById($id){
         return $this->db->table('cocktail')->where('idCocktail',$id)->get()->getRow();
     }
 

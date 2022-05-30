@@ -5,6 +5,12 @@ use App\Models\Model;
 use App\Models\PreferencesModel;
 use App\Models\UserModel;
 
+/**
+ * @author  Ana Vukasinovic 0298/2019, Milica Aleksic 0716/2019, Jana Milovanovic 0292/2019, Aleksa Vujnic 0479/2019
+ *
+ * RegisteredController - klasa kontrolera za funkcionalnosti ulogovanog korisnika
+ */
+
 class RegisteredController extends BaseController
 {
     
@@ -15,6 +21,12 @@ class RegisteredController extends BaseController
         echo view("Views/footer");
     }
     
+
+        
+    /**Jana Milovanovic 0292/2019 
+     * index - dohvata 10 najbolje ocenjenih koktela iz baze i prikazuje ih korisniku na pocetnoj strani
+     * @return poziv fje show
+     */
     public function index()
     {
        $db= db_connect();
@@ -157,6 +169,11 @@ class RegisteredController extends BaseController
         
     }
 
+    /**Jana Milovanovic 0292/2019 
+     * search - sluzi za pretragu koktela u bazi(pretraga se moze vrsiti po nazivu koktela, po sastojku ili po oba parametra)
+     * ako korisnik ne unese ni filter ni naziv koktela, kao i ako trazeni koktel ne postoji, dobija odgovarajucu poruku
+     * @return dohvaceni kokteli
+     */
 
     public function search() { //dodat ajax
 

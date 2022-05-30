@@ -6,8 +6,17 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
+/**
+ * @author Jana Milovanovic 0292/2019 
+ *
+ * RegisteredFilter - klasa koja sprecava da neulogovani korisnici iil admin otvaraju stranice ulogovanog korisnika 
+ */
+
 class RegisteredFilter implements FilterInterface
 {
+     /**
+     * poziva se pre bilo koje funkcije iz RegisteredController-a
+     */
     public function before(RequestInterface $request, $arguments = null)
     {
         $session=session();

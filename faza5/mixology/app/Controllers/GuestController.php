@@ -6,11 +6,18 @@ use App\Models\PreferencesModel;
 use App\Models\RegisteredModel;
 use App\Models\UserModel;
 
-
+/**
+ * @author Jana Milovanovic 0292/2019, Ana Vukasinovic 0298/2019, Aleksa Vujnic 0479/2019
+ *
+ * GuestController - klasa kontrolera za funkcionalnosti neulogovanog korisnika
+ */
 
 class GuestController extends BaseController
 {
-    
+    /**Jana Milovanovic 0292/2019 
+     * show - sluzi za prikaz stranica za neulogovanog korisnika, poziva se iz nekih fja ove klase
+     * @return void
+     */
     public function show($path,$data) {
         
         echo view("Views/guestHeader");
@@ -29,6 +36,10 @@ class GuestController extends BaseController
         $this->show('register', ['ingredients'=>$model->getRegisterIngredients()]);
     }
     
+    /**Jana Milovanovic 0292/2019 
+     * index - dohvata 10 najbolje ocenjenih koktela iz baze i prikazuje ih korisniku na pocetnoj strani
+     * @return poziv fje show
+     */
     public function index()
     {
        $db= db_connect();
@@ -37,6 +48,12 @@ class GuestController extends BaseController
        return $this->show('search',['topRatedCocktails'=>$topRatedCocktails]);
     }
     
+
+    /**Jana Milovanovic 0292/2019 
+     * search - sluzi za pretragu koktela u bazi(pretraga se moze vrsiti po nazivu koktela, po sastojku ili po oba parametra)
+     * ako korisnik ne unese ni filter ni naziv koktela, kao i ako trazeni koktel ne postoji, dobija odgovarajucu poruku
+     * @return dohvaceni kokteli
+     */
     public function search() { //dodat ajax
 
        $db= db_connect();
@@ -101,7 +118,7 @@ class GuestController extends BaseController
                                     echo $cocktail->Description;
                                     echo "</i> </td>"; echo    "</table>";   echo    "</td>";   echo    "</tr>";                        
      }
-    echo  "</table>";
+        echo  "</table>";
     }
 
 
