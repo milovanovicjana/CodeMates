@@ -95,3 +95,10 @@ input[name="inlineRadioOptions4"] {
 input[name="inlineRadioOptions5"] {
 	accent-color: rgb(146, 206, 90);
 }
+
+#cocktail_picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

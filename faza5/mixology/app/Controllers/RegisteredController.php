@@ -225,7 +225,11 @@ class RegisteredController extends BaseController
      }
 
      public function showAddCocktail1(){
-        return $this->show('add_cocktail1',[]);
+        return $this->show('add_cocktail_1',[]);
+     }
+
+     public function showAddCocktail3(){
+        return $this->show('add_cocktail_3',[]);
      }
 
      public function showInfoChange(){
@@ -244,6 +248,50 @@ class RegisteredController extends BaseController
         return $this->show('quiz', []);
     }
 
+    public function addCocktail(){
+
+        $name = $this->request->getVar('name');
+        $description = $this->request->getVar('description');
+        echo($description);
+        $image = $this->request->getFile('image');
+
+        $nameCocktail = $name.'.'.$image->getExtension();
+        $image->store('../../public/images/cocktails', $nameCocktail);
+
+        $db= db_connect();
+        $model=new Model($db);
+
+        $model->insertCocktail($name, $description, $nameCocktail);
+
+        return redirect()->to(site_url('RegisteredController/showAddCocktail3'));
+
+    }
+
+    public function addSteps(){
+
+        $step = $this->request->getVar('step');
+
+        $db= db_connect();
+        $model=new Model($db);
+
+        $cocktail = $model->getLastCocktail();
+
+        $IdC = $cocktail->IdCocktail;
+        $lastStep = $model->getLastStep($IdC);
+        
+        if($lastStep == null) {
+            $IdS = 1;
+        }
+        else {
+            $IdS = $lastStep->Id + 1;
+        }
+        $model->addStep($IdC, $IdS, $step);
+
+        return redirect()->to(site_url('RegisteredController/showAddCocktail3'));
+
+    }
+
+    // menja informacije 
      public function changeInfo(){
         $firstname = $this->request->getVar('firstname');
         $lastname = $this->request->getVar('lastname');
@@ -333,6 +381,24 @@ class RegisteredController extends BaseController
 
         $sum = $question1 + $question2 + $question3 + $question4 + $question5;
 
-        echo $sum;
+        //return $this->show('quiz_result', []);
+
+        //echo $sum;
+
+        if($sum < 8){
+            return $this->show('quiz_result', ['tekst'=>'You are a Blue Lagoon!', 'slika'=>'bluelagoon']);
+        }
+        else if($sum < 14){
+            return $this->show('quiz_result', ['tekst'=>'You are a Tequila Sunrise!', 'slika'=>'tequilasunrise']);
+        }
+        else if($sum < 18){
+            return $this->show('quiz_result', ['tekst'=>'You are a Mohito!', 'slika'=>'mohito']);
+        }
+        else if($sum <22){
+            return $this->show('quiz_result', ['tekst'=>'You are a Bloody Mary!', 'slika'=>'bloodymary']);
+        }
+        else{
+            return $this->show('quiz_result', ['tekst'=>'You are a Sex On The Beach!', 'slika'=>'sexonthebeach']);
+        }
     }
 }

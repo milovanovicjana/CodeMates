@@ -76,6 +76,27 @@ class Model
         $this->db->table('user')->set('Password',$password)->where('IdUser',$userId)->update();
     }
 
+    public function getLastCocktail() {
+        return $this->db->table('cocktail')
+                ->orderBy('IdCocktail',"DESC")
+                ->limit(1)->get()->getRow();
+    }
+
+    public function getLastStep($IdC) {
+        return $this->db->table('steps')
+                ->orderBy('Id', "DESC")
+                ->where('IdCocktail', $IdC)
+                ->limit(1)->get()->getRow();
+    }
+
+    public function addStep($IdC, $IdS, $step){
+        $this->db->table('steps')->insert([
+            'IdCocktail' => $IdC,
+            'Id' => $IdS,
+            'Step' => $step
+        ]);
+    }
+
     public function getAllUsers(){
         return $this->db->table('user')->get()->getResult();
     }
@@ -89,6 +110,14 @@ class Model
        foreach($usersCheckBoxs as $userCb){
            $this->db->table('user')->where('IdUser',$userCb)->delete();
        }
+    }
+
+    public function insertCocktail($name, $description, $image){
+        $this->db->table('cocktail')->insert([
+            'CocktailName' => $name,
+            'Description' => $description,
+            'Image' => $image
+        ]);
     }
 
     public function approveCocktails($cocktailsCheckBoxs,$tip){

@@ -1,4 +1,4 @@
-<!-- @author Milica Aleksic -->
+<!-- Milica Aleksic 716/19 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,37 +19,34 @@
 </head>
 <body>
 
-        <!--POCETAK KODA ZA DODAVANJE KOKTELA-->
-        <div class="container">
-            <div class="row center">
-                <div class="col-sm-2"> &nbsp; </div>
-                <form class="col-sm-8">
-            <h2>Basic information (1/2)</h2>
-            <br>
-            <form class="form-register">
+    <!-- unos opstih informacija o koktelu -->
+    <div class="container">
+        <div class="row center">
+            <div class="col-sm-2"> &nbsp; </div>
+            <div class="col-sm-8">
+            <?= form_open_multipart('RegisteredController/addCocktail') ?>                
+            <h2>Basic information (1/3)</h2>
+                <br>
                 <label>Name</label>
                 <div class="form-group"> 
-                    <input type="text" class="form-control" required> 
+                    <input type="text" name="name" class="form-control" required> 
                 </div> 
                 <label>Description</label>
                 <div class="form-group"> 
-                    <textarea class="form-control" id="description" rows="5"></textarea>
+                    <textarea class="form-control" name="description" id="description" rows="5"></textarea>
                 </div> 
                 <label>Image</label>
                 <div class="form-group"> 
-                    <input type="file"> 
+                    <input type="file" name="image"> 
                 </div> 
                 <br>
                 <button class="btn btn-lg btn-primary btn-block button_next btn-light" type="submit">Next</button>
                 <br>
             </form> 
+            </div>
             <div class="col-sm-2"> &nbsp; </div> 
         </div>
-
-            
-        </div>
-
-
     </div>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- @author Milica Aleksic -->
+<!-- Milica Aleksic 716/19 -->
 
 <html>
 
@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url('style_mili.css')?>">
-    <script src="<?php echo base_url('skripta2.js')?>"></script>
+    
 
 </head>
 
@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row center">
             <div class="col-sm-2"> &nbsp; </div>
-            <form class="col-sm-8" name="answer">
+            <form class="col-sm-8" name="answer" method="post" action="<?=site_url("RegisteredController/quiz")?>">
                 <h1 style="text-align:center">What coctail describes your personality?</h1>
                 <br><br>
 
@@ -174,23 +174,7 @@
                 </div>
 
                 <br>
-                <button class="btn btn-lg btn-primary btn-block btn-light button_confirm" onclick="sumAnswers()" type="button" data-toggle="modal" data-target="#popCoctail">Finish quiz</button>
-                <div class="modal fade" id="popCoctail">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">You are Mohito!</h4>
-                            </div>
-                            <div class="modal-body" style="text-align:center">
-                                 <img src="<?php echo base_url('images/others/mohito.png')?>" alt="" height="500" width="250" >
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger button_close btn-lg btn-primary btn-block btn-light finish" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <button class="btn btn-lg btn-primary btn-block btn-light button_confirm" type="submit">Finish quiz</button>
             </form>
             <div class="col-sm-2"> &nbsp; </div>
             </div>
