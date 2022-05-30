@@ -1,4 +1,4 @@
-<!-- @author Jana Milovanovic -->
+<!-- Milica Aleksic 716/19 -->
 
 <html>
     <head>
@@ -14,7 +14,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style_mili.css">
+        <link rel="stylesheet" href="<?php echo base_url('style_mili.css')?>">
     
     </head>
     

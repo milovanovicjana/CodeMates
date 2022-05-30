@@ -53,7 +53,7 @@
                         <a class="nav-link " href="<?= site_url("RegisteredController/displaySavedCocktails")?>">Saved</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Add new cocktail</a>
+                        <a class="nav-link" href="<?= site_url("RegisteredController/showAddCocktail1")?>">Add new cocktail</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= site_url("RegisteredController/showQuiz")?>">Quiz</a>
@@ -67,7 +67,6 @@
         </div>
 
 
-        <br>
         <br>
         <br>
         
