@@ -52,36 +52,59 @@ class Model
                   ->limit(10)->get()->getResult();
     }
 
+    // menja username korisnika u tabeli
+    // @params id korisnika($userId), novo korisnicko ime($username)
+    // @return void
     public function changeUsername($userId, $username){
         $this->db->table('user')->where('IdUser',$userId)->set('Username',$username)->update();
     }
 
+    // menja ime korisnika u tabeli
+    // @params id korisnika($userId), novo ime($firstname)
+    // @return void
     public function changeName($userId, $firstname){
         $this->db->table('user')->set('Name',$firstname)->where('IdUser',$userId)->update();
     }
 
+    // menja prezime korisnika u tabeli
+    // @params id korisnika($userId), novo prezime($lastname)
+    // @return void
     public function changeSurname($userId, $lastname){
         $this->db->table('user')->set('Surname',$lastname)->where('IdUser',$userId)->update();
     }
 
+    // menja mejl korisnika u tabeli
+    // @params id korisnika($userId), nov mejl($email)
+    // @return void
     public function changeMail($userId, $email){
         $this->db->table('user')->set('Mail',$email)->where('IdUser',$userId)->update();
     }
 
+    // menja pol korisnika u tabeli
+    // @params id korisnika($userId), nov pol($gender)
+    // @return void
     public function changeGender($userId, $gender){
         $this->db->table('user')->set('Gender',$gender)->where('IdUser',$userId)->update();
     }
 
+    // menja sifru korisnika u tabeli
+    // @params id korisnika($userId), nova sifra($password)
+    // @return void
     public function changePassword($userId, $password){
         $this->db->table('user')->set('Password',$password)->where('IdUser',$userId)->update();
     }
 
+    // dohvata poslednji dodat koktel
+    // @return red iz tabele cocktail
     public function getLastCocktail() {
         return $this->db->table('cocktail')
                 ->orderBy('IdCocktail',"DESC")
                 ->limit(1)->get()->getRow();
     }
 
+    // dohvata poslednji unet korak za odredjeni koktel
+    // @params id koktela($IdC)
+    // @return red iz tabele steps
     public function getLastStep($IdC) {
         return $this->db->table('steps')
                 ->orderBy('Id', "DESC")
@@ -89,11 +112,25 @@ class Model
                 ->limit(1)->get()->getRow();
     }
 
+    // dodaje novi korak u recept
+    // @params id koktela($IdC), id koraka($IdS), tekst koraka($step)
+    // @return void
     public function addStep($IdC, $IdS, $step){
         $this->db->table('steps')->insert([
             'IdCocktail' => $IdC,
             'Id' => $IdS,
             'Step' => $step
+        ]);
+    }
+
+    // dodaje koktel u tabelu
+    // @params naziv koktela($name), opis koktela($description), ime slike($image)
+    // @return void
+    public function insertCocktail($name, $description, $image){
+        $this->db->table('cocktail')->insert([
+            'CocktailName' => $name,
+            'Description' => $description,
+            'Image' => $image
         ]);
     }
 
@@ -110,14 +147,6 @@ class Model
        foreach($usersCheckBoxs as $userCb){
            $this->db->table('user')->where('IdUser',$userCb)->delete();
        }
-    }
-
-    public function insertCocktail($name, $description, $image){
-        $this->db->table('cocktail')->insert([
-            'CocktailName' => $name,
-            'Description' => $description,
-            'Image' => $image
-        ]);
     }
 
     public function approveCocktails($cocktailsCheckBoxs,$tip){

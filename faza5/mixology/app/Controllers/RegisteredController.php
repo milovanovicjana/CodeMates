@@ -224,30 +224,38 @@ class RegisteredController extends BaseController
      echo  "</table>";
      }
 
+     // prikazuje pocetnu (1/1) stranicu za dodavanje koktela
      public function showAddCocktail1(){
         return $this->show('add_cocktail_1',[]);
      }
 
+     // prikazuje 3/3 stranicu za dodavanje koktela
      public function showAddCocktail3(){
         return $this->show('add_cocktail_3',[]);
      }
 
+     // prikazuje stranicu za promenu informacija korisnika
      public function showInfoChange(){
         return $this->show('user_info_change',[]);
      }
 
+     // prikazuje stranicu sa informacijama korisnika
      public function showUserInfo(){
         return $this->show('user_info', []);
      }
 
+     // prikazuje stranicu za promenu lozinke korisnika
      public function showPassChange(){
         return $this->show('password_change', []);
     }
 
+    // prikazuje stranicu kviza
     public function showQuiz(){
         return $this->show('quiz', []);
     }
 
+    // funkcija koja dodaje osnovne informacije o koktelu u bazu podataka
+    // @return preusmerava na sledecu (2/3) stranicu za dodavanje koktela
     public function addCocktail(){
 
         $name = $this->request->getVar('name');
@@ -267,6 +275,8 @@ class RegisteredController extends BaseController
 
     }
 
+    // funkcija se poziva na 3/3 stranici za dodavanje koktela i vrsi dodavanje koraka po principu korak po korak
+    // @return vraca opet na stranicu za dodavnje koraka
     public function addSteps(){
 
         $step = $this->request->getVar('step');
@@ -291,7 +301,8 @@ class RegisteredController extends BaseController
 
     }
 
-    // menja informacije 
+    // funkcija menja informacije o korisniku
+    // @return vraca stranicu za prikaz informacija
      public function changeInfo(){
         $firstname = $this->request->getVar('firstname');
         $lastname = $this->request->getVar('lastname');
@@ -342,6 +353,8 @@ class RegisteredController extends BaseController
         return redirect()->to(site_url('RegisteredController/showUserInfo'));
     }
 
+    // funkcija menja sifru korisnika
+    // @return vraca stranicu za prikaz informacija korisnika
     public function changePass(){
         $curpass = $this->request->getVar('curpass');
         $newpass = $this->request->getVar('newpass');
@@ -371,6 +384,8 @@ class RegisteredController extends BaseController
         return redirect()->to(site_url('RegisteredController/showUserInfo'));
     }
 
+    // funkcija obradjuje odgovore koje je uneo korisnik i na osnovu rezultata odredjuje rezultat kviza
+    // @return vraca stranicu na kojoj ispisuje rezultat kviza
     public function quiz(){
 
         $question1 = $this->request->getVar('inlineRadioOptions1');
@@ -380,10 +395,6 @@ class RegisteredController extends BaseController
         $question5 = $this->request->getVar('inlineRadioOptions5');
 
         $sum = $question1 + $question2 + $question3 + $question4 + $question5;
-
-        //return $this->show('quiz_result', []);
-
-        //echo $sum;
 
         if($sum < 8){
             return $this->show('quiz_result', ['tekst'=>'You are a Blue Lagoon!', 'slika'=>'bluelagoon']);
