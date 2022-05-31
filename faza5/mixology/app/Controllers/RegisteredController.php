@@ -317,6 +317,7 @@ class RegisteredController extends BaseController
         $cocktail = $model->getLastCocktail();
 
         $idIngredient = $this->request->getVar('idIngredient');
+        
         $quantity = $this->request->getVar('quantity');
         if($quantity=="")$quantity = 0;
 

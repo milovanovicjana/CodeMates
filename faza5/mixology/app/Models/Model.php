@@ -295,8 +295,16 @@ class Model
         return $this->db->table('ingredient')->get()->getResult();
     }
 
+    public function getIngredient($idIngredient){
+        return $this->db->table('ingredient')->where('IdIngredient', $idIngredient)->get()->getRow();
+    }
+
     public function addContains($idIngredient, $idCocktail, $quantity){
         $newIngredient = $this->db->table('ingredient')->where('IdIngredient', $idIngredient)->get()->getRow();
+        $priceIncr = ($newIngredient->AveragePrice * $quantity) / 10;
+        $cocktail = $this->db->table('cocktail')->where('IdCocktail',$idCocktail)->get()->getRow();
+        $newPrice = $priceIncr + $cocktail->Price;
+        $this->db->table('cocktail')->where('IdCocktail',$idCocktail)->set('Price',$newPrice)->update();
         if($newIngredient->Type == "ALCOHOL"){
             $this->db->table('cocktail')->where('IdCocktail',$idCocktail)->set('Alcoholic',1)->update();
         }
@@ -315,7 +323,8 @@ class Model
             'Image' => $imagePath,
             'Alcoholic' => 0,
             'Approved' => 0,
-            'Description' => $description
+            'Description' => $description,
+            'Price' => 0
         ]);
     }
 
