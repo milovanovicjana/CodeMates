@@ -228,6 +228,23 @@ class RegisteredController extends BaseController
         return $this->show('add_cocktail_1',[]);
      }
 
+     public function showAddCocktail2(){
+        $db= db_connect();
+        $model=new Model($db);
+
+        $ingrDB = $model->getAllIngredients();
+        $ingrByType = [];
+
+        foreach ($ingrDB as $ingredient) {
+            if(!array_key_exists($ingredient->Type, $ingrByType)){
+                $ingrByType[$ingredient->Type] = [];
+            }
+            array_push($ingrByType[$ingredient->Type], $ingredient);
+        }
+
+        return $this->show("add_cocktail_2",['ingrByType'=>$ingrByType]);
+     }
+
      public function showAddCocktail3(){
         return $this->show('add_cocktail_3',[]);
      }
@@ -252,18 +269,33 @@ class RegisteredController extends BaseController
 
         $name = $this->request->getVar('name');
         $description = $this->request->getVar('description');
-        echo($description);
         $image = $this->request->getFile('image');
-
-        $nameCocktail = $name.'.'.$image->getExtension();
-        $image->store('../../public/images/cocktails', $nameCocktail);
+        $fileString = $name.'.'.$image->getExtension();
+        
+        $image->store('../../public/images/cocktails', $fileString);
 
         $db= db_connect();
         $model=new Model($db);
 
-        $model->insertCocktail($name, $description, $nameCocktail);
+        $model->addCocktail($name, $description, $fileString);
 
-        return redirect()->to(site_url('RegisteredController/showAddCocktail3'));
+        return redirect()->to(site_url('RegisteredController/showAddCocktail2'));
+
+    }
+
+    public function addIngredient(){
+        $db= db_connect();
+        $model=new Model($db);
+
+        $cocktail = $model->getLastCocktail();
+
+        $idIngredient = $this->request->getVar('idIngredient');
+        $quantity = $this->request->getVar('quantity');
+        if($quantity=="")$quantity = 0;
+
+        $model->addContains($idIngredient, $cocktail->IdCocktail, $quantity);
+    
+        return redirect()->to(site_url('RegisteredController/showAddCocktail2'));
 
     }
 
@@ -400,23 +432,6 @@ class RegisteredController extends BaseController
         else{
             return $this->show('quiz_result', ['tekst'=>'You are a Sex On The Beach!', 'slika'=>'sexonthebeach']);
         }
-    }
-
-    public function showaddcocktail2(){
-        $db= db_connect();
-        $model=new Model($db);
-
-        $ingrDB = $model->getAllIngredients();
-        $ingrByType = [];
-
-        foreach ($ingrDB as $ingredient) {
-            if(!array_key_exists($ingredient->Type, $ingrByType)){
-                $ingrByType[$ingredient->Type] = [];
-            }
-            array_push($ingrByType[$ingredient->Type], $ingredient);
-        }
-
-        $this->show("add_cocktail_ingr",['ingrByType'=>$ingrByType]);
     }
 
 

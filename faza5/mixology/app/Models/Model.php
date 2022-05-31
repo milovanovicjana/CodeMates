@@ -112,14 +112,6 @@ class Model
        }
     }
 
-    public function insertCocktail($name, $description, $image){
-        $this->db->table('cocktail')->insert([
-            'CocktailName' => $name,
-            'Description' => $description,
-            'Image' => $image
-        ]);
-    }
-
     public function approveCocktails($cocktailsCheckBoxs,$tip){
        if($tip=='A'){
             foreach($cocktailsCheckBoxs as $cocktail){
@@ -233,6 +225,30 @@ class Model
 
     public function getAllIngredients(){
         return $this->db->table('ingredient')->get()->getResult();
+    }
+
+    public function addContains($idIngredient, $idCocktail, $quantity){
+        $newIngredient = $this->db->table('ingredient')->where('IdIngredient', $idIngredient)->get()->getRow();
+        if($newIngredient->Type == "ALCOHOL"){
+            $this->db->table('cocktail')->where('IdCocktail',$idCocktail)->set('Alcoholic',1)->update();
+        }
+        $this->db->table('contains')->insert([
+            'IdCocktail' => $idCocktail,
+            'IdIngredient' => $idIngredient,
+            'Quantity' => $quantity
+        ]);
+    }
+
+    public function addCocktail($name, $description, $imagePath){
+        $this->db->table('cocktail')->insert([
+            'CocktailName' => $name,
+            'AvgGrade' => 0,
+            'Recipes' => "",
+            'Image' => $imagePath,
+            'Alcoholic' => 0,
+            'Approved' => 0,
+            'Description' => $description
+        ]);
     }
 
 }
