@@ -5,6 +5,7 @@ $(document).ready(function(){
         if(groupLabel=="ALCOHOL" || groupLabel=="JUICE" || groupLabel=="SYRUP"){
             $("#amount").prop('disabled', false);
         }else{
+            $("#amount").val("");
             $("#amount").prop('disabled', true);
         }
     });

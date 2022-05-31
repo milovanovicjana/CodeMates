@@ -181,6 +181,7 @@ class Model
      * update-uje bazu postavljanjem polja approved na 1, ako admin zeli da odobri kokktel
      * @return void
      */
+
     public function approveCocktails($cocktailsCheckBoxs,$tip){
        if($tip=='A'){
             foreach($cocktailsCheckBoxs as $cocktail){
@@ -195,11 +196,8 @@ class Model
        }
        
      }
-
-   
-
     
-     public function getCocktailById($id){
+    public function getCocktailById($id){
         return $this->db->table('cocktail')->where('idCocktail',$id)->get()->getRow();
     }
 
@@ -295,6 +293,30 @@ class Model
 
     public function getAllIngredients(){
         return $this->db->table('ingredient')->get()->getResult();
+    }
+
+    public function addContains($idIngredient, $idCocktail, $quantity){
+        $newIngredient = $this->db->table('ingredient')->where('IdIngredient', $idIngredient)->get()->getRow();
+        if($newIngredient->Type == "ALCOHOL"){
+            $this->db->table('cocktail')->where('IdCocktail',$idCocktail)->set('Alcoholic',1)->update();
+        }
+        $this->db->table('contains')->insert([
+            'IdCocktail' => $idCocktail,
+            'IdIngredient' => $idIngredient,
+            'Quantity' => $quantity
+        ]);
+    }
+
+    public function addCocktail($name, $description, $imagePath){
+        $this->db->table('cocktail')->insert([
+            'CocktailName' => $name,
+            'AvgGrade' => 0,
+            'Recipes' => "",
+            'Image' => $imagePath,
+            'Alcoholic' => 0,
+            'Approved' => 0,
+            'Description' => $description
+        ]);
     }
 
 }
