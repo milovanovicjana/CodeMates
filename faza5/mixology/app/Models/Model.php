@@ -4,6 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Database\ConnectionInterface;
 
+/**
+ * @author  Ana Vukasinovic 0298/2019, Milica Aleksic 0716/2019, Jana Milovanovic 0292/2019, Aleksa Vujnic 0479/2019
+ *
+ * Model - klasa modela za pristup bazi podataka
+ */
+
 class Model
 {
     protected $db;
@@ -12,6 +18,11 @@ class Model
     {
         $this->db = &$db;
     }
+
+    /**Jana Milovanovic 0292/2019 
+     * search - funkcija koja vrsi pretragu koktela tako sto vrsi spajanje tabela ingredient,contains i cocktail 
+     * @return dohvaceni kokteli
+     */
     
     public function search( $arrayOfFilters,$type,$name){
         
@@ -45,6 +56,10 @@ class Model
         return $b->get()->getResult();
     }
     
+    /**Jana Milovanovic 0292/2019 
+     * getTopRatedCocktails - funkcija koja iz baze dohvata sve koktele, zatim ih sortira opadajuce po oceni i vraca 10 najbolje ocenjenih koktela 
+     * @return dohvaceni kokteli
+     */
     public function getTopRatedCocktails() {
           return $this->db->table('cocktail')
                   ->orderBy('AvgGrade',"DESC")
@@ -52,36 +67,59 @@ class Model
                   ->limit(10)->get()->getResult();
     }
 
+    // menja username korisnika u tabeli
+    // @params id korisnika($userId), novo korisnicko ime($username)
+    // @return void
     public function changeUsername($userId, $username){
         $this->db->table('user')->where('IdUser',$userId)->set('Username',$username)->update();
     }
 
+    // menja ime korisnika u tabeli
+    // @params id korisnika($userId), novo ime($firstname)
+    // @return void
     public function changeName($userId, $firstname){
         $this->db->table('user')->set('Name',$firstname)->where('IdUser',$userId)->update();
     }
 
+    // menja prezime korisnika u tabeli
+    // @params id korisnika($userId), novo prezime($lastname)
+    // @return void
     public function changeSurname($userId, $lastname){
         $this->db->table('user')->set('Surname',$lastname)->where('IdUser',$userId)->update();
     }
 
+    // menja mejl korisnika u tabeli
+    // @params id korisnika($userId), nov mejl($email)
+    // @return void
     public function changeMail($userId, $email){
         $this->db->table('user')->set('Mail',$email)->where('IdUser',$userId)->update();
     }
 
+    // menja pol korisnika u tabeli
+    // @params id korisnika($userId), nov pol($gender)
+    // @return void
     public function changeGender($userId, $gender){
         $this->db->table('user')->set('Gender',$gender)->where('IdUser',$userId)->update();
     }
 
+    // menja sifru korisnika u tabeli
+    // @params id korisnika($userId), nova sifra($password)
+    // @return void
     public function changePassword($userId, $password){
         $this->db->table('user')->set('Password',$password)->where('IdUser',$userId)->update();
     }
 
+    // dohvata poslednji dodat koktel
+    // @return red iz tabele cocktail
     public function getLastCocktail() {
         return $this->db->table('cocktail')
                 ->orderBy('IdCocktail',"DESC")
                 ->limit(1)->get()->getRow();
     }
 
+    // dohvata poslednji unet korak za odredjeni koktel
+    // @params id koktela($IdC)
+    // @return red iz tabele steps
     public function getLastStep($IdC) {
         return $this->db->table('steps')
                 ->orderBy('Id', "DESC")
@@ -89,6 +127,9 @@ class Model
                 ->limit(1)->get()->getRow();
     }
 
+    // dodaje novi korak u recept
+    // @params id koktela($IdC), id koraka($IdS), tekst koraka($step)
+    // @return void
     public function addStep($IdC, $IdS, $step){
         $this->db->table('steps')->insert([
             'IdCocktail' => $IdC,
@@ -97,20 +138,49 @@ class Model
         ]);
     }
 
+    // dodaje koktel u tabelu
+    // @params naziv koktela($name), opis koktela($description), ime slike($image)
+    // @return void
+    public function insertCocktail($name, $description, $image){
+        $this->db->table('cocktail')->insert([
+            'CocktailName' => $name,
+            'Description' => $description,
+            'Image' => $image
+        ]);
+    }
+
+      /**Jana Milovanovic 0292/2019 
+     * getAllUsers - funkcija koja iz baze dohvata sve korisnike
+     * @return dohvaceni korisnici
+     */
     public function getAllUsers(){
         return $this->db->table('user')->get()->getResult();
     }
 
+    /**Jana Milovanovic 0292/2019 
+     * getUnapprovedCocktails - funkcija koja iz baze dohvata sve neodobrene koktele
+     * @return dohvaceni kokteli
+     */
     public function getUnapprovedCocktails(){
         return $this->db->table('cocktail')->where("Approved",0)->get()->getResult();
     }
     
+    /**Jana Milovanovic 0292/2019 
+     * deleteUsersAccounts - funkcija koja iz baze brise oznacene korisnike
+     * @return void
+     */
     public function deleteUsersAccounts($usersCheckBoxs){
      
        foreach($usersCheckBoxs as $userCb){
            $this->db->table('user')->where('IdUser',$userCb)->delete();
        }
     }
+
+     /**Jana Milovanovic 0292/2019 
+     * approveCocktails - funkcija koja iz baze brise koktel, ako admin ne zeli da ga odobri ili
+     * update-uje bazu postavljanjem polja approved na 1, ako admin zeli da odobri kokktel
+     * @return void
+     */
 
     public function approveCocktails($cocktailsCheckBoxs,$tip){
        if($tip=='A'){
@@ -126,9 +196,7 @@ class Model
        }
        
      }
-
-   
-
+    
     public function getCocktailById($id){
         return $this->db->table('cocktail')->where('idCocktail',$id)->get()->getRow();
     }
