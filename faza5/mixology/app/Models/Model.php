@@ -67,6 +67,7 @@ class Model
                   ->limit(10)->get()->getResult();
     }
 
+    // Milica Aleksić 0716/2019
     // menja username korisnika u tabeli
     // @params id korisnika($userId), novo korisnicko ime($username)
     // @return void
@@ -74,6 +75,7 @@ class Model
         $this->db->table('user')->where('IdUser',$userId)->set('Username',$username)->update();
     }
 
+    // Milica Aleksić 0716/2019
     // menja ime korisnika u tabeli
     // @params id korisnika($userId), novo ime($firstname)
     // @return void
@@ -81,6 +83,7 @@ class Model
         $this->db->table('user')->set('Name',$firstname)->where('IdUser',$userId)->update();
     }
 
+    // Milica Aleksić 0716/2019
     // menja prezime korisnika u tabeli
     // @params id korisnika($userId), novo prezime($lastname)
     // @return void
@@ -88,6 +91,7 @@ class Model
         $this->db->table('user')->set('Surname',$lastname)->where('IdUser',$userId)->update();
     }
 
+    // Milica Aleksić 0716/2019
     // menja mejl korisnika u tabeli
     // @params id korisnika($userId), nov mejl($email)
     // @return void
@@ -95,6 +99,7 @@ class Model
         $this->db->table('user')->set('Mail',$email)->where('IdUser',$userId)->update();
     }
 
+    // Milica Aleksić 0716/2019
     // menja pol korisnika u tabeli
     // @params id korisnika($userId), nov pol($gender)
     // @return void
@@ -102,6 +107,7 @@ class Model
         $this->db->table('user')->set('Gender',$gender)->where('IdUser',$userId)->update();
     }
 
+    // Milica Aleksić 0716/2019
     // menja sifru korisnika u tabeli
     // @params id korisnika($userId), nova sifra($password)
     // @return void
@@ -109,6 +115,7 @@ class Model
         $this->db->table('user')->set('Password',$password)->where('IdUser',$userId)->update();
     }
 
+    // Milica Aleksić 0716/2019
     // dohvata poslednji dodat koktel
     // @return red iz tabele cocktail
     public function getLastCocktail() {
@@ -117,6 +124,7 @@ class Model
                 ->limit(1)->get()->getRow();
     }
 
+    // Milica Aleksić 0716/2019
     // dohvata poslednji unet korak za odredjeni koktel
     // @params id koktela($IdC)
     // @return red iz tabele steps
@@ -127,6 +135,7 @@ class Model
                 ->limit(1)->get()->getRow();
     }
 
+    // Milica Aleksić 0716/2019
     // dodaje novi korak u recept
     // @params id koktela($IdC), id koraka($IdS), tekst koraka($step)
     // @return void
@@ -138,6 +147,7 @@ class Model
         ]);
     }
 
+    // Milica Aleksić 0716/2019
     // dodaje koktel u tabelu
     // @params naziv koktela($name), opis koktela($description), ime slike($image)
     // @return void
@@ -145,7 +155,12 @@ class Model
         $this->db->table('cocktail')->insert([
             'CocktailName' => $name,
             'Description' => $description,
-            'Image' => $image
+            'Image' => $image,
+            'AvgGrade' => 0,
+            'Recipes' => "",
+            'Alcoholic' => 0,
+            'Approved' => 0,
+            'Price' => 0
         ]);
     }
 
@@ -391,19 +406,6 @@ class Model
             'IdCocktail' => $idCocktail,
             'IdIngredient' => $idIngredient,
             'Quantity' => $quantity
-        ]);
-    }
-
-    public function addCocktail($name, $description, $imagePath){
-        $this->db->table('cocktail')->insert([
-            'CocktailName' => $name,
-            'AvgGrade' => 0,
-            'Recipes' => "",
-            'Image' => $imagePath,
-            'Alcoholic' => 0,
-            'Approved' => 0,
-            'Description' => $description,
-            'Price' => 0
         ]);
     }
 

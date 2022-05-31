@@ -267,7 +267,8 @@ class RegisteredController extends BaseController
      echo  "</table>";
      }
 
-     // prikazuje pocetnu 1/1 stranicu za dodavanje koktela
+     // Milica Aleksić 0716/2019
+     // showAddCocktail1 - prikazuje pocetnu 1/1 stranicu za dodavanje koktela
      public function showAddCocktail1(){
         return $this->show('add_cocktail_1',[]);
      }
@@ -290,47 +291,57 @@ class RegisteredController extends BaseController
         return $this->show("add_cocktail_2",['ingrByType'=>$ingrByType]);
      }
 
-     // prikazuje 3/3 stranicu za dodavanje koktela
-
+     // Milica Aleksić 0716/2019
+     // showAddCocktail3 - prikazuje 3/3 stranicu za dodavanje koktela
+     // @return funkcija show
      public function showAddCocktail3(){
         return $this->show('add_cocktail_3',[]);
      }
 
-     // prikazuje stranicu za promenu informacija korisnika
+     // Milica Aleksić 0716/2019
+     // showInfoChange - prikazuje stranicu za promenu informacija korisnika
+     // @return funkcija show
      public function showInfoChange(){
         return $this->show('user_info_change',[]);
      }
 
-     // prikazuje stranicu sa informacijama korisnika
+     // Milica Aleksić 0716/2019
+     // showUserInfo - prikazuje stranicu sa informacijama korisnika
+     // @return funkcija show
      public function showUserInfo(){
         return $this->show('user_info', []);
      }
 
-     // prikazuje stranicu za promenu lozinke korisnika
+     // Milica Aleksić 0716/2019
+     // showPassChange - prikazuje stranicu za promenu lozinke korisnika
+     // @return funkcija show
      public function showPassChange(){
         return $this->show('password_change', []);
     }
 
-    // prikazuje stranicu kviza
+    // Milica Aleksić 0716/2019
+    // showQuiz - prikazuje stranicu kviza
+    // @return funkcija show
     public function showQuiz(){
         return $this->show('quiz', []);
     }
 
-    // funkcija koja dodaje osnovne informacije o koktelu u bazu podataka
+    // Milica Aleksić 0716/2019
+    // addCocktail - funkcija koja dodaje osnovne informacije o koktelu u bazu podataka
     // @return preusmerava na sledecu (2/3) stranicu za dodavanje koktela
     public function addCocktail(){
 
         $name = $this->request->getVar('name');
         $description = $this->request->getVar('description');
         $image = $this->request->getFile('image');
-        $fileString = $name.'.'.$image->getExtension();
+        $imageName = $name.'.'.$image->getExtension();
         
-        $image->store('../../public/images/cocktails', $fileString);
+        $image->store('../../public/images/cocktails', $imageName);
 
         $db= db_connect();
         $model=new Model($db);
 
-        $model->addCocktail($name, $description, $fileString);
+        $model->insertCocktail($name, $description, $imageName);
 
         return redirect()->to(site_url('RegisteredController/showAddCocktail2'));
 
@@ -353,7 +364,8 @@ class RegisteredController extends BaseController
 
     }
 
-    // funkcija se poziva na 3/3 stranici za dodavanje koktela i vrsi dodavanje koraka po principu korak po korak
+    // Milica Aleksić 0716/2019
+    // addSteps - funkcija se poziva na 3/3 stranici za dodavanje koktela i vrsi dodavanje koraka po principu korak po korak
     // @return vraca opet na stranicu za dodavnje koraka
     public function addSteps(){
 
@@ -379,7 +391,8 @@ class RegisteredController extends BaseController
 
     }
 
-    // funkcija menja informacije o korisniku
+    // Milica Aleksić 0716/2019
+    // changeInfo - funkcija menja informacije o korisniku
     // @return vraca stranicu za prikaz informacija
      public function changeInfo(){
         $firstname = $this->request->getVar('firstname');
@@ -431,7 +444,8 @@ class RegisteredController extends BaseController
         return redirect()->to(site_url('RegisteredController/showUserInfo'));
     }
 
-    // funkcija menja sifru korisnika
+    // Milica Aleksić 0716/2019
+    // changePass - funkcija menja sifru korisnika
     // @return vraca stranicu za prikaz informacija korisnika
     public function changePass(){
         $curpass = $this->request->getVar('curpass');
@@ -462,7 +476,8 @@ class RegisteredController extends BaseController
         return redirect()->to(site_url('RegisteredController/showUserInfo'));
     }
 
-    // funkcija obradjuje odgovore koje je uneo korisnik i na osnovu rezultata odredjuje rezultat kviza
+    // Milica Aleksić 0716/2019
+    // quiz - funkcija obradjuje odgovore koje je uneo korisnik i na osnovu rezultata odredjuje rezultat kviza
     // @return vraca stranicu na kojoj ispisuje rezultat kviza
     public function quiz(){
 
