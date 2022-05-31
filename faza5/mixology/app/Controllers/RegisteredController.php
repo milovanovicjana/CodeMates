@@ -37,6 +37,11 @@ class RegisteredController extends BaseController
 
     }
 
+    /**Ana Vukašinović 0298/2019
+     *  cocktailDisplayRegistered - sluzi za prikaz informacija o odredjenom koktelu registrovanom korisniku
+     * @param $id je identifikator koktela cije informacije se prikazuju
+     * @return poziv fje show
+     */
 
     public function cocktailDisplayRegistered($id){
 
@@ -53,6 +58,11 @@ class RegisteredController extends BaseController
         return $this->show('cocktail_registered',['cocktail'=> $cocktail, 'ingredients'=>$ingredients,'cntSavings'=>$cntSavings,'steps'=>$steps]);
 
     }
+
+    /**Ana Vukašinović 0298/2019
+     *  gradeCocktail- sluzi za ocenjivanje koktela ocenom od 1-5
+     *  @return prosecna ocena datog koktela
+     */
 
     public function gradeCocktail(){
         $id=$this->request->getVar('id');
@@ -96,6 +106,11 @@ class RegisteredController extends BaseController
          echo $cocktail->AvgGrade."/5";
     }
 
+    /**Ana Vukašinović 0298/2019
+     *  displaySavedCocktails- sluzi za prikaz sacuvanih koktela za odredjenog korisnika
+     *  @return f-ja show
+     */
+
     public function displaySavedCocktails(){
        $db= db_connect();
        $model=new Model($db);
@@ -104,6 +119,11 @@ class RegisteredController extends BaseController
        return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
        
     }
+
+    /**Ana Vukašinović 0298/2019
+     *  saveCocktail- sluzi za dodavanje koktela u listu sacuvanih
+     *  @return broj cuvanja datog koktela
+     */
 
     public function saveCocktail(){
         $id=$this->request->getVar('id');
@@ -117,6 +137,12 @@ class RegisteredController extends BaseController
         foreach($savings as $saving) $cntSavings=$cntSavings+1;
         echo $cntSavings;
     }
+
+    /**Ana Vukašinović 0298/2019
+     *  unsaveCocktail- sluzi za uklanjanje koktela iz liste sacuvanih
+     * @param identifikator koktela koji se uklanja iz liste sacuvanih
+     *  @return f'ja show
+     */
 
     public function unsaveCocktail($id){
        $db= db_connect();

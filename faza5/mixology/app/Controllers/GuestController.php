@@ -121,6 +121,11 @@ class GuestController extends BaseController
         echo  "</table>";
     }
 
+    /**Ana Vukašinović 0298/2019
+     *  cocktailDisplayUnregistered - sluzi za prikaz informacija o odredjenom koktelu neregistrovanom korisniku
+     * @param $id je identifikator koktela cije informacije se prikazuju
+     * @return poziv fje show
+     */
 
     public function cocktailDisplayUnregistered($id){
         

@@ -196,10 +196,22 @@ class Model
        }
        
      }
+
+     /**Ana Vukašinović 0298/2019
+     *  getCocktailById - sluzi za dohvatanje koktela iz baze prema id-u
+     * @param $id - identifikator koktela koji se dohvata
+     * @return red iz tabele, ukoliko koktel postoji ili null ako ne postoji
+     */
     
     public function getCocktailById($id){
         return $this->db->table('cocktail')->where('idCocktail',$id)->get()->getRow();
     }
+
+    /**Ana Vukašinović 0298/2019
+     * getAllIngredientsForCocktail - sluzi za dohvatanje svih sastojaka za odredjeni koktel
+     * @param $id - identifikator koktela
+     * @return redovi iz tabele koji predstavljaju sastojke
+     */
 
     public function getAllIngredientsForCocktail($id){
         return $this->db->table('contains')->where('contains.idCocktail',$id)
@@ -209,9 +221,23 @@ class Model
 
     }
 
+    /**Ana Vukašinović 0298/2019
+     * checkGrade - sluzi za proveru da li je odredjeni korisnik ranije vec ocenio dati koktel
+     * @param $cocktailId - identifikator koktela , $userId - identifikator korisnika
+     * @return red tabele ukoliko je korisnik vec ocenio koktel ili null u suprotnom
+     */
+    
+
     public function checkGrade($cocktailId, $userId){
         return $this->db->table('grade')->where('IdUser', $userId)->where('IdCocktail',$cocktailId)->get()->getRow();
     }
+
+    /**Ana Vukašinović 0298/2019
+     * insertGrade - sluzi za unos ocene za odredjeni koktel od strane odredjenog korisnika
+     * @param $cocktailId - identifikator koktela , $userId - identifikator korisnika , $grade - ocena
+     * @return void
+     */
+    
 
     public function insertGrade($cocktailId, $userId, $grade){
         $this->db->table('grade')->insert([
@@ -221,6 +247,12 @@ class Model
         ]);
     }
 
+    /**Ana Vukašinović 0298/2019
+     * updateGrade - sluzi za update ocene za odredjeni koktel od strane odredjenog korisnika
+     * @param $cocktailId - identifikator koktela , $userId - identifikator korisnika , $grade - ocena
+     * @return void
+     */
+
     public function updateGrade($cocktailId, $userId, $grade){
         $this->db->table('grade')->replace([
             'IdUser' => $userId,
@@ -229,9 +261,23 @@ class Model
         ]);
     }
 
+
+    /**Ana Vukašinović 0298/2019
+     * getAllGradesForCocktail - sluzi za dohvatanje svih ocena za odredjeni koktel
+     * @param $cocktailId - identifikator koktela 
+     * @return redovi ocena ukoliko je koktel ocenjivan, null u suprotnom
+     */
+
     public function getAllGradesForCocktail($cocktailId){
         return $this->db->table('grade')->where('IdCocktail',$cocktailId)->get()->getResult();
     }
+
+    /**Ana Vukašinović 0298/2019
+     * updateAvgGradeForCocktail - sluzi za azuriranje prosecne ocene koktela
+     * @param $id - identifikator koktela , $avg ' prosecna ocena
+     * @return void
+     */
+
 
     public function updateAvgGradeForCocktail($id, $avg){
         $this->db->table('cocktail')->set('AvgGrade',$avg)->where('IdCocktail',$id)->update();
@@ -250,16 +296,33 @@ class Model
 
     }
 
-
+    /**Ana Vukašinović 0298/2019
+     * getCntSavings - sluzi za odredjivanje broja cuvanja odredjenog koktela
+     * @param $id - identifikator koktela 
+     * @return redovi cuvanja ukoliko je koktel sacuvan ranije, null u suprotnom
+     */
     public function getCntSavings($id){
         return $this->db->table('saved')->where('IdCocktail',$id)->get()->getResult();
     }
+
+    /**Ana Vukašinović 0298/2019
+     * getCntSavings - sluzi za dohvatanje koktela koje je korisnik sacuvao
+     * @param $userId - identifikator korisnika 
+     * @return redovi cuvanja ukoliko je koktel sacuvan ranije, null u suprotnom
+     */
 
     public function getSavedCocktails($userId){
         return $this->db->table('saved')->where('IdUser',$userId)
                                         ->join('cocktail','saved.IdCocktail=cocktail.IdCocktail')
                                         ->get()->getResult();
     }
+
+    /**Ana Vukašinović 0298/2019
+     * saveCocktailBzUser - sluzi za cuvanje koktela u listi sacuvanih za odredjenog korisnika
+     * @param $userId - identifikator korisnika  , $id ' identifikator koktela
+     * @return void
+     */
+
 
     public function saveCocktailByUser($id,$userId){
         $saved = $this->db->table('saved')->where('IdCocktail',$id)->where('IdUser',$userId)->get()->getRow();
@@ -271,6 +334,12 @@ class Model
         }
         
     }
+
+     /**Ana Vukašinović 0298/2019
+     * deleteSavedCocktail - sluzi za uklanjanje koktela iz liste sacuvanih za odredjenog korisnika
+     * @param $userId - identifikator korisnika  , $id ' identifikator koktela
+     * @return void
+     */
 
 
     public function deleteSavedCocktail($id,$userId){
@@ -286,10 +355,20 @@ class Model
         ->get()->getResult();
     }
 
+    /**Ana Vukašinović 0298/2019
+     * getSteps - sluzi za dohvatanje koraka za recept koktela
+     * @param $id ' identifikator koktela
+     * @return void
+     */
 
     public function getSteps($id){
         return $this->db->table('steps')->where('IdCocktail',$id)->orderBy('Id','ASC')->get()->getResult();
     }
+
+    /**Ana Vukašinović 0298/2019
+     *  getAllIngredients - sluzi za dohvatanje svih sastojaka
+     * @return redovi sastojaka ukoliko koktel postoji u bazi
+     */
 
     public function getAllIngredients(){
         return $this->db->table('ingredient')->get()->getResult();
