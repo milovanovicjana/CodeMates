@@ -334,17 +334,22 @@ class RegisteredController extends BaseController
         $name = $this->request->getVar('name');
         $description = $this->request->getVar('description');
         $image = $this->request->getFile('image');
-        $imageName = $name.'.'.$image->getExtension();
-        
-        $image->store('../../public/images/cocktails', $imageName);
+        $recipe = $this->request->getVar('recipe');;
 
         $db= db_connect();
         $model=new Model($db);
 
-        $model->insertCocktail($name, $description, $imageName);
+        $model->insertCocktail($name, $description, $recipe);
+
+        $cocktail = $model->getLastCocktail();
+        $IdC = $cocktail->IdCocktail;
+
+        $imageName = $name.'_'.$IdC.'.'.$image->getExtension();
+        $image->store('../../public/images/cocktails', $imageName);
+
+        $model->addImage($IdC, $imageName);
 
         return redirect()->to(site_url('RegisteredController/showAddCocktail2'));
-
     }
 
     /**Aleksa Vujnic 0479/2019 

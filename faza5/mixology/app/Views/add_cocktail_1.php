@@ -40,6 +40,10 @@
                 <label>Image</label>
                 <div class="form-group"> 
                     <input type="file" name="image"> 
+                </div>
+                <label>Recipe</label>
+                <div class="form-group"> 
+                    <textarea class="form-control" name="recipe" id="recipe" rows="5"></textarea>
                 </div> 
                 <br>
                 <button class="btn btn-lg btn-primary btn-block button_next btn-light" type="submit">Next</button>

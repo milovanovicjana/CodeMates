@@ -51,7 +51,7 @@
             </form>
 
             <br>
-            <button class="btn btn-lg btn-primary btn-block btn-light" onclick="window.location='<?php echo site_url("RegisteredController/showAddCocktail3");?>'">Finish</button>
+            <button class="btn btn-lg btn-primary btn-block btn-light" onclick="window.location='<?php echo site_url("RegisteredController/showAddCocktail3");?>'">Next</button>
             
 
         </div>
