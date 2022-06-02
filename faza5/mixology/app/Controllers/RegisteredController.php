@@ -154,6 +154,9 @@ class RegisteredController extends BaseController
        return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
     }
 
+    /**Aleksa Vujnic 0479/2019 
+     * displayRecommendedCocktails - Prikazuje preporucene koktele za korisnika na osnovu njegovih preferenci
+     */
 
     public function displayRecommendedCocktails(){
         $db= db_connect();
@@ -268,7 +271,9 @@ class RegisteredController extends BaseController
         return $this->show('add_cocktail_1',[]);
      }
 
-     // prikazuje  2/3 stranicu za dodavanje koktela
+     /**Aleksa Vujnic 0479/2019 
+     * showAddCocktail2 - prikazuje stranicu za dodavanje sastojaka koktelu
+     */
      public function showAddCocktail2(){
         $db= db_connect();
         $model=new Model($db);
@@ -342,6 +347,9 @@ class RegisteredController extends BaseController
 
     }
 
+    /**Aleksa Vujnic 0479/2019 
+     * addIngredient - dodaje uneti sastojak u unetoj kolicini u koktel koji je u procesu dodavanja
+     */
     public function addIngredient(){
         $db= db_connect();
         $model=new Model($db);

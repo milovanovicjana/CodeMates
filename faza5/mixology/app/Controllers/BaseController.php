@@ -50,6 +50,9 @@ class BaseController extends Controller
          $this->session = \Config\Services::session();
     }
 
+    /**Aleksa Vujnic 0479/2019 
+     * logout - odjavljuje trenutno ulogovanog korisnika i prikazuje view za neulogovanog korisnika
+     */
     public function logout(){
         $this->session->destroy();
         return redirect()->to(site_url('GuestController'));

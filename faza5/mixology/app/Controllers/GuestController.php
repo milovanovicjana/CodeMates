@@ -140,6 +140,9 @@ class GuestController extends BaseController
 
     } 
 
+    /**Aleksa Vujnic 0479/2019 
+     * register - kreiranje novog registrovanog korisnika na osnovu podataka popunjenih u okviru forme
+     */
     public function register(){
 
         $firstname = $this->request->getVar('firstname');
@@ -209,6 +212,11 @@ class GuestController extends BaseController
         return redirect()->to(site_url('RegisteredController'));
     }
 
+
+    /**Aleksa Vujnic 0479/2019 
+     * login - proverava unete kredencijale korisnika iz forme za logovanje i ukoliko su korektni
+     * korisnik dobija ovlascenja svog tipa korisnickog naloga
+     */
     public function login(){
 
         $username = $this->request->getVar('username');
