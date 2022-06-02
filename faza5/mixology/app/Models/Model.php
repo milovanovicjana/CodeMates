@@ -149,19 +149,27 @@ class Model
 
     // Milica Aleksić 0716/2019
     // dodaje koktel u tabelu
-    // @params naziv koktela($name), opis koktela($description), ime slike($image)
+    // @params naziv koktela($name), opis koktela($description), recept koktela($recipe)
     // @return void
-    public function insertCocktail($name, $description, $image){
+    public function insertCocktail($name, $description, $recipe){
         $this->db->table('cocktail')->insert([
             'CocktailName' => $name,
             'Description' => $description,
-            'Image' => $image,
+            'Image' => '',
             'AvgGrade' => 0,
-            'Recipes' => "",
+            'Recipes' => $recipe,
             'Alcoholic' => 0,
             'Approved' => 0,
             'Price' => 0
         ]);
+    }
+
+    // Milica Aleksić 0716/2019
+    // dodaje sliku koktela u tabelu
+    // @params id koktela($IdC), ime slike($image)
+    // @return void
+    public function addImage($IdC, $image){
+        $this->db->table('cocktail')->set('Image',$image)->where('IdCocktail',$IdC)->update();
     }
 
       /**Jana Milovanovic 0292/2019 
