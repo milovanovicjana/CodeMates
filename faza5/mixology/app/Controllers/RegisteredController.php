@@ -154,11 +154,6 @@ class RegisteredController extends BaseController
        return $this->show('saved_cocktails',['savedCocktails'=>$savedCocktails]);
     }
 
-    public function logout(){
-        $this->session->destroy();
-        return redirect()->to(site_url('GuestController'));
-    }
-
 
     public function displayRecommendedCocktails(){
         $db= db_connect();

@@ -49,4 +49,9 @@ class BaseController extends Controller
 
          $this->session = \Config\Services::session();
     }
+
+    public function logout(){
+        $this->session->destroy();
+        return redirect()->to(site_url('GuestController'));
+    }
 }
