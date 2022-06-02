@@ -306,11 +306,22 @@ class Model
         $this->db->table('cocktail')->set('AvgGrade',$avg)->where('IdCocktail',$id)->update();
     }
 
+    /**Aleksa Vujnic 0479/2019
+     * getRegisterIngredients - dohvata sastojke za koje se unose preference pri registraciji
+     * @return sastojci iz baze koji su alkoholni
+     */
+
     public function getRegisterIngredients(){
         return $this->db->table('ingredient')
         ->where('Type', 'ALCOHOL')
         ->get()->getResult();
     }
+
+    /**Aleksa Vujnic 0479/2019
+     * getUserByUsername - dohvata podatke o korisniku na osnovu korisnickog imena
+     * @param $username - korisnicko ime trazenog korisnika
+     * @return korisnicki podaci iz baze
+     */
 
     public function getUserByUsername($username){
         return $this->db->table('user')
@@ -369,6 +380,12 @@ class Model
         $this->db->table('saved')->where('IdCocktail',$id)->where('IdUser',$userId)->delete();
     }
 
+    /**Aleksa Vujnic 0479/2019
+     * getRecommended - dohvata preporucene koktele za korisnika na osnovu njegovih preferenci
+     * @return kokteli sortirani opadajuce po procentu podudaranja sa korisnikom
+     * @param $userId - id korisnika za kog se traze preporuceni kokteli
+     */
+
     public function getRecommended($userId){
         return $this->db->table('cocktail')
         ->where('Approved',1)
@@ -397,11 +414,32 @@ class Model
         return $this->db->table('ingredient')->get()->getResult();
     }
 
+    /**Aleksa Vujnic 0479/2019
+     * getIngredient - dohvata podatke o sastojku iz baze
+     * @param $idIngredient - id sastojka za koji se traze detalji
+     * @return sastojak iz baze
+     */
+
     public function getIngredient($idIngredient){
         return $this->db->table('ingredient')->where('IdIngredient', $idIngredient)->get()->getRow();
     }
 
+    /**Aleksa Vujnic 0479/2019
+     * addContains - ubacuje relaciju sadrzanja izmedju koktela i sastojka u bazu
+     * @param $idIngredient - id sastojka u relaciji sadrzanja
+     * @param $idCocktail - id koktela u relaciji sadrzanja
+     * @param $quantity - kolicina sastojka
+     * @return da li je ubacivanje uspesno, odnosno da li ne postoji u tabeli red sa istim primarnim kljucem
+     */
+
     public function addContains($idIngredient, $idCocktail, $quantity){
+
+        $existingContains = $this->db->table('contains')->where('IdIngredient', $idIngredient)
+                            ->where('IdCocktail', $idCocktail)->get()->getRow();
+        if($existingContains != null){
+            return false;
+        }
+
         $newIngredient = $this->db->table('ingredient')->where('IdIngredient', $idIngredient)->get()->getRow();
         $priceIncr = ($newIngredient->AveragePrice * $quantity) / 10;
         $cocktail = $this->db->table('cocktail')->where('IdCocktail',$idCocktail)->get()->getRow();
@@ -415,6 +453,8 @@ class Model
             'IdIngredient' => $idIngredient,
             'Quantity' => $quantity
         ]);
+
+        return true;
     }
 
 }

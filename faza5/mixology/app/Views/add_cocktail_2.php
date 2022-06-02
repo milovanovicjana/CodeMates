@@ -23,12 +23,12 @@
     <div class="row center">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-
             
             <h2>Add ingredients to the cocktail (2/3)</h2>
             <br>
+            <p style="color:red"><?php if(isset($message)) echo $message?></p>
             <form class="form-inline" method="post" action="<?=site_url("RegisteredController/addIngredient")?>">
-
+    
                 <div class="form-group mb-2">
                     <select class = "custom-select" id="ingredient-select" name='idIngredient'>
                     <?php 

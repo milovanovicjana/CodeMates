@@ -366,10 +366,27 @@ class RegisteredController extends BaseController
         $quantity = $this->request->getVar('quantity');
         if($quantity=="")$quantity = 0;
 
-        $model->addContains($idIngredient, $cocktail->IdCocktail, $quantity);
-    
-        return redirect()->to(site_url('RegisteredController/showAddCocktail2'));
+        if($model->addContains($idIngredient, $cocktail->IdCocktail, $quantity)){
+            return redirect()->to(site_url('RegisteredController/showAddCocktail2'));
+        }else{
 
+            $db= db_connect();
+            $model=new Model($db);
+
+            $ingrDB = $model->getAllIngredients();
+            $ingrByType = [];
+
+            foreach ($ingrDB as $ingredient) {
+                if(!array_key_exists($ingredient->Type, $ingrByType)){
+                    $ingrByType[$ingredient->Type] = [];
+                }
+                array_push($ingrByType[$ingredient->Type], $ingredient);
+            }
+
+            return $this->show('add_cocktail_2',['ingrByType'=>$ingrByType,'message'=>'Already added this ingredient.']);
+        }
+    
+        
     }
 
     // Milica Aleksić 0716/2019
