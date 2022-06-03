@@ -326,7 +326,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="yu/u1nlP10CY0A7F0O+uGgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="NfYDNsNCoUmndtKNLsI2PQAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">svaed_cocktails.php</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">saved_cocktails.php</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="DVzszosY3kefVmomRYlCuwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -486,7 +486,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="BVb+PO4A7k+RuQkxdq77wgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="AvfgABaBZEyBz1jVb6ha1wAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">search</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">cp  search</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="ZDHFN0L6zkuztik3aGa/DgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -518,7 +518,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="XxLd3nl9B0GpdQuZkhdYkAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="hGlzAkKEyEy27i+7hORmowAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">user_info</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">cp  user_info</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="sDezWBP6tUepjkA+gma5aQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -543,14 +543,14 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">380</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">300</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">158</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">168</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">96</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
 <XPD:REF name="Model">6Ytdeon7BEOSqJA/KLbIagAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="6nFgMZsa5EKY23GTrKZVJwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="WvBcnY3tYUSTBvlSZMwt8QAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">recommended_cocktails</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">cp  recommended_cocktails</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="95pX2C9MMU+0/e0ut3UQrQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -582,7 +582,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="flddeWHUBEC7aSgL5wl58QAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="96CKuFPenECrkSiM5nPtagAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">quiz</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">cp  quiz</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="+vhNKDwkk0WFLs6IYvaouwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -614,7 +614,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="AtGF5gYyQU+Rz2S7Rq6O9gAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="YW+D6xCd6kCKWPEC955HRgAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">add_cocktail</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">cp  add_cocktail</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="UJ+2LDkPxk628QEpJhLKlAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -805,7 +805,7 @@
 <XPD:OBJ name="OwnedViews[12]" type="UMLAssociationView" guid="rhjTw/xCKk2De459bqm0LwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">580,239;511,300</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">581,239;514,300</XPD:ATTR>
 <XPD:REF name="Model">s/M6FkDKE0+Bi7u1mCbriQAA</XPD:REF>
 <XPD:REF name="Head">TF2dhwwBwEW4Sm9Igg/kRgAA</XPD:REF>
 <XPD:REF name="Tail">BasOfu5cBUmpHmdcRyzFKAAA</XPD:REF>
@@ -1535,7 +1535,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedElements" type="integer">22</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="YuCE0N2V4kOjVAP23PJLWwAA">
-<XPD:ATTR name="Name" type="string">svaed_cocktails.php</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">saved_cocktails.php</XPD:ATTR>
 <XPD:REF name="Namespace">HYNZOfg/NEu7CkrhKkrL4AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">w/UC1Ekj90mJmjIlHvCiBgAA</XPD:REF>
@@ -1639,7 +1639,7 @@
 <XPD:REF name="Associations[1]">1Q6RgZliIEy68VMjm5DHfAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[5]" type="UMLClass" guid="2ZCW+Sb9302X4Nq4OxzrlgAA">
-<XPD:ATTR name="Name" type="string">search</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">cp  search</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">HYNZOfg/NEu7CkrhKkrL4AAA</XPD:REF>
@@ -1652,7 +1652,7 @@
 <XPD:REF name="Associations[0]">hixUxwm1E0Ce7bQmrT3A2AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[6]" type="UMLClass" guid="oZ1/sir/t0O937URAa+sogAA">
-<XPD:ATTR name="Name" type="string">user_info</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">cp  user_info</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">HYNZOfg/NEu7CkrhKkrL4AAA</XPD:REF>
@@ -1665,7 +1665,7 @@
 <XPD:REF name="Associations[0]">9xLb9V4u0kuXoNO8NZXvoAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[7]" type="UMLClass" guid="6Ytdeon7BEOSqJA/KLbIagAA">
-<XPD:ATTR name="Name" type="string">recommended_cocktails</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">cp  recommended_cocktails</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">HYNZOfg/NEu7CkrhKkrL4AAA</XPD:REF>
@@ -1678,7 +1678,7 @@
 <XPD:REF name="Associations[0]">sw/bLg6Eika4jQLsK+kN8wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[8]" type="UMLClass" guid="2OTyevAMX0O2Lwf+U7Iy1wAA">
-<XPD:ATTR name="Name" type="string">quiz</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">cp  quiz</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">HYNZOfg/NEu7CkrhKkrL4AAA</XPD:REF>
@@ -1691,7 +1691,7 @@
 <XPD:REF name="Associations[0]">Xirpr+gyt0iFMLvT+rzL6AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[9]" type="UMLClass" guid="5RMbMuckC0+FwFgmMZltiAAA">
-<XPD:ATTR name="Name" type="string">add_cocktail</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">cp  add_cocktail</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">HYNZOfg/NEu7CkrhKkrL4AAA</XPD:REF>
@@ -2092,13 +2092,13 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">328</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">48</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">70</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">109</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">350</XPD:ATTR>
 <XPD:REF name="Model">8WhyybmXRkW4yq9K3yOWkAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="QfOMSBM8M0K1o3Xwo2koKwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="gL5aUw6fYUWBQJ1ub9W2fwAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Object1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">RegisteredController</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="SZcqrWQYdUqK+7cf1pj9FgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -2122,7 +2122,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="cbyL1GJyCkG9Fyax7sB9xgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="9HzGeb8kW0WQAs0aNmZ0NwAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Object2</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Model</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="kIy4pWDFYk2WKeBOKcigTQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -2146,7 +2146,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="xohWIupORkq1LiVtHt7fpgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="6eyOkgU/JE+B+SMmuWKyRQAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Object3</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Database</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="lsTQ5Rs+TEiXgQAl8AYFzQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -2163,7 +2163,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">116,160;356,160</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">116,160;375,160</XPD:ATTR>
 <XPD:REF name="Model">0pDcPE1ddk6fN1wd4PWgBAAA</XPD:REF>
 <XPD:REF name="Head">zzqBgybVMEW8l71xabty9wAA</XPD:REF>
 <XPD:REF name="Tail">LDAEDWdtgkKgv1ue16DxcgAA</XPD:REF>
@@ -2189,7 +2189,7 @@
 <XPD:REF name="HostEdge">7p6Zvhpiz02lhjxMmXC8WAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="oWDlqV/sHUCPS/YUctqhVgAA">
-<XPD:ATTR name="Left" type="integer">356</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">375</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">160</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">94</XPD:ATTR>
@@ -2199,7 +2199,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">369,172;564,172</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">388,172;564,172</XPD:ATTR>
 <XPD:REF name="Model">qs3OaFQTC0mT+dG9NNiDzQAA</XPD:REF>
 <XPD:REF name="Head">/jyp1/0sKkCLrYDYnpxQrAAA</XPD:REF>
 <XPD:REF name="Tail">zzqBgybVMEW8l71xabty9wAA</XPD:REF>
@@ -2309,7 +2309,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">564,220;369,220</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">564,220;388,220</XPD:ATTR>
 <XPD:REF name="Model">oDRPKwiuoU+xEPCSGIYZLQAA</XPD:REF>
 <XPD:REF name="Head">zzqBgybVMEW8l71xabty9wAA</XPD:REF>
 <XPD:REF name="Tail">/jyp1/0sKkCLrYDYnpxQrAAA</XPD:REF>
@@ -2336,7 +2336,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="6EsGq97WCUGbJKz+6R4PtQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">356</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">375</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">220</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
@@ -2346,7 +2346,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">356,244;116,244</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">375,244;116,244</XPD:ATTR>
 <XPD:REF name="Model">bIYHYLcb50GF1nAacxIcRAAA</XPD:REF>
 <XPD:REF name="Head">LDAEDWdtgkKgv1ue16DxcgAA</XPD:REF>
 <XPD:REF name="Tail">zzqBgybVMEW8l71xabty9wAA</XPD:REF>
@@ -2488,7 +2488,7 @@ Neuspešan scenario: ne postoji za ovaj SSU (kad korisnik pritisne dugme Unsave,
 <XPD:REF name="ReceivingStimuli[0]">bIYHYLcb50GF1nAacxIcRAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[1]" type="UMLObject" guid="8WhyybmXRkW4yq9K3yOWkAAA">
-<XPD:ATTR name="Name" type="string">Object1</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">RegisteredController</XPD:ATTR>
 <XPD:REF name="CollaborationInstanceSet">jIbozixjxkKFnyZ7dxRhbgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">t8XTG5KAOEiARDWUUOgHpAAA</XPD:REF>
@@ -2501,7 +2501,7 @@ Neuspešan scenario: ne postoji za ovaj SSU (kad korisnik pritisne dugme Unsave,
 <XPD:REF name="ReceivingStimuli[1]">oDRPKwiuoU+xEPCSGIYZLQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[2]" type="UMLObject" guid="CHBUhFTuO0aI1JZd7GbSVQAA">
-<XPD:ATTR name="Name" type="string">Object2</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Model</XPD:ATTR>
 <XPD:REF name="CollaborationInstanceSet">jIbozixjxkKFnyZ7dxRhbgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">ypBRi6hJLkmZzvPrqomizwAA</XPD:REF>
@@ -2514,7 +2514,7 @@ Neuspešan scenario: ne postoji za ovaj SSU (kad korisnik pritisne dugme Unsave,
 <XPD:REF name="ReceivingStimuli[1]">lLe6CWUK50Oj9QqIpGHz3wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[3]" type="UMLObject" guid="eZ+hHg/AYUmI0HnasPWuYwAA">
-<XPD:ATTR name="Name" type="string">Object3</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Database</XPD:ATTR>
 <XPD:REF name="CollaborationInstanceSet">jIbozixjxkKFnyZ7dxRhbgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">8ixlG2RPSkWa9zpghnbZMAAA</XPD:REF>
