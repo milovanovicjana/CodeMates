@@ -46,7 +46,7 @@
                         </div>
                         <label>Birth date</label>
                         <div class="form-group"> 
-                            <input type="date" value=<?=$user->DateOfBirth?> class="form-control" name="birthdate" required> 
+                            <input type="date" value=<?=$user->DateOfBirth?> class="form-control" name="birthdate" disabled required> 
                         </div>
                         <label >Gender</label>
                         <br>
