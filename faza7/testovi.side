@@ -1,0 +1,474 @@
+{
+  "id": "b8c3c6ef-4712-4975-af1d-67fb69deb013",
+  "version": "2.0",
+  "name": "Testovi&nbsp;",
+  "url": "http://localhost/mixology/public/index.php/RegisteredController",
+  "tests": [{
+    "id": "6cab9d32-80dc-4fb0-9beb-123b330988c4",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "165431b9-2411-48e1-ae51-98c8a571147a",
+    "name": "korisnik uspesno pregleda koktel",
+    "commands": [{
+      "id": "594b4e02-7bc4-43c8-bfb5-81120c3c198b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68648587-b050-4682-bc05-41e17a6801f8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "600x669",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdecda78-b227-4f9c-813b-c407b6c56f85",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wine Cooler",
+      "targets": [
+        ["linkText=Wine Cooler", "linkText"],
+        ["css=tr:nth-child(1) table a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wine Cooler')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '\n                                    http://localhost/mixology/public/index.php/GuestController/cocktailDisplayUnregistered/5                                    \n                                    ')]", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wine Cooler')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "11fe1ba7-21b4-4828-b3e3-eb444320d6d5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ing1",
+      "targets": [
+        ["css=.ing1", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Ingredients:')]", "xpath:innerText"]
+      ],
+      "value": "Ingredients:"
+    }]
+  }, {
+    "id": "4f8447b2-e124-4219-8b79-896d36c5899e",
+    "name": "korisnik neuspesno ocenjuje koktel",
+    "commands": [{
+      "id": "7b3f9849-d081-4ec3-90e5-ed36b4dbba2e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "547a32d9-3e4d-412f-a515-59cfb63a851f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x831",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08e801e6-9f4a-4420-b181-4211941e21c4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Wine Cooler",
+      "targets": [
+        ["linkText=Wine Cooler", "linkText"],
+        ["css=tr:nth-child(1) table a", "css:finder"],
+        ["xpath=//a[contains(text(),'Wine Cooler')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '\n                                    http://localhost/mixology/public/index.php/RegisteredController/cocktailDisplayRegistered/5                                    \n                                    ')]", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Wine Cooler')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd2ca091-4f7f-4216-870e-e7c2725e1c8b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cocktailGrade",
+      "targets": [
+        ["id=cocktailGrade", "id"],
+        ["css=#cocktailGrade", "css:finder"],
+        ["xpath=//div[@id='cocktailGrade']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": "5/5"
+    }, {
+      "id": "426fc5ec-e47a-4741-b25c-db53a8213613",
+      "comment": "",
+      "command": "click",
+      "target": "id=grade",
+      "targets": [
+        ["id=grade", "id"],
+        ["css=#grade", "css:finder"],
+        ["xpath=//button[@id='grade']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Grade')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bfc30ebd-0b8d-4185-84ea-ca75bfca94a8",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cocktailGrade",
+      "targets": [
+        ["id=cocktailGrade", "id"],
+        ["css=#cocktailGrade", "css:finder"],
+        ["xpath=//div[@id='cocktailGrade']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": "5/5"
+    }]
+  }, {
+    "id": "d5e96613-4227-4f40-ac6c-62fae02a9976",
+    "name": "korisnik uspesno ocenjuje koktel",
+    "commands": [{
+      "id": "e11aef82-b0ac-4749-854b-24516ce54391",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "be2f9dc9-2fbc-443d-9092-6e260e2c9d5e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "494b0a02-ad43-4c8f-a32d-00dfdf37c43f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bahama Mama",
+      "targets": [
+        ["linkText=Bahama Mama", "linkText"],
+        ["css=tr:nth-child(9) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bahama Mama')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr[9]/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '\n                                    http://localhost/mixology/public/index.php/RegisteredController/cocktailDisplayRegistered/7                                    \n                                    ')]", "xpath:href"],
+        ["xpath=//tr[9]/td/table/tbody/tr/td[2]/font/b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bahama Mama')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b714ed11-afa1-47de-931a-9eb24febdeea",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=cocktailGrade",
+      "targets": [
+        ["id=cocktailGrade", "id"],
+        ["css=#cocktailGrade", "css:finder"],
+        ["xpath=//div[@id='cocktailGrade']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": "1/5"
+    }, {
+      "id": "41ae5a40-1cc7-45f3-8bf7-9af2161b416a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.star:nth-child(4)",
+      "targets": [
+        ["css=.star:nth-child(4)", "css:finder"],
+        ["xpath=//label[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7b08402-b1ed-44f6-a91d-ec8a5a7ebe6d",
+      "comment": "",
+      "command": "click",
+      "target": "id=grade",
+      "targets": [
+        ["id=grade", "id"],
+        ["css=#grade", "css:finder"],
+        ["xpath=//button[@id='grade']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Grade')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "644e516f-8898-4da9-96eb-61b5774cde31",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cocktailGrade",
+      "targets": [
+        ["id=cocktailGrade", "id"],
+        ["css=#cocktailGrade", "css:finder"],
+        ["xpath=//div[@id='cocktailGrade']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": "4/5"
+    }]
+  }, {
+    "id": "23cb3134-1279-4eba-98d4-90e8873f75a2",
+    "name": "korisnik uspešno dodanje koktel u listu sačuvanih",
+    "commands": [{
+      "id": "45f755f1-990c-4877-9cd1-d0006e029ae4",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b32f48e0-3a1c-4a0b-9817-74aa1cb86f48",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a5accd6-01d5-46e4-9602-9b7a7e43dfa7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cuba Libre",
+      "targets": [
+        ["linkText=Cuba Libre", "linkText"],
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Cuba Libre')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr[2]/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '\n                                    http://localhost/mixology/public/index.php/RegisteredController/cocktailDisplayRegistered/8                                    \n                                    ')]", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td[2]/font/b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cuba Libre')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a923c2c9-64f8-460b-aadd-6757a9834192",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cnt",
+      "targets": [
+        ["id=cnt", "id"],
+        ["css=#cnt", "css:finder"],
+        ["xpath=//span[@id='cnt']", "xpath:attributes"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'0')]", "xpath:innerText"]
+      ],
+      "value": "0"
+    }, {
+      "id": "59df7c04-e897-415c-9a77-949a520cab0f",
+      "comment": "",
+      "command": "click",
+      "target": "id=save",
+      "targets": [
+        ["id=save", "id"],
+        ["css=#save", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/mixology/public/images/others/light_heart1.png')]", "xpath:img"],
+        ["xpath=//img[@id='save']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[3]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cdfa46a-8f70-4c04-b14b-f4c77df2c7cf",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cnt",
+      "targets": [
+        ["id=cnt", "id"],
+        ["css=#cnt", "css:finder"],
+        ["xpath=//span[@id='cnt']", "xpath:attributes"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }]
+  }, {
+    "id": "f84ade7f-2335-40db-95a0-0d836ee081a9",
+    "name": "korisnik uspesno uklanja koktel iz liste sacuvanih",
+    "commands": [{
+      "id": "7de5e1a4-29d6-4c73-a387-56fe66d62079",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47d835fc-d5d7-447e-ac7b-d7b217cfb8b6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "595dbad9-84be-4616-980b-3a7c7eb4f46b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Saved",
+      "targets": [
+        ["linkText=Saved", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Saved')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/displaySavedCocktails']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Saved')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c00956f-aeb0-406d-b148-094f3c5f3f97",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Bahama Mama",
+      "targets": [
+        ["linkText=Bahama Mama", "linkText"],
+        ["css=tr:nth-child(1) > td:nth-child(1) a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bahama Mama')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '\n                                        http://localhost/mixology/public/index.php/RegisteredController/cocktailDisplayRegistered/7                                        \n                                        ')]", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bahama Mama')]", "xpath:innerText"]
+      ],
+      "value": "Bahama Mama"
+    }, {
+      "id": "08674d00-9868-4d38-80dd-78f84914c436",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) form .btn",
+      "targets": [
+        ["css=tr:nth-child(1) form .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//td[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Unsave')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "364bf231-0e14-44ee-9dd0-059ea9dd5498",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Bird of Paradise",
+      "targets": [
+        ["linkText=Bird of Paradise", "linkText"],
+        ["css=tr:nth-child(1) > td:nth-child(1) a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bird of Paradise')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '\n                                        http://localhost/mixology/public/index.php/RegisteredController/cocktailDisplayRegistered/9                                        \n                                        ')]", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bird of Paradise')]", "xpath:innerText"]
+      ],
+      "value": "Bird of Paradise"
+    }]
+  }, {
+    "id": "7b1c2e6a-de65-409a-976c-ae0b3cea7250",
+    "name": "korisnik uspesno pregleda sacuvane koktele",
+    "commands": [{
+      "id": "87584404-a658-48bc-b83b-ee33856b0741",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d76cd7d-854c-4387-9410-4d7d6d502032",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "82ff1260-de46-4e67-ae9e-86ce07eb22f0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Saved",
+      "targets": [
+        ["linkText=Saved", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Saved')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/displaySavedCocktails']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Saved')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a96abab-1461-4f7f-b049-c66deff6cc0a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p b",
+      "targets": [
+        ["css=p b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Saved cocktails')]", "xpath:innerText"]
+      ],
+      "value": "Saved cocktails"
+    }]
+  }, {
+    "id": "48f495ec-0c5f-40cb-ac6e-1c2ee5072f3d",
+    "name": "korinsik neuspesno dodaje koktel u listu sacuvanih",
+    "commands": [{
+      "id": "e1d7d1dd-2955-4769-8582-1b3df8557c7e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a8fc73b7-0d57-41e6-bb3c-758969af0dbd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c587214-226b-4e33-a4ee-8bfe274d1797",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bird of Paradise",
+      "targets": [
+        ["linkText=Bird of Paradise", "linkText"],
+        ["css=tr:nth-child(10) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bird of Paradise')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr[10]/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '\n                                    http://localhost/mixology/public/index.php/RegisteredController/cocktailDisplayRegistered/9                                    \n                                    ')]", "xpath:href"],
+        ["xpath=//tr[10]/td/table/tbody/tr/td[2]/font/b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bird of Paradise')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d810cc9-0d32-45c1-adea-ffa5907b7278",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cnt",
+      "targets": [
+        ["id=cnt", "id"],
+        ["css=#cnt", "css:finder"],
+        ["xpath=//span[@id='cnt']", "xpath:attributes"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "6cfcc226-b266-44ab-bfa7-14e8c719eb6d",
+      "comment": "",
+      "command": "click",
+      "target": "id=save",
+      "targets": [
+        ["id=save", "id"],
+        ["css=#save", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/mixology/public/images/others/light_heart1.png')]", "xpath:img"],
+        ["xpath=//img[@id='save']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[3]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87509567-a4fd-47b2-9eeb-69e6e1a1ed5c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cnt",
+      "targets": [
+        ["id=cnt", "id"],
+        ["css=#cnt", "css:finder"],
+        ["xpath=//span[@id='cnt']", "xpath:attributes"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }]
+  }],
+  "suites": [{
+    "id": "7d87aa46-0cd0-4e7a-8173-377ca51a7c70",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6cab9d32-80dc-4fb0-9beb-123b330988c4"]
+  }],
+  "urls": ["http://localhost/", "http://localhost/mixology/public/index.php/RegisteredController"],
+  "plugins": []
+}
