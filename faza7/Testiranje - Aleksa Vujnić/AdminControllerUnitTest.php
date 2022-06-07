@@ -7,7 +7,7 @@ use CodeIgniter\Config\Factories;
 use CodeIgniter\HTTP\URI;
 use Config\Services;
 
-class RegisteredControllerMockTest extends CIUnitTestCase
+class AdminControllerUnitTest extends CIUnitTestCase
 {
 
     //VAZNO: Za pokretanje testova neophodno izmeniti kod RegisteredController.php tako da Model klasu dohvata
@@ -39,17 +39,17 @@ class RegisteredControllerMockTest extends CIUnitTestCase
 		
 	}
 
-	public function test_showUserInfo()
+	public function test_showAdminInfo()
 	{		
-		$results = $this->controller('\App\Controllers\RegisteredController')
-                ->execute("showUserInfo");
+		$results = $this->controller('\App\Controllers\AdminController')
+                ->execute("showAdminInfo");
 		
         $this->assertTrue($results->see('My info', 'h3'));
         $this->assertTrue($results->see('First name', 'label'));
         $this->assertTrue($results->see('Tom'));
 	}
 
-    public function test_changeInfo(){
+    public function test_changeAdminInfo(){
 
         $mockModel = $this->createMock(\App\Models\Model::class);
 		$mockModel->expects($this->once())->method("changeUsername")->with($this->equalTo(1),$this->stringContains('mariar'));
@@ -70,12 +70,12 @@ class RegisteredControllerMockTest extends CIUnitTestCase
         ]);
 
         $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("changeInfo");
+                ->controller('\App\Controllers\AdminController')
+                ->execute("changeAdminInfo");
 
     }
 
-    public function test_changeInfo_usernameTaken(){
+    public function test_changeAdminInfo_usernameTaken(){
 
         $existing = (object)[
             'IdUser'=>2,
@@ -96,13 +96,13 @@ class RegisteredControllerMockTest extends CIUnitTestCase
         ]);
 
         $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("changeInfo");
+                ->controller('\App\Controllers\AdminController')
+                ->execute("changeAdminInfo");
         $this->assertTrue($results->see('Username already taken.','p'));
 
     }
 
-    public function test_changePass(){
+    public function test_changeAdminPass(){
 
         $mockModel = $this->createMock(\App\Models\Model::class);
 		$mockModel->expects($this->once())->method("changePassword")->with($this->equalTo(1),$this->stringContains('maria123'));
@@ -117,12 +117,12 @@ class RegisteredControllerMockTest extends CIUnitTestCase
         ]);
 
         $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("changePass");
+                ->controller('\App\Controllers\AdminController')
+                ->execute("changeAdminPass");
                 
     }
 
-    public function test_changePass_wrongCurrent(){
+    public function test_changeAdminPass_wrongCurrent(){
 
         $mockModel = $this->createMock(\App\Models\Model::class);
         Factories::injectMock('models', 'App\Models\Model', $mockModel);
@@ -135,14 +135,14 @@ class RegisteredControllerMockTest extends CIUnitTestCase
         ]);
 
         $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("changePass");
+                ->controller('\App\Controllers\AdminController')
+                ->execute("changeAdminPass");
 
         $this->assertTrue($results->see('Wrong input','label'));
                 
     }
 
-    public function test_changePass_nonMatching(){
+    public function test_changeAdminPass_nonMatching(){
 
         $mockModel = $this->createMock(\App\Models\Model::class);
         Factories::injectMock('models', 'App\Models\Model', $mockModel);
@@ -155,102 +155,13 @@ class RegisteredControllerMockTest extends CIUnitTestCase
         ]);
 
         $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("changePass");
+                ->controller('\App\Controllers\AdminController')
+                ->execute("changeAdminPass");
 
         $this->assertTrue($results->see('Wrong input','label'));
                 
     }
 
-    public function test_quiz_outcome1(){
-        $request = new \CodeIgniter\HTTP\IncomingRequest(new \Config\App(), new URI('http://example.com/'),'',new \CodeIgniter\HTTP\UserAgent());
-        $request->setGlobal('request',[
-            'inlineRadioOptions1'=>1,
-            'inlineRadioOptions2'=>1,
-            'inlineRadioOptions3'=>1,
-            'inlineRadioOptions4'=>1,
-            'inlineRadioOptions5'=>1
-        ]);
-
-        $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("quiz");
-
-        $this->assertTrue($results->see('You are a Blue Lagoon!','h2'));
-
-    }
-
-    public function test_quiz_outcome2(){
-        $request = new \CodeIgniter\HTTP\IncomingRequest(new \Config\App(), new URI('http://example.com/'),'',new \CodeIgniter\HTTP\UserAgent());
-        $request->setGlobal('request',[
-            'inlineRadioOptions1'=>2,
-            'inlineRadioOptions2'=>2,
-            'inlineRadioOptions3'=>3,
-            'inlineRadioOptions4'=>1,
-            'inlineRadioOptions5'=>5
-        ]);
-
-        $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("quiz");
-
-        $this->assertTrue($results->see('You are a Tequila Sunrise!','h2'));
-
-    }
-
-    public function test_quiz_outcome3(){
-        $request = new \CodeIgniter\HTTP\IncomingRequest(new \Config\App(), new URI('http://example.com/'),'',new \CodeIgniter\HTTP\UserAgent());
-        $request->setGlobal('request',[
-            'inlineRadioOptions1'=>2,
-            'inlineRadioOptions2'=>2,
-            'inlineRadioOptions3'=>5,
-            'inlineRadioOptions4'=>3,
-            'inlineRadioOptions5'=>5
-        ]);
-
-        $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("quiz");
-
-        $this->assertTrue($results->see('You are a Mohito!','h2'));
-
-    }
-
-    public function test_quiz_outcome4(){
-        $request = new \CodeIgniter\HTTP\IncomingRequest(new \Config\App(), new URI('http://example.com/'),'',new \CodeIgniter\HTTP\UserAgent());
-        $request->setGlobal('request',[
-            'inlineRadioOptions1'=>5,
-            'inlineRadioOptions2'=>3,
-            'inlineRadioOptions3'=>5,
-            'inlineRadioOptions4'=>3,
-            'inlineRadioOptions5'=>5
-        ]);
-
-        $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("quiz");
-
-        $this->assertTrue($results->see('You are a Bloody Mary!','h2'));
-
-    }
-
-    public function test_quiz_outcome5(){
-        $request = new \CodeIgniter\HTTP\IncomingRequest(new \Config\App(), new URI('http://example.com/'),'',new \CodeIgniter\HTTP\UserAgent());
-        $request->setGlobal('request',[
-            'inlineRadioOptions1'=>5,
-            'inlineRadioOptions2'=>5,
-            'inlineRadioOptions3'=>5,
-            'inlineRadioOptions4'=>3,
-            'inlineRadioOptions5'=>5
-        ]);
-
-        $results = $this->withRequest($request)
-                ->controller('\App\Controllers\RegisteredController')
-                ->execute("quiz");
-
-        $this->assertTrue($results->see('You are a Sex On The Beach!','h2'));
-
-    }
 
 
 }
