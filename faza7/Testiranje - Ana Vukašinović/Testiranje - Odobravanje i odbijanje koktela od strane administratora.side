@@ -1,0 +1,410 @@
+{
+  "id": "624b3f49-abd6-4292-adf3-8c6c7193990d",
+  "version": "2.0",
+  "name": "Testiranje - Odobravanje koktela od strane administratora",
+  "url": "http://localhost/mixology/public/index.php/GuestController",
+  "tests": [{
+    "id": "58876269-6e57-4e38-8fb9-3557b6aa3d2f",
+    "name": "TP1-Uspešno odobravanje koktela od strane administratora",
+    "commands": [{
+      "id": "1ee81950-6fea-43b2-95ed-6523bede22fc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "122d959e-4925-41be-b432-ff49153446e5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1026x710",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "135612b0-0c08-40cf-b7ce-a76572752b29",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a512bfb-aa20-43d0-8da9-d79c8387425a",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "3726a009-aed4-4aab-9c6f-5d5b3d80c75d",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8871a358-9ce1-405a-842f-633e15b89876",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin123"
+    }, {
+      "id": "5466b75a-4e6c-4f38-ba1d-9df3f19885c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0ef24b5-c99d-42cf-865d-05c227155a90",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Approve cocktails",
+      "targets": [
+        ["linkText=Approve cocktails", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Approve cocktails')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/AdminController/approveCocktailsPage']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Approve cocktails')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "311865eb-e095-4d78-ad14-2e10f364f0d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=(//input[@name='cocktail[]'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ecc169a-942b-40e8-ae5d-d042d33ac007",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > .btn",
+      "targets": [
+        ["css=p > .btn", "css:finder"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SUBMIT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09625890-7951-451e-ba05-2347d11dba66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/AdminController/logout'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f351990b-0063-40bf-bf76-b2cf00fa5230",
+      "comment": "",
+      "command": "click",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "073c03b8-d879-411d-b3b4-9c2d75447b69",
+      "comment": "",
+      "command": "type",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Hugo"
+    }, {
+      "id": "573534ee-a47d-4257-bcd6-abf4507c00d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a54a0093-b3d5-4613-b2a3-13d8a32edd55",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) tr",
+      "targets": [
+        ["css=tr:nth-child(1) tr", "css:finder"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr", "xpath:idRelative"],
+        ["xpath=//td/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eab83b83-c28c-43e3-8df0-75a7c40e96e4",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Hugo",
+      "targets": [
+        ["linkText=Hugo", "linkText"],
+        ["css=b > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Hugo')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/GuestController/cocktailDisplayUnregistered/2']", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Hugo')]", "xpath:innerText"]
+      ],
+      "value": "Hugo"
+    }]
+  }, {
+    "id": "5d999e25-f928-4974-8cbb-3cb71bf3bdb0",
+    "name": "TP2 - Uspešno odbijanje koktela od strane administratora",
+    "commands": [{
+      "id": "b18bef85-769b-4015-ac38-0cb910a1a81b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c075a58-e7c5-4b27-9fad-81956f86e4a5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1026x710",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f332b6a-bd3b-4923-8bd2-ab2e83941cb7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0627aec6-0504-4e14-b3b6-7645f483f185",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "4e00b8b9-c1f8-4bc1-b19c-0ed835fba767",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ade4f5a9-96b0-47de-afac-0e81a4b07211",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin123"
+    }, {
+      "id": "9e31a279-e7e3-4e9e-8add-cfa787abe895",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "943acfa9-f6c3-46fc-a121-7eb1e40f6e48",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Approve cocktails",
+      "targets": [
+        ["linkText=Approve cocktails", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Approve cocktails')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/AdminController/approveCocktailsPage']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Approve cocktails')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52550801-cc8c-4507-ac6b-bdfeab294a6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=(//input[@name='cocktail[]'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bc717b2-f2d9-422d-b747-b83c392606d9",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='type'])[2]", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c7353a7-f32b-4627-93a6-29130b6f5304",
+      "comment": "",
+      "command": "click",
+      "target": "css=p > .btn",
+      "targets": [
+        ["css=p > .btn", "css:finder"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SUBMIT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7688410f-422d-4bff-b29e-9bf9126fcbc5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/AdminController/logout'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "08e40d62-3140-4e04-9c52-adf552a6ebbd",
+      "comment": "",
+      "command": "click",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6338c012-fd89-4ffe-8672-6d5d5c271558",
+      "comment": "",
+      "command": "type",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Hugo"
+    }, {
+      "id": "c354c973-38b1-4b96-8422-64b5e5b26e52",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb04f7e2-fa89-47a9-a31c-0f2b2ae50f04",
+      "comment": "",
+      "command": "click",
+      "target": "css=#results > p",
+      "targets": [
+        ["css=#results > p", "css:finder"],
+        ["xpath=//div[@id='results']/p", "xpath:idRelative"],
+        ["xpath=//div[3]/p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ade83abc-9634-4aa7-ad21-6f3f8808e1df",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#results > p",
+      "targets": [
+        ["css=#results > p", "css:finder"],
+        ["xpath=//div[@id='results']/p", "xpath:idRelative"],
+        ["xpath=//div[3]/p", "xpath:position"]
+      ],
+      "value": "Sorry, no results were found"
+    }]
+  }],
+  "suites": [{
+    "id": "08ba8b9e-c36b-40ca-9c07-e54f822ed10f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost/", "http://localhost/mixology/public/index.php/AdminController", "http://localhost/mixology/public/index.php/GuestController"],
+  "plugins": []
+}
