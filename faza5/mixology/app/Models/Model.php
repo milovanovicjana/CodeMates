@@ -195,7 +195,8 @@ class Model
     public function deleteUsersAccounts($usersCheckBoxs){
      
        foreach($usersCheckBoxs as $userCb){
-           $this->db->table('user')->where('IdUser',$userCb)->delete();
+           if($userCb!="1")  //dodato da admin ne moze da brise sam sebe
+                 $this->db->table('user')->where('IdUser',$userCb)->delete();
        }
     }
 
