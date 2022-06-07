@@ -1,0 +1,511 @@
+{
+  "id": "f6d16787-880a-42b2-80eb-9d728749454c",
+  "version": "2.0",
+  "name": "Testiranje - Pretraga",
+  "url": "http://localhost/mixology/public/index.php/GuestController",
+  "tests": [{
+    "id": "a4466707-6396-4bee-8935-fa87656f51ec",
+    "name": "TP1 - Neuspešna pretraga, nije unet nijedan kriterijum pretrage",
+    "commands": [{
+      "id": "c9776e7a-da15-426c-a795-e8a1d8910ff7",
+      "comment": "",
+      "command": "open",
+      "target": "/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3201f60a-084c-4547-a6c4-3725f0f0899d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1023x711",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fcf6df3-f2f4-43f3-8f31-95b6acb5a2ba",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9fbc1db-1f66-4719-a3dd-49bf3018d979",
+      "comment": "",
+      "command": "click",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='results']/p/font/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Please enter a cocktail name or click on the filters to start searching.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a09d30a-100a-4376-a300-b6ad6b4510fd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='results']/p/font/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Please enter a cocktail name or click on the filters to start searching.')]", "xpath:innerText"]
+      ],
+      "value": "Please enter a cocktail name or click on the filters to start searching."
+    }]
+  }, {
+    "id": "4b6919f9-6138-4700-b38a-fafe2f72c861",
+    "name": "TP2 - Uspešna pretraga, unet naziv koktela",
+    "commands": [{
+      "id": "63bdd1d7-d68a-4e12-8dd8-35c5112d6d51",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cfb87a8-f282-47c7-8b6a-18f0f570f900",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1023x711",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9289860b-2cf7-43fd-941e-2db530237a3e",
+      "comment": "",
+      "command": "click",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a307f41-4251-44fd-bd1e-6f2e84ad4b5f",
+      "comment": "",
+      "command": "type",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Mojito"
+    }, {
+      "id": "07ec904a-8058-4665-9c0c-b5e0eb322b75",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ab50039-4a44-457b-84ee-8eea3b7ac3f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) tr",
+      "targets": [
+        ["css=tr:nth-child(1) tr", "css:finder"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr", "xpath:idRelative"],
+        ["xpath=//td/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2448e08e-e01d-409f-9d48-6983e9d6dc12",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Virgin Mojito",
+      "targets": [
+        ["linkText=Virgin Mojito", "linkText"],
+        ["css=tr:nth-child(1) table a", "css:finder"],
+        ["xpath=//a[contains(text(),'Virgin Mojito')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/GuestController/cocktailDisplayUnregistered/17']", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Virgin Mojito')]", "xpath:innerText"]
+      ],
+      "value": "Virgin Mojito"
+    }, {
+      "id": "f1037366-fd3a-495a-8216-0c0b67df269e",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='results']/table/tbody/tr[2]/td/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9fb7ed9-90c1-4d20-9b21-a5d8bd4066b9",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Mojito",
+      "targets": [
+        ["linkText=Mojito", "linkText"],
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Mojito')])[2]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr[2]/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/GuestController/cocktailDisplayUnregistered/18']", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td[2]/font/b/a", "xpath:position"]
+      ],
+      "value": "Mojito"
+    }]
+  }, {
+    "id": "a2e9f070-b324-458b-a16f-ab574b3b495c",
+    "name": "TP3 - Uspešna pretraga, uneto više filtera",
+    "commands": [{
+      "id": "a38a1748-7ec8-4164-9ecf-0029a1eae9da",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4c5dc22-ddac-40d5-b711-dc97146b0837",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1026x714",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a40f1cfe-f0c7-42ed-9711-feef485f8462",
+      "comment": "",
+      "command": "click",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df0a1592-e2ae-41f4-9716-f9920f5bd4cd",
+      "comment": "",
+      "command": "type",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Pina"
+    }, {
+      "id": "e22ca36e-0f20-4e0a-81da-94902410f7b0",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(1) td:nth-child(2) > input",
+      "targets": [
+        ["css=li:nth-child(1) td:nth-child(2) > input", "css:finder"],
+        ["xpath=(//input[@name='Type'])[2]", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af5e94c9-bc48-4063-81f1-e7af05427d01",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "31c046af-6c7f-4951-b0a4-7b5c025e35cd",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) tr",
+      "targets": [
+        ["css=tr:nth-child(1) tr", "css:finder"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr", "xpath:idRelative"],
+        ["xpath=//td/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8b8dc88-bedf-4e06-9387-cce8ddf86d1b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Virgin Pina Colada",
+      "targets": [
+        ["linkText=Virgin Pina Colada", "linkText"],
+        ["css=b > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Virgin Pina Colada')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/GuestController/cocktailDisplayUnregistered/19']", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Virgin Pina Colada')]", "xpath:innerText"]
+      ],
+      "value": "Virgin Pina Colada"
+    }]
+  }, {
+    "id": "65c079e4-a594-43eb-9e3a-6679472644e5",
+    "name": "TP4 - Neuspešna pretraga, nema rezultata za date filtere",
+    "commands": [{
+      "id": "7090a830-2180-4ea6-9aa8-322c497eb921",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e9d44b3-6b68-430f-ac1a-30f4b27758fb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1030x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "87dfc77e-8612-4e69-96ba-c3bfb3338b69",
+      "comment": "",
+      "command": "click",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1fbe4d8-ece9-406f-a213-aa0aa8d68086",
+      "comment": "",
+      "command": "type",
+      "target": "id=cName",
+      "targets": [
+        ["id=cName", "id"],
+        ["name=cocktailName", "name"],
+        ["css=#cName", "css:finder"],
+        ["xpath=//input[@id='cName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Kubana"
+    }, {
+      "id": "c1322a92-36c7-42f2-b395-b09e9f1b505c",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(1) td:nth-child(2) > input",
+      "targets": [
+        ["css=li:nth-child(1) td:nth-child(2) > input", "css:finder"],
+        ["xpath=(//input[@name='Type'])[2]", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77d9cffb-a9a4-46af-92ee-bdd744477f78",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(3) tr:nth-child(1) > td:nth-child(4) > input",
+      "targets": [
+        ["css=li:nth-child(3) tr:nth-child(1) > td:nth-child(4) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[3]", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e760c7e-37c9-4bfc-a725-b6c7e4f59f6d",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(5) td:nth-child(4) > input",
+      "targets": [
+        ["css=li:nth-child(5) td:nth-child(4) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[20]", "xpath:attributes"],
+        ["xpath=//li[3]/table/tbody/tr/td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6b1c3c0-af8e-4853-836d-7096cce7ad4a",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fabe8f12-2074-4c9e-8ef1-b9a3764eec6a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#results > p",
+      "targets": [
+        ["css=#results > p", "css:finder"],
+        ["xpath=//div[@id='results']/p", "xpath:idRelative"],
+        ["xpath=//div[3]/p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a817d665-ada6-4954-a0e2-44836c6b777c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='results']/p/font/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Sorry, no results were found')]", "xpath:innerText"]
+      ],
+      "value": "Sorry, no results were found"
+    }]
+  }, {
+    "id": "96bcd190-3347-40db-8052-5306b505f36f",
+    "name": "TP5 - Uspešna pretraga, za svaki kriterijum, tj. filter je obelžena jedna vrednost",
+    "commands": [{
+      "id": "ee3b9fcf-1206-4f1b-bbd7-1c0d1802696b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "765b95a1-07de-492f-a2cd-12de570296d3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1023x711",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1fb027fd-1f01-402e-9963-9f93c5f1271e",
+      "comment": "",
+      "command": "click",
+      "target": "name=Type",
+      "targets": [
+        ["name=Type", "name"],
+        ["css=li:nth-child(1) td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='Type']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3db71f2-e4ed-4191-878e-a278dc4a45af",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(3) tr:nth-child(2) > td:nth-child(2) > input",
+      "targets": [
+        ["css=li:nth-child(3) tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[5]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0af83adb-0d6d-49e8-b30b-e6a963552c76",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(5) td:nth-child(1) > input",
+      "targets": [
+        ["css=li:nth-child(5) td:nth-child(1) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[17]", "xpath:attributes"],
+        ["xpath=//li[3]/table/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f75a5aa1-179d-41cf-b1b4-631c68701a90",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(7) tr:nth-child(1) > td:nth-child(2) > input",
+      "targets": [
+        ["css=li:nth-child(7) tr:nth-child(1) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[23]", "xpath:attributes"],
+        ["xpath=//li[4]/table/tbody/tr/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "716c9e21-663c-4ec0-b7f4-0b226a663495",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(9) td:nth-child(2) > input",
+      "targets": [
+        ["css=li:nth-child(9) td:nth-child(2) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[35]", "xpath:attributes"],
+        ["xpath=//li[5]/table/tbody/tr/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5b11b90-e1e8-4ce0-bfb3-90f8b1223514",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(11) td:nth-child(1) > input",
+      "targets": [
+        ["css=li:nth-child(11) td:nth-child(1) > input", "css:finder"],
+        ["xpath=(//input[@name='filter[]'])[41]", "xpath:attributes"],
+        ["xpath=//li[6]/table/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "829462e8-43ee-4a08-bfb7-7a8f302e97db",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["css=#search", "css:finder"],
+        ["xpath=//button[@id='search']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEARCH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "730c0723-4ec3-4e54-b90b-1c84e3e9584c",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(1) > td td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td/table/tbody/tr/td[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b2accee-84db-4e55-be1a-f4c26e276c06",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Mai Tai",
+      "targets": [
+        ["linkText=Mai Tai", "linkText"],
+        ["css=b > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Mai Tai')]", "xpath:link"],
+        ["xpath=//div[@id='results']/table/tbody/tr/td/table/tbody/tr/td[2]/font/b/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/GuestController/cocktailDisplayUnregistered/6']", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Mai Tai')]", "xpath:innerText"]
+      ],
+      "value": "Mai Tai"
+    }]
+  }],
+  "suites": [{
+    "id": "f7d08038-8d39-4c95-9da5-e13a2b97977c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a4466707-6396-4bee-8935-fa87656f51ec"]
+  }],
+  "urls": ["http://localhost/", "http://localhost/mixology/public/index.php/GuestController"],
+  "plugins": []
+}
