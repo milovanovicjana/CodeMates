@@ -1,0 +1,1678 @@
+{
+  "id": "738ba1a9-f525-4e96-9a06-d7ea6055edfb",
+  "version": "2.0",
+  "name": "Mixology",
+  "url": "http://localhost/mixology/public/index.php/RegisteredController",
+  "tests": [{
+    "id": "772c8440-e56c-4f59-9f23-f2051fab26bf",
+    "name": "Pregled korisnickih podataka",
+    "commands": [{
+      "id": "048438be-ab60-4dbc-ae1a-e3fc4df551aa",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28ab3b43-c7d5-48b9-9f3d-070614aad4a9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1079x726",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09b9930a-fe6b-4959-af49-5ea6c5cd91d6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My info",
+      "targets": [
+        ["linkText=My info", "linkText"],
+        ["css=.nav-item:nth-child(6) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'My info')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showUserInfo']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "50935944-ca8e-4ff7-bd84-3a35c3a0a83a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Aleksa']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cafc069-13a2-43b9-a957-5d080102d213",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-6 > h3",
+      "targets": [
+        ["css=.col-sm-6 > h3", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2b20a45-5e4b-4259-81dc-33e026674658",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-6 > h3",
+      "targets": [
+        ["css=.col-sm-6 > h3", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": "My info"
+    }, {
+      "id": "84437b28-14e2-4db9-ac62-e9d5341398df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Aleksa']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1426a4a2-1b28-4e79-898f-4c1194af1fa7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Aleksa']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "52e6da21-19b6-49d7-b7f7-e7b02b371632",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Aleksa']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a16d4dec-70ce-45e4-a1e4-7ecfb380611a",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Aleksa']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Tom"
+    }, {
+      "id": "dad9e6da-9e8c-423b-99d5-3f9e89459221",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(6) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(6) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Vujnic']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Jones"
+    }, {
+      "id": "13ad62f0-6997-45f3-b688-8d9ffb2c32d7",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(8) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom99@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tom99@gmail.com"
+    }, {
+      "id": "b42456ee-9789-4bc0-b0f2-626e9b0d16b0",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(8) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom99@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tom99@gmail.com"
+    }, {
+      "id": "12960dfe-801e-47d2-87c3-c400643b13c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(10) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(10) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom99']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fec668e-ff86-4d28-b02c-252f5aa01107",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(10) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(10) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom99']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "tom99"
+    }, {
+      "id": "80c35678-1e85-4beb-8db6-f4f2f18fdbcb",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(12) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(12) > .form-control", "css:finder"],
+        ["xpath=//input[@value='1999-05-10']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "1999-05-10"
+    }, {
+      "id": "b56fd86e-7e09-4f61-a44a-76d1ce3cd354",
+      "comment": "",
+      "command": "assertChecked",
+      "target": "id=male",
+      "targets": [
+        ["id=male", "id"],
+        ["name=gender", "name"],
+        ["css=#male", "css:finder"],
+        ["xpath=//input[@id='male']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fe31c01-619c-483d-9ce3-476f53efdca8",
+      "comment": "",
+      "command": "assertNotChecked",
+      "target": "id=female",
+      "targets": [
+        ["id=female", "id"],
+        ["css=#female", "css:finder"],
+        ["xpath=//input[@id='female']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "845a0d46-1073-46d0-a60b-4a4057dd1ab1",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(20) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(20) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom123']", "xpath:attributes"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37eab829-8ed7-46bd-8434-79c3994362cb",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Aleksa']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee79f3ec-4dfd-4ee6-9a97-4ccd6fea1516",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(6) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(6) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Vujnic']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc195306-1f41-477e-a000-d9525fdb7913",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(8) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom99@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d0d822e-ee2d-4c2a-8fe0-e15e6d7071c2",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(10) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(10) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom99']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f182cd2-84c8-444d-ba98-ad4640850d6c",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(12) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(12) > .form-control", "css:finder"],
+        ["xpath=//input[@value='1999-05-10']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91ad6e4c-21c1-4146-ad18-d6ed38e9f5f7",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "id=male",
+      "targets": [
+        ["id=male", "id"],
+        ["name=gender", "name"],
+        ["css=#male", "css:finder"],
+        ["xpath=//input[@id='male']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75822e99-52ba-4f25-a062-270ad2d1479f",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "id=female",
+      "targets": [
+        ["css=.form-check:nth-child(16) > .form-check-label", "css:finder"],
+        ["xpath=//div[7]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Female')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b39daf49-501b-4733-acb6-e1da0be3b485",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "id=other",
+      "targets": [
+        ["id=other", "id"],
+        ["css=#other", "css:finder"],
+        ["xpath=//input[@id='other']", "xpath:attributes"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d53b7780-9212-4da2-8550-832ea06696c4",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.form-group:nth-child(20) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(20) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tom123']", "xpath:attributes"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "db875b65-3e9f-4e5a-99de-2711ee71bb87",
+    "name": "Promena korisnickih podataka",
+    "commands": [{
+      "id": "695b8614-6c02-4b8d-b656-f5823bb4b1fb",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e43733e1-504c-4a28-a973-ff2d87dd1146",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1079x726",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf008de0-9faa-4fa6-8bf0-f971a1008306",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My info",
+      "targets": [
+        ["linkText=My info", "linkText"],
+        ["css=.nav-item:nth-child(6) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'My info')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showUserInfo']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdb3f549-0fae-48da-a36d-dd2ff6eee276",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(18)",
+      "targets": [
+        ["css=.btn:nth-child(18)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea814fbd-e4af-4393-ba7d-ea3ef452bce6",
+      "comment": "",
+      "command": "type",
+      "target": "name=firstname",
+      "targets": [
+        ["name=firstname", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='firstname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Tommy"
+    }, {
+      "id": "5a2d237e-06a8-41e2-82c6-dceefd7b07db",
+      "comment": "",
+      "command": "type",
+      "target": "name=lastname",
+      "targets": [
+        ["name=lastname", "name"],
+        ["css=.form-group:nth-child(6) > .form-control", "css:finder"],
+        ["xpath=//input[@name='lastname']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Jacobs"
+    }, {
+      "id": "e6e4470c-8f04-4270-a5c1-027a62ec4cad",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tommy99"
+    }, {
+      "id": "7a79b46c-af38-46eb-a348-5b62c51186dd",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tommy99@gmail.com"
+    }, {
+      "id": "5d3e5d02-fbba-4f25-92e0-81d6900a6817",
+      "comment": "",
+      "command": "click",
+      "target": "id=other",
+      "targets": [
+        ["id=other", "id"],
+        ["css=#other", "css:finder"],
+        ["xpath=//input[@id='other']", "xpath:attributes"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7c06086-4030-499f-8fe6-dbb64024e104",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Apply changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aca76a2f-e5f2-4307-b6ae-ddaf5fc200ef",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(4) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Tommy']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Tommy"
+    }, {
+      "id": "ad5722b9-d816-4354-a5be-31464c1c8aa4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-6 > h3",
+      "targets": [
+        ["css=.col-sm-6 > h3", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": "My info"
+    }, {
+      "id": "9fe3c109-3f75-46fc-9e6c-774cab29d924",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(6) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(6) > .form-control", "css:finder"],
+        ["xpath=//input[@value='Jacobs']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Jacobs"
+    }, {
+      "id": "4e52c2dc-313c-40fd-8518-e0df110458c1",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(8) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tommy99@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tommy99@gmail.com"
+    }, {
+      "id": "69839604-68de-4453-81c6-c58f1cf6dbbf",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.form-group:nth-child(10) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(8) > .form-control", "css:finder"],
+        ["xpath=//input[@value='tommy99@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tommy99"
+    }, {
+      "id": "44f57b06-0d77-4a32-af48-de9666e66b1b",
+      "comment": "",
+      "command": "assertNotChecked",
+      "target": "id=male",
+      "targets": [
+        ["id=male", "id"],
+        ["name=gender", "name"],
+        ["css=#male", "css:finder"],
+        ["xpath=//input[@id='male']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca87c8c8-fe33-4109-bca7-d3ae93ce083a",
+      "comment": "",
+      "command": "assertNotChecked",
+      "target": "id=female",
+      "targets": [
+        ["id=female", "id"],
+        ["css=#female", "css:finder"],
+        ["xpath=//input[@id='female']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11b96922-bcd1-4211-b11f-3eedd155a128",
+      "comment": "",
+      "command": "assertChecked",
+      "target": "id=other",
+      "targets": [
+        ["id=other", "id"],
+        ["css=#other", "css:finder"],
+        ["xpath=//input[@id='other']", "xpath:attributes"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "108d5c61-0bf2-4063-8960-ecfd5d9c96f4",
+    "name": "Promena lozinke",
+    "commands": [{
+      "id": "af9f3b78-3b6f-4dc2-813f-ff5fb5deb18e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23dad08b-047a-4b11-ae65-3a4573f17873",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1079x726",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e99c75e2-6e2e-45dc-8948-a6795e2cbd2c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My info",
+      "targets": [
+        ["linkText=My info", "linkText"],
+        ["css=.nav-item:nth-child(6) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'My info')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showUserInfo']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7ea20b9-f3b0-411f-bfb3-ed88c755642d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4a30f70-e345-47ec-83e4-c010f6089c9c",
+      "comment": "",
+      "command": "click",
+      "target": "name=curpass",
+      "targets": [
+        ["name=curpass", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='curpass']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5d82bf0-07a9-4d37-8858-27165dc0edfb",
+      "comment": "",
+      "command": "type",
+      "target": "name=curpass",
+      "targets": [
+        ["name=curpass", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='curpass']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tom123"
+    }, {
+      "id": "c89b0a50-26c0-4041-9c45-8d046504492a",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpass",
+      "targets": [
+        ["name=newpass", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "tom123"
+    }, {
+      "id": "b1eaf2f5-c9b5-407e-bad2-52649f7c3626",
+      "comment": "",
+      "command": "click",
+      "target": "name=newpass",
+      "targets": [
+        ["name=newpass", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53561dee-51b2-4305-af51-0955c87756e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpass",
+      "targets": [
+        ["name=newpass", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "tommy123"
+    }, {
+      "id": "f4ddda5e-544b-4a57-a278-371bd2ba616f",
+      "comment": "",
+      "command": "click",
+      "target": "name=newpassconf",
+      "targets": [
+        ["name=newpassconf", "name"],
+        ["css=.form-group:nth-child(5) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpassconf']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40bb72a5-aa68-40e2-aeb3-a35ba2cc469a",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpassconf",
+      "targets": [
+        ["name=newpassconf", "name"],
+        ["css=.form-group:nth-child(5) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpassconf']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tommy123"
+    }, {
+      "id": "d08200b9-6658-424b-b351-0fa77216d047",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4868edd4-75e1-44ed-b997-95d30ac5274f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(3)",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/RegisteredController/logout'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c30d4d3-7ee5-4eed-a26b-c82ee2ef0230",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a02dcae3-1b56-4e66-8a1f-ea272d3ebf1f",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tommy99"
+    }, {
+      "id": "ae1130a4-e5ea-4411-a146-2789bbf21ace",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "393d6bab-86ae-4d95-8ebc-23364f1bc885",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "tommy123"
+    }, {
+      "id": "3a2ea56c-b1ea-4332-b2f3-208350f4e57f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "039b5809-1a1c-4a60-b8a5-b1b68ce00df3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.logo",
+      "targets": [
+        ["css=.logo", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8812a1aa-6a75-482d-99ac-d4b1669e52bd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=i > font",
+      "targets": [
+        ["css=i > font", "css:finder"],
+        ["xpath=//font", "xpath:position"],
+        ["xpath=//font[contains(.,'Hello Tommy!')]", "xpath:innerText"]
+      ],
+      "value": "Hello Tommy!"
+    }]
+  }, {
+    "id": "10977717-37d1-476e-9fec-38fff4f02c47",
+    "name": "Resavanje kviza - ishod 1",
+    "commands": [{
+      "id": "271d32b7-1776-4130-b6e2-a7a20e95fc6f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c779323d-2353-49f4-be27-ce8b1568e73d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0d4f2c5-fc1b-4802-a49f-cceb5e972f74",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quiz",
+      "targets": [
+        ["linkText=Quiz", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quiz')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showQuiz']", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c4af602-6c9c-4a37-a8a5-0a66e73cdb6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(4) .form-check:nth-child(2) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(4) .form-check:nth-child(2) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions1'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0dd8083d-6781-4ddb-9943-58e4fb058124",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(7) .form-check:nth-child(2) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(7) .form-check:nth-child(2) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions2'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91c38fb4-85e5-4b11-a128-d22ec20f604f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(10) .form-check:nth-child(2) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(10) .form-check:nth-child(2) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions3'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fccad9b-b59c-4159-ae99-a768d6b3943e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(13) .form-check:nth-child(4) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(13) .form-check:nth-child(4) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions4'])[4]", "xpath:attributes"],
+        ["xpath=//div[4]/div/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28029459-4b44-4bfb-9b5c-a294675092bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e32879ba-736c-4a87-8fed-ed15b89fffdf",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-8 > h2",
+      "targets": [
+        ["css=.col-sm-8 > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'You are a Mohito!')]", "xpath:innerText"]
+      ],
+      "value": "You are a Mohito!"
+    }, {
+      "id": "f6b3850e-2df9-4ebf-b6fd-1d52aa970ffb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/RegisteredController/'\"]", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Return')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "902f18a8-a09d-4c2d-9b4d-3f4688ba6580",
+    "name": "Resavanje kviza - ishod 2",
+    "commands": [{
+      "id": "e11ab283-f03a-46e5-80ae-9c0089f7e43e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f115af9-58ab-4a11-894c-fd2db91e1a1f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eddefb8c-df6e-4f6a-bc39-d2a7b34111ce",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quiz",
+      "targets": [
+        ["linkText=Quiz", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quiz')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showQuiz']", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "81414077-c095-4eb3-8fcf-ffa21534c71e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(4) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(4) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions1'])[5]", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "289a32b0-f802-4f86-858c-e64d51184aea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(7) .form-check:nth-child(4) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(7) .form-check:nth-child(4) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions2'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fceddf16-df86-475b-ae09-25fc354df3f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(10) .form-check:nth-child(3) > .form-check-label",
+      "targets": [
+        ["css=.options:nth-child(10) .form-check:nth-child(3) > .form-check-label", "css:finder"],
+        ["xpath=//div[3]/div/div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Adventurous')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f031627-ba91-4f03-b687-90120613114f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(10) .form-check:nth-child(3) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(10) .form-check:nth-child(3) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions3'])[3]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7397baed-beec-4e9f-8ca0-b81434c95cbd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(13) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(13) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions4'])[5]", "xpath:attributes"],
+        ["xpath=//div[4]/div/div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66332943-0da2-4e3f-97ba-eb5d019b712d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(16) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(16) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions5'])[5]", "xpath:attributes"],
+        ["xpath=//div[5]/div/div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "768180de-81d4-475d-bc0c-9b558b950955",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1ed374f-6a82-4a5d-87c8-23847deeac1f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-8 > h2",
+      "targets": [
+        ["css=.col-sm-8 > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'You are a Sex On The Beach!')]", "xpath:innerText"]
+      ],
+      "value": "You are a Sex On The Beach!"
+    }]
+  }, {
+    "id": "c8df0936-9c8f-4f1b-b874-0576e805478d",
+    "name": "Resavanje kviza - ishod 3",
+    "commands": [{
+      "id": "2223d3ec-0b04-4cec-8f75-625a92cb5c79",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "941a1b1d-8483-451f-8bef-57789199892d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "059fc55e-3183-49f9-9130-cce58bd81f2d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quiz",
+      "targets": [
+        ["linkText=Quiz", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quiz')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showQuiz']", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fef728f4-1b79-4ac7-b026-d0462e380d10",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(4) .form-check:nth-child(3)",
+      "targets": [
+        ["css=.options:nth-child(4) .form-check:nth-child(3)", "css:finder"],
+        ["xpath=//form/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f286002-4b3b-4cb5-aca4-5deef6d51c5f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(4) .form-check:nth-child(3) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(4) .form-check:nth-child(3) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions1'])[3]", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b980157-9b76-46bb-b1c2-07c031ecc144",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(7) .form-check:nth-child(5)",
+      "targets": [
+        ["css=.options:nth-child(7) .form-check:nth-child(5)", "css:finder"],
+        ["xpath=//div[2]/div/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c854a1a8-b92d-4599-a22f-82f0fde9e0d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(7) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(7) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions2'])[5]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3817115-8dbd-4cb6-8023-196522f3f9b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(13) .form-check:nth-child(3) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(13) .form-check:nth-child(3) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions4'])[3]", "xpath:attributes"],
+        ["xpath=//div[4]/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44ac5ae2-d637-44c2-a7ec-25feef05b23b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(16) .form-check:nth-child(4) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(16) .form-check:nth-child(4) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions5'])[4]", "xpath:attributes"],
+        ["xpath=//div[5]/div/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b07e417b-3883-4838-9201-dd303e8c901a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "90fd45c2-02d9-4696-8417-c2b1b1ad8ba1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-8 > h2",
+      "targets": [
+        ["css=.col-sm-8 > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'You are a Blue Lagoon!')]", "xpath:innerText"]
+      ],
+      "value": "You are a Blue Lagoon!"
+    }]
+  }, {
+    "id": "c301171f-8590-441c-b825-f5eec54e3f01",
+    "name": "Promena lozinke - pogresna lozinka",
+    "commands": [{
+      "id": "bc237784-c0a8-4edf-9f2a-7de312a6df26",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20da9b8d-7d23-4b86-99ac-49793bc9f7b9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3044ecd9-b164-4279-bb4e-1a4cf6687ab6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My info",
+      "targets": [
+        ["linkText=My info", "linkText"],
+        ["css=.nav-item:nth-child(6) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'My info')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showUserInfo']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0cb701b-a14d-48c7-bc77-c5d1c2453856",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7943f981-12eb-4924-8c07-9b74490c03b0",
+      "comment": "",
+      "command": "click",
+      "target": "name=curpass",
+      "targets": [
+        ["name=curpass", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='curpass']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b49ce1d-b9ed-4e95-8151-097ae1cb3f04",
+      "comment": "",
+      "command": "type",
+      "target": "name=curpass",
+      "targets": [
+        ["name=curpass", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='curpass']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tommy1"
+    }, {
+      "id": "9769606d-cfdf-4ffc-9280-bafeaa04ace4",
+      "comment": "",
+      "command": "click",
+      "target": "name=newpass",
+      "targets": [
+        ["name=newpass", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0539153-7768-4a9c-a7be-1748306008ba",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpass",
+      "targets": [
+        ["name=newpass", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "tom123"
+    }, {
+      "id": "44fe9a02-1a62-489f-9269-996025686c85",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpassconf",
+      "targets": [
+        ["name=newpassconf", "name"],
+        ["css=.form-group:nth-child(5) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpassconf']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tom123"
+    }, {
+      "id": "e71161a4-7872-41d0-bf9b-3cc68fb85846",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0869d7de-dd85-4d5d-b018-9f8007f8e5ba",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=wr_in",
+      "targets": [
+        ["id=wr_in", "id"],
+        ["css=#wr_in", "css:finder"],
+        ["xpath=//label[@id='wr_in']", "xpath:attributes"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Wrong input')]", "xpath:innerText"]
+      ],
+      "value": "Wrong input"
+    }]
+  }, {
+    "id": "0634b15e-e551-460e-af29-3d7187e6fce5",
+    "name": "Promena lozinke - nepodudaranje",
+    "commands": [{
+      "id": "531651f4-d62a-4005-a2b9-85027e886330",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd53340e-1504-4106-a503-fe4dac67682f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d60ced2-c8fa-4e63-b2c4-b37543071cc4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My info",
+      "targets": [
+        ["linkText=My info", "linkText"],
+        ["css=.nav-item:nth-child(6) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'My info')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showUserInfo']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a7bbbb6-fedb-43e4-808e-6ac4c6c64126",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd58d750-acda-4930-a8a4-b18c6ffbe19b",
+      "comment": "",
+      "command": "click",
+      "target": "name=curpass",
+      "targets": [
+        ["name=curpass", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='curpass']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "03922791-8b1d-4c53-b54f-778ed898c86b",
+      "comment": "",
+      "command": "type",
+      "target": "name=curpass",
+      "targets": [
+        ["name=curpass", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='curpass']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tommy123"
+    }, {
+      "id": "11c41429-bf1c-49f0-8aa6-7f76b418fbf0",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpass",
+      "targets": [
+        ["name=newpass", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "tom123"
+    }, {
+      "id": "593bfc20-fe01-45d3-b6bf-806a3efb531f",
+      "comment": "",
+      "command": "type",
+      "target": "name=newpassconf",
+      "targets": [
+        ["name=newpassconf", "name"],
+        ["css=.form-group:nth-child(5) > .form-control", "css:finder"],
+        ["xpath=//input[@name='newpassconf']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "tommy1"
+    }, {
+      "id": "f71b0855-eb6b-405b-8d2d-41056521b93f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9217e0ed-5588-4ec0-92a4-235248ea58f6",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=wr_in",
+      "targets": [
+        ["id=wr_in", "id"],
+        ["css=#wr_in", "css:finder"],
+        ["xpath=//label[@id='wr_in']", "xpath:attributes"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Wrong input')]", "xpath:innerText"]
+      ],
+      "value": "Wrong input"
+    }]
+  }, {
+    "id": "a20532c9-b92c-4ad1-ab07-f6a68064951d",
+    "name": "Promena korisnickih podataka - zauzeto ime",
+    "commands": [{
+      "id": "b773c84a-d99f-4cd8-8cd1-931f7987ef64",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12d89759-ffae-4881-a61c-defb15ebcb72",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8349004-885c-47f5-b3f4-6728c7592f82",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My info",
+      "targets": [
+        ["linkText=My info", "linkText"],
+        ["css=.nav-item:nth-child(6) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'My info')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showUserInfo']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a19ffcfc-4e32-4e42-9856-222beca83d43",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(18)",
+      "targets": [
+        ["css=.btn:nth-child(18)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Change info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "012c4cd1-8481-4637-a3e7-dbab5ca313da",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-group:nth-child(10) > .form-control", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87e51c44-218a-463b-a097-dff312d7340b",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-group:nth-child(10) > .form-control", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "0a7af1bd-2cfc-4ed5-a747-8a464a24cd3a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Apply changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff3fd074-ef76-481a-b533-4cee8cdde345",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(1)",
+      "targets": [
+        ["css=p:nth-child(1)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Username already taken.')]", "xpath:innerText"]
+      ],
+      "value": "Username already taken."
+    }]
+  }, {
+    "id": "52e97b4a-9b69-43b3-a232-b4567e95b02f",
+    "name": "Resavanje kviza - ishod 4",
+    "commands": [{
+      "id": "f7a19352-798b-4d9b-a5a7-42572868dbc9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25d09686-ed15-4531-af29-bd84f118199a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3af9e53f-5bec-4da7-aca9-30d55a340eff",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quiz",
+      "targets": [
+        ["linkText=Quiz", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quiz')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showQuiz']", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "69c8a9ac-2660-4efb-9613-af69b60f2c73",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(4) .form-check:nth-child(4) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(4) .form-check:nth-child(4) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions1'])[4]", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43f48ff3-1f03-4043-bfd4-21b8eed5165e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(7) .form-check:nth-child(3) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(7) .form-check:nth-child(3) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions2'])[3]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1cc5902-ca71-4649-b7e2-61759f502251",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(10) .form-check:nth-child(4) > .form-check-label",
+      "targets": [
+        ["css=.options:nth-child(10) .form-check:nth-child(4) > .form-check-label", "css:finder"],
+        ["xpath=//div[3]/div/div[4]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Artistic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c140a20-73e8-403d-b1c8-6fac4cd5c14f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(10) .form-check:nth-child(4) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(10) .form-check:nth-child(4) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions3'])[4]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5629590d-5e4e-4c2d-9399-2718f1aa1f87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(13) .form-check:nth-child(3) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(13) .form-check:nth-child(3) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions4'])[3]", "xpath:attributes"],
+        ["xpath=//div[4]/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c532ec9c-1eef-4cce-8030-a9d4ce7fa995",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(16) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(16) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions5'])[5]", "xpath:attributes"],
+        ["xpath=//div[5]/div/div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c34af12a-4c6b-4c2e-b0fa-5f23a7607f1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cde723c4-27af-4a88-8922-c26b32cfecd8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-8 > h2",
+      "targets": [
+        ["css=.col-sm-8 > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'You are a Tequila Sunrise!')]", "xpath:innerText"]
+      ],
+      "value": "You are a Tequila Sunrise!"
+    }]
+  }, {
+    "id": "4a5de6e8-e093-4c9f-9559-8189d07ffd35",
+    "name": "Resavanje kviza - ishod 5",
+    "commands": [{
+      "id": "ebe54c95-2ad1-4e31-abc2-803c98fbd649",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/RegisteredController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5e1707c-cb7f-43a3-9729-9468200e08d6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x731",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "337cc14e-6ce4-483f-985e-fe8d30a424da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quiz",
+      "targets": [
+        ["linkText=Quiz", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quiz')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/showQuiz']", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d9d5d82-737c-48f0-bd07-8e80c75999eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(4) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(4) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions1'])[5]", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b06417b-54ad-4511-9492-0bb4f7256340",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(7) .form-check:nth-child(2) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(7) .form-check:nth-child(2) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions2'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5ee2817-c1f9-45fa-a500-4d91a8dc05bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(10) .form-check:nth-child(3) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(10) .form-check:nth-child(3) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions3'])[3]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d29a6549-4491-48b8-95da-51ebd36f541c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options:nth-child(16) .form-check:nth-child(5) > .form-check-input",
+      "targets": [
+        ["css=.options:nth-child(16) .form-check:nth-child(5) > .form-check-input", "css:finder"],
+        ["xpath=(//input[@name='inlineRadioOptions5'])[5]", "xpath:attributes"],
+        ["xpath=//div[5]/div/div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68b4adef-6a0f-49f3-94b3-0808aea87663",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish quiz')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "052f48ba-762b-45b2-a96e-1a50e3871513",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-sm-8 > h2",
+      "targets": [
+        ["css=.col-sm-8 > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'You are a Bloody Mary!')]", "xpath:innerText"]
+      ],
+      "value": "You are a Bloody Mary!"
+    }]
+  }],
+  "suites": [{
+    "id": "f8ac6c28-f76c-4e8f-a387-8716322e1776",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost/", "http://localhost/mixology/public/index.php/RegisteredController"],
+  "plugins": []
+}
