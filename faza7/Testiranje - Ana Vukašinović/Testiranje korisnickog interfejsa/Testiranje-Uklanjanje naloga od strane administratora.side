@@ -495,6 +495,141 @@
       ],
       "value": "User not found."
     }]
+  }, {
+    "id": "0dcaaf3c-35a8-44d2-a506-ec1a19950092",
+    "name": "TP3 - Neuspešno uklanjanje naloga, administrator pokušao da obriše svoj nalog",
+    "commands": [{
+      "id": "c0f8749e-ba42-4f63-af7e-d619f9371910",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee0a54ff-c661-401e-844a-1f7ae019f158",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x712",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7fbb1ffa-cab1-45c4-a54b-852a9b2777cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e89057d-ec20-4746-b738-2503a763f104",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "e8ab9cb2-050a-40ba-8c20-9b34c7ef118e",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8546b3b-1429-4397-9aa1-192130d80e67",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin123"
+    }, {
+      "id": "5b915b4f-201f-4c74-a2e8-e1b5c5b96cf3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19b4df87-c263-47ae-9461-9f42d62a5896",
+      "comment": "",
+      "command": "click",
+      "target": "name=users[]",
+      "targets": [
+        ["name=users[]", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='users[]']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2753fd1c-39b2-437c-84fd-f3f0b7cb882f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'DELETE')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70126f94-0990-4422-8ac4-267a797d0cbc",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td td:nth-child(3)",
+      "targets": [
+        ["css=tr:nth-child(2) > td td:nth-child(3)", "css:finder"],
+        ["xpath=//td[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "698616e9-cd4f-478c-aa92-7844c6153144",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td td:nth-child(3)",
+      "targets": [
+        ["css=tr:nth-child(2) > td td:nth-child(3)", "css:finder"],
+        ["xpath=//td[3]", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "fdf07ae9-5182-47d4-86d4-66c0eba53060",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/AdminController/logout'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "bf76fed3-6f64-46e9-8803-d9c52bb46f6a",
