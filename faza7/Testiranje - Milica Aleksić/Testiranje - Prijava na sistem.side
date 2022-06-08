@@ -9,7 +9,7 @@
     "commands": []
   }, {
     "id": "e72fd8ea-f5dc-45e2-87fe-c4da84c03c60",
-    "name": "1. Uspešna prijava",
+    "name": "1. Uspešna prijava - Korisnik",
     "commands": [{
       "id": "4c3de510-c7af-4b59-8095-54868135d12e",
       "comment": "",
@@ -276,6 +276,103 @@
         ["xpath=//form/button", "xpath:position"]
       ],
       "value": "Log in"
+    }]
+  }, {
+    "id": "ebd58081-81a6-42f1-97ac-deb9584b6e46",
+    "name": "4. Uspešna prijava - Admin",
+    "commands": [{
+      "id": "c412254c-ec2b-49ed-ac1a-6f59527f5401",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e41aea24-b9ab-48fe-832a-1ebecb2208e9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0708bbe7-f0ce-4fb9-aa83-319357a0b35e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e890e01d-5960-4072-ab97-42b2ff925cb8",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "20b36a77-445e-4efb-bbf9-a26c23a3ae51",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin123"
+    }, {
+      "id": "8ef70d4c-fd0e-4b0a-91cd-90f405014c36",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3a1a7b96-0cb2-40a6-a265-363fac61f888",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Delete accounts",
+      "targets": [
+        ["linkText=Delete accounts", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Delete accounts')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/AdminController/index']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delete accounts')]", "xpath:innerText"]
+      ],
+      "value": "Delete accounts"
+    }, {
+      "id": "4240f8df-f6d1-438f-99c8-ef10a6d7611f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Approve cocktails",
+      "targets": [
+        ["linkText=Approve cocktails", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Approve cocktails')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/AdminController/approveCocktailsPage']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Approve cocktails')]", "xpath:innerText"]
+      ],
+      "value": "Approve cocktails"
     }]
   }],
   "suites": [{
