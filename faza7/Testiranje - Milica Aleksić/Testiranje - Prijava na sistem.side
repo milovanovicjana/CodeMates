@@ -1,0 +1,291 @@
+{
+  "id": "6effe4a9-46d8-4580-940c-1c803098270f",
+  "version": "2.0",
+  "name": "Testiranje - Prijava na sistem",
+  "url": "http://localhost/mixology/public/index.php/GuestController",
+  "tests": [{
+    "id": "9631ca1b-4a38-4c34-b233-892834754ba6",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "e72fd8ea-f5dc-45e2-87fe-c4da84c03c60",
+    "name": "1. Uspešna prijava",
+    "commands": [{
+      "id": "4c3de510-c7af-4b59-8095-54868135d12e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "373c4039-ab00-4904-bd12-b4c311784a48",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e853356-b83b-44a9-9fa6-79356b8b7a47",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "97e5cd4d-e34f-4bde-a4e2-057e49825322",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "mili"
+    }, {
+      "id": "d000a34a-4128-46aa-a099-e649f41d83d0",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "101cdcb5-b01a-48a9-8698-85951c6df264",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a269925-dc28-420a-96db-54a29df7e62c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=i > font",
+      "targets": [
+        ["css=i > font", "css:finder"],
+        ["xpath=//font", "xpath:position"],
+        ["xpath=//font[contains(.,'Hello Milica!')]", "xpath:innerText"]
+      ],
+      "value": "Hello Milica!"
+    }, {
+      "id": "50ccdfbf-bb65-46ed-83bf-aee8f0ebfdff",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/RegisteredController/logout'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign out')]", "xpath:innerText"]
+      ],
+      "value": "Sign out"
+    }]
+  }, {
+    "id": "c388f3e8-d9c8-4d25-a7d1-7d963d6def58",
+    "name": "2. Neuspešno - neispravno korisničko ime",
+    "commands": [{
+      "id": "b0b901ae-068a-431c-ab50-177d1bb90a5a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0982f01e-27c9-4376-80b6-caa74bb9196e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b89edcb7-57f5-46a1-8904-39f149d95252",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f75042c9-4c55-47fc-b799-cb0c429abc1d",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "mimi"
+    }, {
+      "id": "5ef69385-6723-4da2-bf7b-28f845862595",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "1137b671-0d8c-465b-a368-f3d45f26b84b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c56c26f-64ab-4924-b280-ecc5439d60f4",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p:nth-child(1)",
+      "targets": [
+        ["css=p:nth-child(1)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'User not found.')]", "xpath:innerText"]
+      ],
+      "value": "User not found."
+    }, {
+      "id": "ce5dbf9f-eb20-4042-9da5-32eeeb90d09b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": "Log in"
+    }]
+  }, {
+    "id": "2dc61839-ffc7-408f-9577-be9f5206cfe3",
+    "name": "3. Neuspešno - neispravna lozinka",
+    "commands": [{
+      "id": "57c80987-0113-4f1f-8e24-d1f40aa3d4d8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b5d08ae-9f5f-44c4-bf73-3a3b1a8930da",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ff6469c-b994-41ff-8b3a-7b274b1b702b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "729ea2b8-b8ab-4e09-9fff-60c645b13379",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "mili"
+    }, {
+      "id": "f7a04b44-d7b7-4686-9e06-c87aac1f197c",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "111"
+    }, {
+      "id": "f9b5d6d3-fb56-446c-ad81-6abe3e3183cf",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "575b2bc5-c53b-4469-a5d7-6cb34c97eb26",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p:nth-child(1)",
+      "targets": [
+        ["css=p:nth-child(1)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Incorrect password.')]", "xpath:innerText"]
+      ],
+      "value": "Incorrect password."
+    }, {
+      "id": "53bf31af-714d-4c17-bc92-ad522dae541f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": "Log in"
+    }]
+  }],
+  "suites": [{
+    "id": "cafddf08-f527-428f-8207-15543726fb20",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9631ca1b-4a38-4c34-b233-892834754ba6"]
+  }],
+  "urls": ["http://localhost/mixology/public/index.php/GuestController"],
+  "plugins": []
+}

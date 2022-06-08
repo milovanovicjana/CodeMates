@@ -1,0 +1,113 @@
+{
+  "id": "1032dc83-39e9-49eb-854a-98b6a1c52c8a",
+  "version": "2.0",
+  "name": "Testiranje - Prikaz preporučenih koktela",
+  "url": "http://localhost/mixology/public/index.php/GuestController",
+  "tests": [{
+    "id": "650ae1d5-9963-4769-b129-2b8edcc70512",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "b559ec27-062e-4bdf-a4e5-1081c39fd9cb",
+    "name": "1. Uspešan prikaz",
+    "commands": [{
+      "id": "6cc49e4d-eb8e-4fcc-81b4-a3331a3de3ad",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/mixology/public/index.php/GuestController",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "810fe2f9-deaf-418a-a461-db1e359af391",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c5fdd5a-64bb-4c43-9a15-d1ce28584721",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location='http://localhost/mixology/public/index.php/GuestController/showLogin'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc3a4740-083a-4dba-9548-d884f0959933",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputUsername",
+      "targets": [
+        ["id=inputUsername", "id"],
+        ["name=username", "name"],
+        ["css=#inputUsername", "css:finder"],
+        ["xpath=//input[@id='inputUsername']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "mili"
+    }, {
+      "id": "9f9901ac-20d0-4dd2-928b-2a399ba19523",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "e31b3b13-168f-4aa1-bb20-0da527261585",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cb95173-5764-4e8e-baba-9a0c479e604d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recommended",
+      "targets": [
+        ["linkText=Recommended", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Recommended')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/mixology/public/index.php/RegisteredController/displayRecommendedCocktails']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Recommended')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba71426c-5a50-41c4-8b80-9589379452b6",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p b",
+      "targets": [
+        ["css=p b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Recommended cocktails')]", "xpath:innerText"]
+      ],
+      "value": "Recommended cocktails"
+    }]
+  }],
+  "suites": [{
+    "id": "33cd9d15-46b2-49f5-bd61-3785d86e0146",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["650ae1d5-9963-4769-b129-2b8edcc70512"]
+  }],
+  "urls": ["http://localhost/mixology/public/index.php/GuestController"],
+  "plugins": []
+}
